@@ -14,7 +14,6 @@ import {
   MenuItem,
   FormControl,
   InputLabel,
-  Grid,
 } from '@mui/material';
 import { useSnapshot } from 'valtio';
 import { appState } from '../state/appState';
@@ -161,23 +160,29 @@ const EditSquareModal: React.FC<EditSquareModalProps> = ({
 
           {/* Picture grid */}
           <Box sx={{ maxHeight: '300px', overflowY: 'auto' }}>
-            <Grid container spacing={1}>
+            <Box
+              sx={{
+                display: 'grid',
+                gridTemplateColumns: 'repeat(4, 1fr)',
+                gap: 1,
+              }}
+            >
               {filteredPictures.map((pic) => (
-                <Grid item xs={3} key={pic.id}>
-                  <Box
-                    onClick={() => {
-                      setSelectedPicture(pic.id);
-                      setAssociatedText(pic.text);
-                    }}
-                    sx={{
-                      cursor: 'pointer',
-                      border:
-                        selectedPicture === pic.id
-                          ? '3px solid #1976d2'
-                          : '2px solid #e0e0e0',
-                      borderRadius: 1,
-                      padding: 1,
-                      display: 'flex',
+                <Box
+                  key={pic.id}
+                  onClick={() => {
+                    setSelectedPicture(pic.id);
+                    setAssociatedText(pic.text);
+                  }}
+                  sx={{
+                    cursor: 'pointer',
+                    border:
+                      selectedPicture === pic.id
+                        ? '3px solid #1976d2'
+                        : '2px solid #e0e0e0',
+                    borderRadius: 1,
+                    padding: 1,
+                    display: 'flex',
                       flexDirection: 'column',
                       alignItems: 'center',
                       '&:hover': {
@@ -198,9 +203,8 @@ const EditSquareModal: React.FC<EditSquareModalProps> = ({
                       {pic.text}
                     </Typography>
                   </Box>
-                </Grid>
-              ))}
-            </Grid>
+                ))}
+              </Box>
             {filteredPictures.length === 0 && (
               <Typography sx={{ textAlign: 'center', py: 2, color: '#999' }}>
                 Aucune image trouvée
