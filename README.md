@@ -1,101 +1,142 @@
-# Pictho
+# Pict'Oh
 
-<a alt="Nx logo" href="https://nx.dev" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-logo.png" width="45"></a>
+**Pict'Oh** est une application de communication par pictogrammes conçue pour tablettes en orientation portrait. Elle permet aux utilisateurs de communiquer en sélectionnant des images qui sont lues à voix haute.
 
-✨ Your new, shiny [Nx workspace](https://nx.dev) is ready ✨.
+## 🎯 Fonctionnalités
 
-[Learn more about this workspace setup and its capabilities](https://nx.dev/getting-started/tutorials/react-standalone-tutorial?utm_source=nx_project&amp;utm_medium=readme&amp;utm_campaign=nx_projects) or run `npx nx graph` to visually explore what was created. Now, let's get you up to speed!
+- **Grille 6x4** : 24 cases avec coins arrondis pour afficher des pictogrammes
+- **Mode édition** : Activé en cliquant 5 fois sur n'importe quelle case
+- **Synthèse vocale** : Lecture automatique du texte associé à chaque case
+- **Gestion des pages** : Créer, renommer, supprimer et naviguer entre plusieurs pages
+- **Personnalisation** : Associer des images, du texte et des liens vers d'autres pages
+- **Favoris** : Les images utilisées deviennent automatiquement favorites
+- **Persistance** : Toutes les modifications sont sauvegardées automatiquement
+- **Orientation portrait** : L'application reste en mode portrait même si la tablette est tournée
 
-## Run tasks
+## 🚀 Démarrage
 
-To run the dev server for your app, use:
+### Installation
 
-```sh
-npx nx serve pictho
+```bash
+npm install
 ```
 
-To create a production bundle:
+### Développement
 
-```sh
-npx nx build pictho
+```bash
+npm start
 ```
 
-To see all available targets to run for a project, run:
+L'application sera accessible sur [http://localhost:4200](http://localhost:4200)
 
-```sh
-npx nx show project pictho
+### Build de production
+
+```bash
+npm run build
 ```
 
-These targets are either [inferred automatically](https://nx.dev/concepts/inferred-tasks?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) or defined in the `project.json` or `package.json` files.
+Les fichiers compilés seront dans `dist/pictho/`
 
-[More about running tasks in the docs &raquo;](https://nx.dev/features/run-tasks?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
+## 📱 Utilisation
 
-## Add new projects
+### Mode Normal
 
-While you could add new projects to your workspace manually, you might want to leverage [Nx plugins](https://nx.dev/concepts/nx-plugins?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) and their [code generation](https://nx.dev/features/generate-code?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) feature.
+- Cliquez sur une case pour **lire le texte associé à voix haute**
+- Si la case a une page cible, elle sera ouverte après la lecture
 
-Use the plugin's generator to create new projects.
+### Mode Édition
 
-To generate a new application, use:
+1. **Activer le mode édition** : Cliquez 5 fois rapidement sur n'importe quelle case
+2. **Modifier une case** : Cliquez sur une case pour ouvrir le dialogue d'édition
+   - Sélectionner une image
+   - Définir le texte associé
+   - Choisir si le texte s'affiche au-dessus ou en-dessous
+   - Définir une page cible (navigation)
+3. **Créer une nouvelle page** : Cliquez sur "+ Créer une page"
+4. **Gérer les pages** : Cliquez sur "⚙ Gérer les pages" pour renommer, supprimer ou ouvrir des pages
+5. **Quitter le mode édition** : Cliquez sur "✕ Quitter le mode édition"
 
-```sh
-npx nx g @nx/react:app demo
+## 🏗️ Architecture
+
+### Stack technique
+
+- **React 19** avec **TypeScript**
+- **Material UI** pour les composants UI
+- **Valtio** pour la gestion d'état
+- **Tailwind CSS** (utilisé uniquement si nécessaire)
+- **Nx** pour la gestion du monorepo
+- **Vite** pour le bundling
+
+### Structure du projet
+
+```
+src/
+├── app/              # Composant principal de l'application
+├── components/       # Composants React
+│   ├── Grid.tsx
+│   ├── Square.tsx
+│   ├── EditModeBar.tsx
+│   ├── EditSquareModal.tsx
+│   ├── CreatePageDialog.tsx
+│   └── ManagePagesDialog.tsx
+├── state/            # Gestion d'état avec Valtio
+│   └── appState.ts
+├── types/            # Types TypeScript
+│   └── index.ts
+└── utils/            # Utilitaires
+    ├── pictureLoader.ts
+    └── pictureUtils.ts
 ```
 
-To generate a new library, use:
+### Modèle de données
 
-```sh
-npx nx g @nx/react:lib mylib
+```typescript
+interface Square {
+  id: number;
+  selectedPicture?: string;
+  associatedText: string;
+  displayTextAbovePicture: boolean;
+  openPageName: string;
+}
+
+interface Page {
+  pageName: string;
+  squares: Square[]; // 24 squares
+}
+
+interface AppConfig {
+  homePageName: string;
+  pages: Page[];
+  pictures: Picture[];
+  currentPageName: string;
+  isEditMode: boolean;
+}
 ```
 
-You can use `npx nx list` to get a list of installed plugins. Then, run `npx nx list <plugin-name>` to learn about more specific capabilities of a particular plugin. Alternatively, [install Nx Console](https://nx.dev/getting-started/editor-setup?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) to browse plugins and generators in your IDE.
+## 🎨 Pictogrammes
 
-[Learn more about Nx plugins &raquo;](https://nx.dev/concepts/nx-plugins?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) | [Browse the plugin registry &raquo;](https://nx.dev/plugin-registry?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
+Les pictogrammes sont stockés dans `public/assets/pictures/` au format SVG.
 
-## Set up CI!
+Pour ajouter de nouvelles images :
+1. Placez le fichier SVG dans `public/assets/pictures/`
+2. Ajoutez l'entrée correspondante dans `src/utils/pictureLoader.ts`
 
-### Step 1
+## 💾 Persistance
 
-To connect to Nx Cloud, run the following command:
+Toutes les données sont automatiquement sauvegardées dans le **localStorage** du navigateur :
+- Configuration des pages
+- Position et contenu des cases
+- Favoris
+- Page courante
 
-```sh
-npx nx connect
-```
+## 🌐 Internationalisation
 
-Connecting to Nx Cloud ensures a [fast and scalable CI](https://nx.dev/ci/intro/why-nx-cloud?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) pipeline. It includes features such as:
+L'application est actuellement en **français uniquement**, comme spécifié dans les exigences.
 
-- [Remote caching](https://nx.dev/ci/features/remote-cache?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-- [Task distribution across multiple machines](https://nx.dev/ci/features/distribute-task-execution?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-- [Automated e2e test splitting](https://nx.dev/ci/features/split-e2e-tasks?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-- [Task flakiness detection and rerunning](https://nx.dev/ci/features/flaky-tasks?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
+## 📝 Licence
 
-### Step 2
+MIT
 
-Use the following command to configure a CI workflow for your workspace:
+---
 
-```sh
-npx nx g ci-workflow
-```
-
-[Learn more about Nx on CI](https://nx.dev/ci/intro/ci-with-nx#ready-get-started-with-your-provider?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-
-## Install Nx Console
-
-Nx Console is an editor extension that enriches your developer experience. It lets you run tasks, generate code, and improves code autocompletion in your IDE. It is available for VSCode and IntelliJ.
-
-[Install Nx Console &raquo;](https://nx.dev/getting-started/editor-setup?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-
-## Useful links
-
-Learn more:
-
-- [Learn more about this workspace setup](https://nx.dev/getting-started/tutorials/react-standalone-tutorial?utm_source=nx_project&amp;utm_medium=readme&amp;utm_campaign=nx_projects)
-- [Learn about Nx on CI](https://nx.dev/ci/intro/ci-with-nx?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-- [Releasing Packages with Nx release](https://nx.dev/features/manage-releases?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-- [What are Nx plugins?](https://nx.dev/concepts/nx-plugins?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-
-And join the Nx community:
-- [Discord](https://go.nx.dev/community)
-- [Follow us on X](https://twitter.com/nxdevtools) or [LinkedIn](https://www.linkedin.com/company/nrwl)
-- [Our Youtube channel](https://www.youtube.com/@nxdevtools)
-- [Our blog](https://nx.dev/blog?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
+**Développé avec ❤️ pour faciliter la communication**
