@@ -1,27 +1,224 @@
-The project name is pictho but the comercial name is Pict'Oh
-Only front app, use workers to have off line
-React app. Use material as UI lib. And enabled tailwind, but use it only if realy necessary. Use valtio as state manager.
-Use material icon.
-use nx to manage the project to have monorepository in case I want add netxjs server side later
-Off line totally, just first download of the app, loader, download the lib of picture
-the app is targeting tablet only
-It should only display on portrait mode, even if the user turn the tablet
-The UI use french language. No need of internationnalisation for future other language
-the app purpose is to display 24 squares, 6 columns and 4 rows. The squares angles are rounded.
-The user can select from the /assets/pictures/* a picture for each square
-each square can be empty.
-When clicking 5 time on a square, an edit mode is enabledm then When the user click on a square, a modal open with the list of picture to select, a text field allow to filter. By default
-only the favorite picture are displayed. Never display all the picture at once, because is too many picture.
-For each picture a text is associated. By default the text is the file name. An optin option for the picture allow to
-display above the picture or not the text.
-The image could also open a new page. by Default the 'Home' page is created. In edit mode there is a band on top of the square with :
-- new page creation button (a popup allow to enter the page name, then the page is open)
-- manage pages button (a popup with the list of page, allow to delete a page, rename it, open it)
-- close edit mode button
-Each time the user make a change the config is saved in the local storage of the browser.
-When the user click on a square in normal mode, the associated text is read, using a local text to speech model,
-with one female voice preloaded. When the app is loaded the first time, the text to speech model is downloaded in background.
-During the first open, a loader with percent for the progress is display when all for offline is downloaded (front code, 
-picto libs, text to speech model, etc...).
+# 🧩 AI Agent Prompt — Project **Pict'Oh**
+*(internal project name: `pictho`)*
 
+You are an expert **frontend architect and React/TypeScript engineer**.  
+Your task is to **design and implement the frontend application** described below with clean architecture, strong typing, and offline-first behavior.
 
+---
+
+## 1. Project Identity
+
+- **Commercial name**: **Pict'Oh**
+- **Internal project name**: `pictho`
+- **Target platform**: **Tablet only**
+- **Orientation**: **Portrait only**
+   - The UI must remain portrait even if the tablet is rotated
+- **Language**: **French only**
+   - No internationalization required
+
+---
+
+## 2. Technical Stack & Constraints
+
+### Core stack
+
+- **React**
+- **TypeScript**
+- **Material UI (MUI)** as the main UI library
+- **Material Icons**
+- **Tailwind CSS**
+   - Enabled but **used only when strictly necessary**
+- **Valtio** for state management
+
+### Project structure
+
+- Use **Nx** to manage the project
+- Monorepo-ready architecture:
+   - Frontend app only for now
+   - Must allow adding a **Next.js server-side app later**
+
+---
+
+## 3. Offline-First Requirements
+
+- The app must work **100% offline** after the first launch
+- On first launch:
+   - Display a **loader with progress percentage**
+   - Download and cache:
+      - Frontend code
+      - Picture library
+      - Text-to-speech model
+- Use **Web Workers** for offline support and background downloads
+- Persist configuration using **localStorage**  
+  *(IndexedDB may be used if necessary)*
+
+---
+
+## 4. App Purpose & Layout
+
+### Main grid
+
+- Display **24 squares**
+- Layout:
+   - **6 columns**
+   - **4 rows**
+- Squares have **rounded corners**
+- Each square:
+   - Can be empty
+   - Can contain a selected picture from `/assets/pictures/*`
+
+---
+
+## 5. Interaction Modes
+
+### Normal mode (default)
+
+- Clicking a square:
+   - Reads the **associated text aloud**
+   - Uses a **local text-to-speech model**
+   - One **female voice**, preloaded
+- If the square defines a target page:
+   - Navigate to that page after speech (if applicable)
+
+---
+
+### Edit mode
+
+- Activated by **clicking 5 times on any square**
+- Edit mode applies to the **entire page**, regardless of which square was clicked
+
+#### Edit mode UI
+
+A **top band** is displayed with:
+
+1. **Create new page**
+   - Opens a popup
+   - User enters page name
+   - Page is created and immediately opened
+
+2. **Manage pages**
+   - Popup with page list
+   - Actions:
+      - Open page
+      - Rename page
+      - Delete page
+
+3. **Exit edit mode**
+
+---
+
+## 6. Square Editing Behavior
+
+- In edit mode, clicking a square opens a **modal**
+- Modal content:
+   - Current selected image
+   - Square attributes editor
+   - Below: picture selection list
+
+### Picture selection rules
+
+- Pictures come from `/assets/pictures/*`
+- Never load or display all pictures at once
+- Display pictures:
+   - **Alphabetical order**
+   - **Filtered by text input**
+- By default:
+   - Only **favorite pictures** are shown
+- A picture becomes **favorite once it is used at least once**
+- Favorites are part of the **persisted configuration**
+
+### Picture metadata
+
+- Each picture has an associated **text**
+   - Default text = file name
+- Option per picture:
+   - Show text **above** the image or not
+
+---
+
+## 7. Navigation & Pages
+
+### Page model
+
+Each page has:
+
+- `pageName`
+- `squares[]` with fixed positions (6×4 grid)
+
+### Square attributes
+
+Each square contains:
+
+- `selectedPicture`
+- `associatedText`
+- `displayTextAbovePicture` (boolean)
+- `openPageName` (string, empty = no navigation)
+
+### App-level attributes
+
+- `homePageName`
+- `pages[]`
+
+- A **Home page** is created by default
+
+---
+
+## 8. Persistence Rules
+
+- **Every change** (square edit, page edit, favorites update, etc.):
+   - Must be **saved immediately**
+   - Stored in browser local storage
+- State must rehydrate fully on reload
+- Offline behavior must be deterministic
+
+---
+
+## 9. Text-to-Speech (TTS)
+
+- Use a **local TTS model**, not a cloud service
+- Female voice only
+- Model is:
+   - Downloaded in background on first app launch
+   - Cached for offline use
+- On first app launch:
+   - Display a loader with **download progress percentage**
+
+---
+
+## 10. UX & Code Quality Expectations
+
+- Tablet-friendly UI (large touch targets)
+- Clear separation of concerns:
+   - UI components
+   - State (Valtio)
+   - Persistence
+   - Offline / worker logic
+- Strong TypeScript typing for:
+   - App configuration
+   - Pages
+   - Squares
+   - Pictures
+- Scalable architecture suitable for future Next.js backend integration
+
+---
+
+## 11. Deliverables
+
+- Nx monorepo structure
+- React app using Material UI
+- Offline-first implementation
+- Edit mode logic
+- Page & square configuration system
+- Local persistence
+- Text-to-speech integration
+- Clean, readable, production-quality code
+
+---
+
+### Important Notes
+
+- Do **not** over-engineer
+- Favor **clarity, maintainability, and correctness**
+- Avoid unnecessary abstractions
+
+---
