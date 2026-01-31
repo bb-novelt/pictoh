@@ -49,7 +49,7 @@ Pict'Oh is an offline-first, tablet-optimized communication board application bu
   - Name: `pictho-app` or `frontend`
   - Framework: React with TypeScript
 - [ ] Configure app for tablet-only viewport
-- [ ] Set portrait orientation lock in manifest/config
+- [ ] Set landscape orientation lock in manifest/config
 - [ ] Remove unnecessary boilerplate files
 
 ### 1.3 Install Core Dependencies
@@ -71,40 +71,20 @@ Pict'Oh is an offline-first, tablet-optimized communication board application bu
 - [ ] Configure Prettier for code formatting
 - [ ] Set up Git hooks (husky) for pre-commit checks
 - [ ] Create `.editorconfig` for consistent code style
-- [ ] Set up VS Code workspace settings (optional)
+- [ ] Set up IntelliJ IDEA workspace settings
 
 ---
 
 ## Epic 2: Core Data Models & State Management
 
-**Goal**: Define TypeScript types and Valtio state structure for the entire application
+**Goal**: Define TypeScript types alongside features (agile approach) and Valtio state structure
 
-### 2.1 Define TypeScript Types
-- [ ] Create `types/` directory in shared library
-- [ ] Define `Picture` interface:
-  - `id: string`
-  - `fileName: string`
-  - `path: string`
-  - `defaultText: string`
-  - `isFavorite: boolean`
-- [ ] Define `Square` interface:
-  - `id: string`
-  - `position: { row: number, col: number }`
-  - `selectedPicture: Picture | null`
-  - `associatedText: string`
-  - `displayTextAbovePicture: boolean`
-  - `openPageName: string`
-- [ ] Define `Page` interface:
-  - `pageName: string`
-  - `squares: Square[]` (24 items, 6×4 grid)
-- [ ] Define `AppConfig` interface:
-  - `homePageName: string`
-  - `pages: Page[]`
-  - `currentPageName: string`
-  - `isEditMode: boolean`
-  - `favoritePictures: string[]` (picture IDs)
-  - `isFirstLaunch: boolean`
-  - `cacheStatus: CacheStatus`
+### 2.1 Define TypeScript Types (created alongside features)
+- [ ] Create types as needed when implementing features
+- [ ] Define `Picture` interface when implementing picture feature
+- [ ] Define `Square` interface when implementing grid feature
+- [ ] Define `Page` interface when implementing page management
+- [ ] Define `AppConfig` interface when implementing app state
 
 ### 2.2 Create Valtio State Store
 - [ ] Create `state/store.ts` with main application state
@@ -169,12 +149,14 @@ Pict'Oh is an offline-first, tablet-optimized communication board application bu
 ### 3.4 First Launch Experience
 - [ ] Create `FirstLaunchLoader` component
 - [ ] Show progress bar with percentage
+- [ ] Load everything completely before allowing app use (no lazy loading)
 - [ ] Track download progress for:
   - App assets (30%)
   - Picture library (40%)
   - TTS model (30%)
 - [ ] Store first launch completion flag
 - [ ] Handle download errors gracefully
+- [ ] Only show app when 100% loaded
 
 ### 3.5 Offline Detection & Feedback
 - [ ] Implement online/offline detection
@@ -189,15 +171,15 @@ Pict'Oh is an offline-first, tablet-optimized communication board application bu
 **Goal**: Create the main 6×4 grid layout with Material UI components
 
 ### 4.1 App Layout Structure
-- [ ] Create `Layout` component with portrait lock
+- [ ] Create `Layout` component with landscape lock
 - [ ] Set up viewport meta tags for tablet
-- [ ] Configure responsive breakpoints (tablet-only)
+- [ ] Configure for landscape-only (not portrait, not phone, not desktop)
 - [ ] Ensure proper touch target sizes (min 44×44px)
 
 ### 4.2 Grid Component
 - [ ] Create `Grid` component (6 columns × 4 rows)
 - [ ] Use CSS Grid or MUI Grid for layout
-- [ ] Ensure equal-sized squares
+- [ ] Ensure squares scale to fill space but stay square
 - [ ] Add rounded corners to squares
 - [ ] Implement responsive padding/gaps
 - [ ] Handle different tablet sizes gracefully
@@ -209,7 +191,8 @@ Pict'Oh is an offline-first, tablet-optimized communication board application bu
 - [ ] Display text above picture (if configured)
 - [ ] Style empty squares differently
 - [ ] Add visual feedback on click/tap
-- [ ] Ensure accessibility (ARIA labels)
+- [ ] No ARIA labels needed (not for blind people)
+- [ ] No hover effects (tablet-only)
 
 ### 4.4 Theme Configuration
 - [ ] Create custom MUI theme
@@ -226,17 +209,16 @@ Pict'Oh is an offline-first, tablet-optimized communication board application bu
 **Goal**: Implement click handling and text-to-speech functionality
 
 ### 5.1 Click Tracking for Edit Mode Activation
-- [ ] Implement click counter per square
-- [ ] Track clicks within time window (e.g., 3 seconds)
-- [ ] Activate edit mode on 5th click
+- [ ] Implement click counter for the screen (not per square)
+- [ ] Track clicks within time window (e.g., short time)
+- [ ] Activate edit mode on 5th click anywhere on screen
 - [ ] Reset counter on timeout or mode change
 - [ ] Add visual feedback during click counting (optional)
 
 ### 5.2 Normal Mode Click Behavior
 - [ ] Handle square click in normal mode
 - [ ] Trigger TTS for associated text
-- [ ] Wait for TTS completion
-- [ ] Navigate to target page (if configured)
+- [ ] Navigate to target page immediately (do not wait for TTS)
 - [ ] Prevent multiple simultaneous clicks
 
 ### 5.3 Text-to-Speech Integration
@@ -254,9 +236,10 @@ Pict'Oh is an offline-first, tablet-optimized communication board application bu
 
 ### 5.4 Navigation Logic
 - [ ] Implement page navigation on square click
-- [ ] Trigger navigation after TTS completes
+- [ ] Trigger navigation immediately (do not wait for TTS)
 - [ ] Handle navigation to non-existent pages
-- [ ] Animate page transitions (optional)
+- [ ] No page transition animations
+- [ ] No navigation history
 
 ---
 
@@ -271,7 +254,7 @@ Pict'Oh is an offline-first, tablet-optimized communication board application bu
 - [ ] Add "Manage Pages" button
 - [ ] Add "Exit Edit Mode" button
 - [ ] Style with Material UI AppBar
-- [ ] Ensure toolbar is always visible
+- [ ] Toolbar only visible in edit mode
 
 ### 6.2 Create New Page Dialog
 - [ ] Create `CreatePageDialog` component
@@ -309,8 +292,8 @@ Pict'Oh is an offline-first, tablet-optimized communication board application bu
 - [ ] Add visual indicators for edit mode
 - [ ] Highlight editable areas
 - [ ] Show borders around squares in edit mode
-- [ ] Add hover effects on squares
-- [ ] Show edit icon on square hover (optional)
+- [ ] All squares are editable when in edit mode
+- [ ] No hover effects (tablet-only app)
 
 ---
 
@@ -322,8 +305,9 @@ Pict'Oh is an offline-first, tablet-optimized communication board application bu
 - [ ] Implement `navigateToPage(pageName)` function
 - [ ] Update current page in state
 - [ ] Render new page grid
-- [ ] Handle navigation history (optional)
+- [ ] No navigation history needed
 - [ ] Prevent navigation to non-existent pages
+- [ ] No page transition animations
 
 ### 7.2 Page Creation
 - [ ] Implement `createPage(name)` function
@@ -365,7 +349,8 @@ Pict'Oh is an offline-first, tablet-optimized communication board application bu
 
 ### 8.1 Picture Library Setup
 - [ ] Create `/public/assets/pictures/` directory
-- [ ] Add initial set of sample pictures
+- [ ] Add initial set of test pictures (repository has none currently)
+- [ ] Note: More pictures will be added in the future
 - [ ] Create picture manifest/index file
 - [ ] Implement picture loading utility
 - [ ] Generate Picture objects from files
@@ -373,12 +358,11 @@ Pict'Oh is an offline-first, tablet-optimized communication board application bu
 
 ### 8.2 Picture Service
 - [ ] Create `PictureService` class
-- [ ] Implement `getAllPictures()` - lazy load
+- [ ] Implement `getAllPictures()` - all loaded on first access
 - [ ] Implement `getFavoritePictures()`
 - [ ] Implement `searchPictures(query: string)`
 - [ ] Implement alphabetical sorting
 - [ ] Cache loaded pictures in memory
-- [ ] Optimize for performance (don't load all at once)
 
 ### 8.3 Picture Selection UI
 - [ ] Create `PictureSelector` component
@@ -400,7 +384,7 @@ Pict'Oh is an offline-first, tablet-optimized communication board application bu
 ### 8.5 Picture Display in Squares
 - [ ] Optimize image loading and display
 - [ ] Use appropriate image sizes
-- [ ] Implement lazy loading for grid images
+- [ ] All images loaded on first access (no lazy loading)
 - [ ] Cache loaded images in browser
 - [ ] Handle missing/broken images gracefully
 - [ ] Show text above picture when configured
@@ -456,11 +440,13 @@ Pict'Oh is an offline-first, tablet-optimized communication board application bu
 ### 10.1 UI Polish
 - [ ] Review all components for tablet usability
 - [ ] Ensure consistent spacing and alignment
-- [ ] Add smooth transitions and animations
+- [ ] No page transition animations
 - [ ] Optimize touch targets (min 44×44px)
 - [ ] Improve loading states and feedback
 - [ ] Add error boundaries for graceful failures
-- [ ] Review accessibility (ARIA labels, keyboard nav)
+- [ ] No ARIA labels needed (not for blind people)
+- [ ] No hover effects (tablet-only)
+- [ ] No navigation history
 
 ### 10.2 French Localization
 - [ ] Review all UI text in French
@@ -470,24 +456,23 @@ Pict'Oh is an offline-first, tablet-optimized communication board application bu
 
 ### 10.3 Performance Optimization
 - [ ] Optimize re-renders with React.memo
-- [ ] Implement virtual scrolling for large lists
 - [ ] Optimize image loading and caching
 - [ ] Minimize bundle size
-- [ ] Lazy load non-critical components
+- [ ] All resources loaded on first access (no lazy loading)
 - [ ] Profile and optimize slow operations
 
 ### 10.4 Manual Testing
 - [ ] Test first launch experience
 - [ ] Test offline functionality
-- [ ] Test edit mode activation (5 clicks)
+- [ ] Test edit mode activation (5 clicks anywhere on screen)
 - [ ] Test square editing and saving
 - [ ] Test page creation, rename, delete
-- [ ] Test navigation between pages
+- [ ] Test navigation between pages (immediate, no waiting for TTS)
 - [ ] Test TTS with various texts
 - [ ] Test favorites system
 - [ ] Test persistence (reload app)
 - [ ] Test on multiple tablet sizes
-- [ ] Test portrait orientation lock
+- [ ] Test landscape orientation lock
 
 ### 10.5 Automated Testing (if applicable)
 - [ ] Set up Jest and React Testing Library
@@ -523,8 +508,12 @@ Pict'Oh is an offline-first, tablet-optimized communication board application bu
 2. **Persistence**: localStorage for immediate saves, IndexedDB if quota issues
 3. **Offline**: Service Worker + Web Worker for downloads
 4. **TTS**: Evaluate Web Speech API vs. local model (Piper/Coqui)
-5. **Images**: Store in public assets, reference by path
+5. **Images**: Store in public assets, reference by path, all loaded on first access
 6. **Build**: Nx for monorepo, Vite/Webpack for bundling
+7. **Orientation**: Landscape-only (not portrait)
+8. **Loading**: No lazy loading - everything loaded on first access
+9. **IDE**: IntelliJ (not VS Code)
+10. **Types**: Created alongside features (agile approach)
 
 ### Scalability Considerations
 
@@ -536,12 +525,13 @@ Pict'Oh is an offline-first, tablet-optimized communication board application bu
 
 ### Performance Targets
 
-- First Launch: < 30 seconds (with downloads)
+- First Launch: < 30 seconds (with downloads, everything loaded before app is usable)
 - Subsequent Loads: < 2 seconds
 - Offline: 100% functional
 - TTS Response: < 500ms delay
 - Square Click Response: Immediate visual feedback
 - Picture Search: < 100ms for filtering
+- Navigation: Immediate (does not wait for TTS)
 
 ---
 
@@ -614,19 +604,28 @@ The project is complete when:
 
 1. ✅ Nx monorepo is set up with React app
 2. ✅ 6×4 grid displays correctly on tablets
-3. ✅ Portrait orientation is locked
+3. ✅ Landscape orientation is locked
 4. ✅ All text is in French
 5. ✅ App works 100% offline after first launch
-6. ✅ First launch shows progress loader
+6. ✅ First launch shows progress loader and loads everything before app is usable
 7. ✅ TTS reads square text aloud with female voice
-8. ✅ 5 clicks activates edit mode
-9. ✅ Edit mode allows square customization
+8. ✅ 5 clicks anywhere on screen activates edit mode
+9. ✅ Edit mode allows square customization (all squares editable)
 10. ✅ Pages can be created, renamed, deleted
 11. ✅ Pictures can be selected and displayed
 12. ✅ Favorites system works correctly
 13. ✅ All changes persist to localStorage
 14. ✅ App rehydrates state on reload
 15. ✅ Code is clean, typed, and maintainable
+16. ✅ No lazy loading - everything loaded on first access
+17. ✅ Navigation does not wait for TTS completion
+18. ✅ No page transition animations
+19. ✅ Toolbar only visible in edit mode
+20. ✅ No ARIA labels (not for blind people)
+21. ✅ No hover effects (tablet-only)
+22. ✅ No navigation history
+23. ✅ Squares scale to fill space but stay square
+24. ✅ Test pictures created in repository
 
 ---
 

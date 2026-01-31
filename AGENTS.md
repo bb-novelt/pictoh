@@ -11,8 +11,8 @@ Your task is to **design and implement the frontend application** described belo
 - **Commercial name**: **Pict'Oh**
 - **Internal project name**: `pictho`
 - **Target platform**: **Tablet only**
-- **Orientation**: **Portrait only**
-   - The UI must remain portrait even if the tablet is rotated
+- **Orientation**: **Landscape only**
+   - The UI must remain landscape even if the tablet is rotated
 - **Language**: **French only**
    - No internationalization required
 
@@ -44,13 +44,15 @@ Your task is to **design and implement the frontend application** described belo
 - The app must work **100% offline** after the first launch
 - On first launch:
    - Display a **loader with progress percentage**
-   - Download and cache:
+   - Load everything completely (no lazy loading):
       - Frontend code
       - Picture library
       - Text-to-speech model
+   - Only when everything is loaded, the app can be used
 - Use **Web Workers** for offline support and background downloads
 - Persist configuration using **localStorage**  
   *(IndexedDB may be used if necessary)*
+- **No lazy loading** - all resources must be fully loaded on first access
 
 ---
 
@@ -78,18 +80,19 @@ Your task is to **design and implement the frontend application** described belo
    - Uses a **local text-to-speech model**
    - One **female voice**, preloaded
 - If the square defines a target page:
-   - Navigate to that page after speech (if applicable)
+   - Navigate to that page immediately (do not wait for speech to complete)
 
 ---
 
 ### Edit mode
 
-- Activated by **clicking 5 times on any square**
-- Edit mode applies to the **entire page**, regardless of which square was clicked
+- Activated by **clicking 5 times quickly anywhere on the screen**
+- Edit mode applies to the **entire page**
+- When in edit mode, **all squares** can be edited by clicking on them
 
 #### Edit mode UI
 
-A **top band** is displayed with:
+A **toolbar** is displayed (only visible in edit mode) with:
 
 1. **Create new page**
    - Opens a popup
@@ -118,7 +121,6 @@ A **top band** is displayed with:
 ### Picture selection rules
 
 - Pictures come from `/assets/pictures/*`
-- Never load or display all pictures at once
 - Display pictures:
    - **Alphabetical order**
    - **Filtered by text input**
@@ -126,6 +128,7 @@ A **top band** is displayed with:
    - Only **favorite pictures** are shown
 - A picture becomes **favorite once it is used at least once**
 - Favorites are part of the **persisted configuration**
+- **Note**: Test pictures should be created in the repository as none exist yet
 
 ### Picture metadata
 
@@ -188,17 +191,25 @@ Each square contains:
 ## 10. UX & Code Quality Expectations
 
 - Tablet-friendly UI (large touch targets)
+- **Landscape-only** orientation (not portrait, not phone, not desktop)
+- Not fully responsive - **squares scale to fill space but stay square**
+- **No hover effects** (tablet-only app)
+- **No ARIA labels** (not for blind people)
+- **No page transition animations**
+- **No navigation history**
 - Clear separation of concerns:
    - UI components
    - State (Valtio)
    - Persistence
    - Offline / worker logic
+- **Agile approach to types**: Create types **alongside features**, not before
 - Strong TypeScript typing for:
    - App configuration
    - Pages
    - Squares
    - Pictures
 - Scalable architecture suitable for future Next.js backend integration
+- **IDE**: IntelliJ (not VS Code)
 
 ---
 
