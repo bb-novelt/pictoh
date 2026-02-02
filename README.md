@@ -25,4 +25,4 @@ Pict'Oh (pictho) is an offline-first, tablet-optimized communication board appli
 
 ## Test Pictures
 
-Test pictures are available in `/public/assets/pictures/`. More will be added in the future.
+The repository currently has no test images in `/public/assets/pictures/`. Test images will be added in the future as the library grows to eventually contain thousands of images.

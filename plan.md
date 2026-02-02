@@ -82,40 +82,45 @@ Pict'Oh is an offline-first, tablet-optimized communication board application bu
 ### 2.1 Define TypeScript Types (created alongside features)
 - [ ] Create types as needed when implementing features
 - [ ] Define `Picture` interface when implementing picture feature
+  - Include `lastUsedTime` attribute for tracking usage
+  - Support both built-in and user-added pictures
 - [ ] Define `Square` interface when implementing grid feature
+  - Reference pages by `pageId` instead of `pageName`
 - [ ] Define `Page` interface when implementing page management
+  - Include both `pageId` (unique identifier) and `pageName` (display name)
 - [ ] Define `AppConfig` interface when implementing app state
+  - Use `homePageId` and `currentPageId` instead of names
 
 ### 2.2 Create Valtio State Store
 - [ ] Create `state/store.ts` with main application state
 - [ ] Initialize store with default values
-- [ ] Create default "Home" page structure
+- [ ] Create default "Home" page with unique `pageId`
 - [ ] Implement state utility functions:
-  - `getCurrentPage()`
+  - `getCurrentPage()` - get by `pageId`
   - `getSquareAtPosition(row, col)`
   - `updateSquare(squareId, updates)`
-  - `addPage(pageName)`
-  - `deletePage(pageName)`
-  - `renamePage(oldName, newName)`
+  - `addPage(pageName)` - generate unique `pageId`
+  - `deletePage(pageId)` - delete by ID
+  - `renamePage(pageId, newName)` - rename using ID
 
 ### 2.3 Create State Actions
 - [ ] Create `actions/` directory
 - [ ] Implement page actions:
-  - `createPage(name: string)`
-  - `deletePage(name: string)`
-  - `renamePage(oldName: string, newName: string)`
-  - `navigateToPage(name: string)`
+  - `createPage(name: string)` - auto-generate unique `pageId`
+  - `deletePage(pageId: string)` - delete by ID
+  - `renamePage(pageId: string, newName: string)` - rename by ID
+  - `navigateToPage(pageId: string)` - navigate by ID
 - [ ] Implement square actions:
   - `updateSquareContent(squareId, picture, text)`
   - `toggleTextDisplay(squareId)`
-  - `setSquareNavigation(squareId, targetPage)`
+  - `setSquareNavigation(squareId, targetPageId)` - reference by page ID
 - [ ] Implement edit mode actions:
   - `toggleEditMode()`
   - `activateEditMode()`
   - `deactivateEditMode()`
-- [ ] Implement favorites actions:
-  - `addToFavorites(pictureId)`
-  - `removeFromFavorites(pictureId)`
+- [ ] Implement picture tracking actions:
+  - `updateLastUsedTime(pictureId)` - track when pictures are used
+  - `getPicturesSortedByLastUsed()` - for managing 50-picture limit
 
 ---
 
@@ -136,7 +141,11 @@ Pict'Oh is an offline-first, tablet-optimized communication board application bu
   - App bundle (JS/CSS)
   - Material UI fonts
   - Core icons
-- [ ] Implement runtime caching for pictures
+- [ ] Implement **complete image library caching**:
+  - **All images** from `/assets/pictures/*` cached on first load
+  - When user adds a new image to a square, **add it to cache immediately**
+  - Cache persists across sessions for offline availability
+- [ ] Implement runtime caching for user-added pictures
 - [ ] Set cache expiration policies
 
 ### 3.3 Web Worker for Background Tasks
@@ -190,7 +199,11 @@ Pict'Oh is an offline-first, tablet-optimized communication board application bu
 - [ ] Display selected picture (if any)
 - [ ] Display text above picture (if configured)
 - [ ] Style empty squares differently
-- [ ] Add visual feedback on click/tap
+- [ ] Add visual feedback on touch (not release):
+  - **Border changes color for 1 second** when touched
+  - Trigger TTS on touch start
+- [ ] **Edit mode visual feedback**:
+  - Show **red border** when edit mode is active
 - [ ] No ARIA labels needed (not for blind people)
 - [ ] No hover effects (tablet-only)
 
@@ -216,10 +229,12 @@ Pict'Oh is an offline-first, tablet-optimized communication board application bu
 - [ ] Add visual feedback during click counting (optional)
 
 ### 5.2 Normal Mode Click Behavior
-- [ ] Handle square click in normal mode
+- [ ] Handle square touch in normal mode
+- [ ] Trigger on **touch start** (not on release)
+- [ ] **Border color changes for 1 second** as visual feedback
 - [ ] Trigger TTS for associated text
 - [ ] Navigate to target page immediately (do not wait for TTS)
-- [ ] Prevent multiple simultaneous clicks
+- [ ] Prevent multiple simultaneous touches
 
 ### 5.3 Text-to-Speech Integration
 - [ ] Research and select local TTS library
@@ -235,7 +250,8 @@ Pict'Oh is an offline-first, tablet-optimized communication board application bu
 - [ ] Add TTS state management (speaking, idle, error)
 
 ### 5.4 Navigation Logic
-- [ ] Implement page navigation on square click
+- [ ] Implement page navigation on square touch
+- [ ] Navigate by `pageId` (not `pageName`)
 - [ ] Trigger navigation immediately (do not wait for TTS)
 - [ ] Handle navigation to non-existent pages
 - [ ] No page transition animations
@@ -268,12 +284,13 @@ Pict'Oh is an offline-first, tablet-optimized communication board application bu
 ### 6.3 Manage Pages Dialog
 - [ ] Create `ManagePagesDialog` component
 - [ ] Display list of all pages
+- [ ] **Sort pages by name alphabetically**
 - [ ] Highlight current page
 - [ ] Prevent deletion of Home page
 - [ ] Add actions per page:
-  - Open/navigate to page
-  - Rename page
-  - Delete page
+  - Open/navigate to page (by `pageId`)
+  - Rename page (update `pageName`, keep `pageId` unchanged)
+  - Delete page (by `pageId`)
 - [ ] Confirm before deletion
 - [ ] Handle edge cases (deleting current page)
 
@@ -283,15 +300,15 @@ Pict'Oh is an offline-first, tablet-optimized communication board application bu
 - [ ] Display square attribute editors:
   - Associated text (TextField)
   - Display text above picture (Checkbox)
-  - Navigate to page (Select/Autocomplete)
-- [ ] Show picture selection list below
+  - Navigate to page (Select/Autocomplete - by `pageId`, display `pageName`)
+- [ ] Show picture selection list below (built-in + user-added)
 - [ ] Auto-save changes on edit
 - [ ] Close modal on outside click or close button
 
 ### 6.5 Edit Mode Visual Feedback
 - [ ] Add visual indicators for edit mode
+- [ ] **All squares show red borders** when edit mode is active
 - [ ] Highlight editable areas
-- [ ] Show borders around squares in edit mode
 - [ ] All squares are editable when in edit mode
 - [ ] No hover effects (tablet-only app)
 
@@ -302,8 +319,8 @@ Pict'Oh is an offline-first, tablet-optimized communication board application bu
 **Goal**: Implement full page creation, navigation, and management
 
 ### 7.1 Page Navigation
-- [ ] Implement `navigateToPage(pageName)` function
-- [ ] Update current page in state
+- [ ] Implement `navigateToPage(pageId)` function - navigate by ID
+- [ ] Update current page in state (`currentPageId`)
 - [ ] Render new page grid
 - [ ] No navigation history needed
 - [ ] Prevent navigation to non-existent pages
@@ -311,35 +328,37 @@ Pict'Oh is an offline-first, tablet-optimized communication board application bu
 
 ### 7.2 Page Creation
 - [ ] Implement `createPage(name)` function
-- [ ] Validate unique page name
+- [ ] Generate unique `pageId` (e.g., UUID or timestamp-based)
+- [ ] Validate unique page name (display name can be same, but warn user)
 - [ ] Initialize with 24 empty squares
 - [ ] Add to pages array in state
-- [ ] Navigate to new page immediately
+- [ ] Navigate to new page immediately (by `pageId`)
 - [ ] Persist to localStorage
 
 ### 7.3 Page Deletion
-- [ ] Implement `deletePage(name)` function
-- [ ] Prevent deletion of Home page
+- [ ] Implement `deletePage(pageId)` function - delete by ID
+- [ ] Prevent deletion of Home page (check `homePageId`)
 - [ ] Show confirmation dialog
 - [ ] Remove page from state
 - [ ] Navigate to Home if deleting current page
-- [ ] Update any squares pointing to deleted page
+- [ ] Update any squares pointing to deleted page (clear `openPageId`)
 - [ ] Persist changes
 
 ### 7.4 Page Rename
-- [ ] Implement `renamePage(oldName, newName)` function
-- [ ] Validate new name is unique
-- [ ] Update page name in state
-- [ ] Update currentPageName if renaming current page
-- [ ] Update all square navigations pointing to old name
+- [ ] Implement `renamePage(pageId, newName)` function - rename by ID
+- [ ] Validate new name is unique (warn if duplicate)
+- [ ] Update `pageName` in state (keep `pageId` unchanged)
+- [ ] Update `currentPageId` reference if renaming current page
+- [ ] **No need to update square navigations** (they reference `pageId`, not name)
 - [ ] Persist changes
 
 ### 7.5 Home Page Initialization
 - [ ] Create default Home page on first launch
-- [ ] Set as homePageName in config
-- [ ] Set as currentPageName on app load
-- [ ] Ensure Home page cannot be deleted
-- [ ] Ensure Home page can be renamed
+- [ ] Generate unique `homePageId`
+- [ ] Set as `homePageId` in config
+- [ ] Set as `currentPageId` on app load
+- [ ] Ensure Home page cannot be deleted (check by `pageId`)
+- [ ] Ensure Home page can be renamed (update `pageName` only)
 
 ---
 
@@ -349,45 +368,73 @@ Pict'Oh is an offline-first, tablet-optimized communication board application bu
 
 ### 8.1 Picture Library Setup
 - [ ] Create `/public/assets/pictures/` directory
-- [ ] Add initial set of test pictures (repository has none currently)
-- [ ] Note: More pictures will be added in the future
-- [ ] Create picture manifest/index file
+- [ ] **Note**: Repository currently has no test images - will be added in the future
+- [ ] **Image discovery approach** (preferred):
+  - Automatically discover all images in `/public/assets/pictures/`
+  - Use dynamic import or manifest generation
+  - No manual list maintenance required
+- [ ] **Fallback approach** (if auto-discovery not feasible):
+  - Create a script to scan and generate image list
+  - Script updates manifest when new images are added
 - [ ] Implement picture loading utility
 - [ ] Generate Picture objects from files
 - [ ] Extract metadata (filename, path)
+- [ ] Add `lastUsedTime` attribute to track usage
 
 ### 8.2 Picture Service
 - [ ] Create `PictureService` class
-- [ ] Implement `getAllPictures()` - all loaded on first access
-- [ ] Implement `getFavoritePictures()`
-- [ ] Implement `searchPictures(query: string)`
+- [ ] Implement `getAllPictures()` - returns built-in + user-added (all loaded on first access)
+- [ ] Implement `getBuiltInPictures()` - from `/assets/pictures/*`
+- [ ] Implement `getUserAddedPictures()` - user uploaded pictures
+- [ ] Implement `searchPictures(query: string)` - filter by name/text
+- [ ] Implement `getPicturesSortedByLastUsed()` - for 50-picture limit management
+- [ ] Implement `updateLastUsedTime(pictureId)` - track picture usage
 - [ ] Implement alphabetical sorting
 - [ ] Cache loaded pictures in memory
+- [ ] **Note**: Library will eventually contain thousands of images
 
 ### 8.3 Picture Selection UI
 - [ ] Create `PictureSelector` component
-- [ ] Show search/filter text input
+- [ ] Show **search/filter text input** for finding pictures
+- [ ] Add **filter toggle**: Built-in pictures, User-added pictures, or Both
 - [ ] Display filtered pictures in grid
-- [ ] Show only favorites by default
-- [ ] Implement infinite scroll or pagination
+- [ ] Display maximum **50 pictures** at once
+- [ ] New pictures replace the **last used** picture (based on `lastUsedTime`)
+- [ ] Implement pagination or virtual scrolling for performance
 - [ ] Show picture name below each thumbnail
 - [ ] Highlight currently selected picture
 - [ ] Handle picture click/selection
+- [ ] **Do not show favorite count**
+- [ ] Support user adding new pictures (upload functionality)
 
-### 8.4 Favorites Management
-- [ ] Auto-add picture to favorites on first use
-- [ ] Track favorites in app state
-- [ ] Persist favorites to localStorage
-- [ ] Show favorites count (optional)
-- [ ] Allow manual favorite toggle (optional)
+### 8.4 Picture Usage Tracking
+- [ ] Track `lastUsedTime` when picture is selected for a square
+- [ ] Update timestamp in app state
+- [ ] Persist tracking data to localStorage
+- [ ] Implement 50-picture display limit logic:
+  - Sort pictures by `lastUsedTime`
+  - Show 50 most recently used
+  - New selections replace least recently used
+- [ ] **Do not track or display favorite count**
 
 ### 8.5 Picture Display in Squares
 - [ ] Optimize image loading and display
 - [ ] Use appropriate image sizes
-- [ ] All images loaded on first access (no lazy loading)
-- [ ] Cache loaded images in browser
+- [ ] All images **cached on first load** (no lazy loading)
+- [ ] **User-added images cached immediately** when added to a square
+- [ ] Cache loaded images in browser for offline use
 - [ ] Handle missing/broken images gracefully
 - [ ] Show text above picture when configured
+
+### 8.6 User-Added Pictures Support
+- [ ] Allow users to upload/add custom pictures (not from built-in library)
+- [ ] Store user-added pictures separately from built-in library
+- [ ] Implement picture upload functionality in picture selection dialog
+- [ ] Cache user-added pictures immediately for offline use
+- [ ] Track user-added pictures with `lastUsedTime`
+- [ ] Apply same 50-picture limit across built-in + user-added
+- [ ] Persist user-added picture references in localStorage
+- [ ] Include in search/filter functionality
 
 ---
 
@@ -408,14 +455,18 @@ Pict'Oh is an offline-first, tablet-optimized communication board application bu
 - [ ] Debounce save operations (e.g., 500ms)
 - [ ] Save to localStorage on every change
 - [ ] Handle save errors gracefully
-- [ ] Show save status indicator (optional)
+- [ ] Show **discrete save indicator** when saving:
+  - Brief, non-intrusive visual feedback
+  - Small icon or text (e.g., "Saved" or checkmark)
+  - Fades out after 1-2 seconds
 
 ### 9.3 State Rehydration
 - [ ] Load config from localStorage on app start
-- [ ] Restore pages, squares, favorites
-- [ ] Restore current page and edit mode state
+- [ ] Restore pages (by `pageId`), squares, picture tracking
+- [ ] Restore current page (`currentPageId`) and edit mode state
 - [ ] Handle missing/corrupted data
 - [ ] Initialize with defaults if no saved data
+- [ ] Restore user-added pictures
 
 ### 9.4 Data Validation
 - [ ] Validate loaded data structure
@@ -424,12 +475,12 @@ Pict'Oh is an offline-first, tablet-optimized communication board application bu
 - [ ] Ensure backwards compatibility
 - [ ] Log validation errors
 
-### 9.5 Export/Import (Optional Enhancement)
-- [ ] Implement export config to JSON
-- [ ] Implement import config from JSON
-- [ ] Add export button in settings
-- [ ] Add import button in settings
-- [ ] Validate imported data
+### 9.5 Data Import/Export
+- [ ] **Not implemented yet** - future feature
+- [ ] Reserved for future implementation:
+  - Export config to JSON
+  - Import config from JSON
+  - Validation of imported data
 
 ---
 
@@ -514,6 +565,10 @@ Pict'Oh is an offline-first, tablet-optimized communication board application bu
 8. **Loading**: No lazy loading - everything loaded on first access
 9. **IDE**: IntelliJ (not VS Code)
 10. **Types**: Created alongside features (agile approach)
+11. **Page References**: Use unique `pageId` instead of `pageName` to handle renames
+12. **Picture Limit**: Maximum 50 pictures displayed, sorted by `lastUsedTime`
+13. **Picture Discovery**: Auto-discover images from directory (preferred) or use generation script
+14. **User Pictures**: Support user-added pictures with same caching/tracking as built-in
 
 ### Scalability Considerations
 
@@ -529,9 +584,10 @@ Pict'Oh is an offline-first, tablet-optimized communication board application bu
 - Subsequent Loads: < 2 seconds
 - Offline: 100% functional
 - TTS Response: < 500ms delay
-- Square Click Response: Immediate visual feedback
-- Picture Search: < 100ms for filtering
+- Square Touch Response: Immediate visual feedback (border color change for 1 second)
+- Picture Search: < 100ms for filtering (even with thousands of images)
 - Navigation: Immediate (does not wait for TTS)
+- Save Indicator: Discrete, fades within 1-2 seconds
 
 ---
 
@@ -593,8 +649,10 @@ Finalize storage, testing, and UI polish
 - **Fallback**: Show unsupported browser message
 
 ### Risk: Picture Library Size
-- **Mitigation**: Implement lazy loading and optimize images
-- **Fallback**: Limit picture library size or use external CDN
+- **Mitigation**: Implement efficient search/filter, virtual scrolling, 50-picture display limit
+- **Note**: Library will eventually contain thousands of images
+- **Strategy**: Use `lastUsedTime` tracking to show most relevant pictures first
+- **Fallback**: Pagination or lazy loading for picture selection UI only
 
 ---
 
@@ -608,24 +666,35 @@ The project is complete when:
 4. ✅ All text is in French
 5. ✅ App works 100% offline after first launch
 6. ✅ First launch shows progress loader and loads everything before app is usable
-7. ✅ TTS reads square text aloud with female voice
-8. ✅ 5 clicks anywhere on screen activates edit mode
-9. ✅ Edit mode allows square customization (all squares editable)
-10. ✅ Pages can be created, renamed, deleted
-11. ✅ Pictures can be selected and displayed
-12. ✅ Favorites system works correctly
-13. ✅ All changes persist to localStorage
-14. ✅ App rehydrates state on reload
-15. ✅ Code is clean, typed, and maintainable
-16. ✅ No lazy loading - everything loaded on first access
-17. ✅ Navigation does not wait for TTS completion
-18. ✅ No page transition animations
-19. ✅ Toolbar only visible in edit mode
-20. ✅ No ARIA labels (not for blind people)
-21. ✅ No hover effects (tablet-only)
-22. ✅ No navigation history
-23. ✅ Squares scale to fill space but stay square
-24. ✅ Test pictures created in repository
+7. ✅ **All images from library cached on first load**
+8. ✅ **User-added images cached immediately when used**
+9. ✅ TTS reads square text aloud with female voice
+10. ✅ **Touch (not release) triggers TTS and border color change for 1 second**
+11. ✅ 5 clicks anywhere on screen activates edit mode
+12. ✅ **Edit mode shows red borders on all squares**
+13. ✅ Edit mode allows square customization (all squares editable)
+14. ✅ Pages use **unique `pageId`** for references (not `pageName`)
+15. ✅ Pages can be created, renamed, deleted
+16. ✅ **Pages dialog sorts pages by name**
+17. ✅ Pictures can be selected and displayed
+18. ✅ **User can add custom pictures (not from built-in library)**
+19. ✅ **Picture selection has search and filter (built-in/user-added toggle)**
+20. ✅ **Max 50 pictures displayed, tracked by `lastUsedTime`**
+21. ✅ **No favorite count displayed**
+22. ✅ **Image auto-discovery from directory or generation script**
+23. ✅ All changes persist to localStorage
+24. ✅ **Discrete save indicator shown on save**
+25. ✅ App rehydrates state on reload
+26. ✅ Code is clean, typed, and maintainable
+27. ✅ No lazy loading - everything loaded on first access
+28. ✅ Navigation does not wait for TTS completion
+29. ✅ No page transition animations
+30. ✅ Toolbar only visible in edit mode
+31. ✅ No ARIA labels (not for blind people)
+32. ✅ No hover effects (tablet-only)
+33. ✅ No navigation history
+34. ✅ Squares scale to fill space but stay square
+35. ✅ **Note: Repository currently has no test images**
 
 ---
 
