@@ -20,9 +20,9 @@ Pict'Oh (pictho) is an offline-first, tablet-optimized communication board appli
 
 ## Documentation
 
-- See [AGENTS.md](./AGENTS.md) for detailed technical specifications
+- See [PROJECT-OVERVIEW.md](./PROJECT-OVERVIEW.md) for detailed technical specifications
 - See [plan.md](./plan.md) for implementation plan
 
 ## Test Pictures
 
-The repository currently has no test images in `/public/assets/pictures/`. Test images will be added in the future as the library grows to eventually contain thousands of images.
+The repository currently includes 8 test images in `/public/assets/pictures/` (arbre.svg, chat.svg, eau.svg, fleur.svg, maison.svg, manger.svg, soleil.svg, voiture.svg). More images will be added in the future as the library grows to eventually contain thousands of images.

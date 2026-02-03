@@ -368,7 +368,7 @@ Pict'Oh is an offline-first, tablet-optimized communication board application bu
 
 ### 8.1 Picture Library Setup
 - [ ] Create `/public/assets/pictures/` directory
-- [ ] **Note**: Repository currently has no test images - will be added in the future
+- [ ] **Note**: Repository currently includes 8 test images (arbre.svg, chat.svg, eau.svg, fleur.svg, maison.svg, manger.svg, soleil.svg, voiture.svg)
 - [ ] **Image discovery approach** (preferred):
   - Automatically discover all images in `/public/assets/pictures/`
   - Use dynamic import or manifest generation
@@ -694,7 +694,7 @@ The project is complete when:
 32. ✅ No hover effects (tablet-only)
 33. ✅ No navigation history
 34. ✅ Squares scale to fill space but stay square
-35. ✅ **Note: Repository currently has no test images**
+35. ✅ **Note: Repository currently includes 8 test images**
 
 ---
 
