@@ -138,7 +138,6 @@ A **toolbar** is displayed (only visible in edit mode) with:
    - New pictures replace the **last used** picture
    - Pictures have a **lastUsedTime** attribute for tracking
 - **Do not display favorite count**
-- **Note**: The repository currently has no test images
 
 ### Picture library management
 
