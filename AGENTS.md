@@ -1,10 +1,5 @@
-# 🧩 AI Agent Prompt — Project **Pict'Oh**
+# 🧩 Project **Pict'Oh**
 *(internal project name: `pictho`)*
-
-You are an expert **frontend architect and React/TypeScript engineer**.  
-Your task is to **design and implement the frontend application** described below with clean architecture, strong typing, and offline-first behavior.
-
----
 
 ## 1. Project Identity
 
