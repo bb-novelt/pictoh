@@ -1,0 +1,26 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "rootDir": ".",
+    "sourceMap": true,
+    "declaration": false,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "target": "es2015",
+    "module": "esnext",
+    "lib": ["es2020", "dom"],
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
+    "baseUrl": ".",
+    "strict": true,
+    "paths": {
+      "@pictoh/types": ["libs/types/src/index.ts"],
+      "@pictoh/state": ["libs/state/src/index.ts"],
+      "@pictoh/utils": ["libs/utils/src/index.ts"],
+      "@pictoh/components": ["libs/components/src/index.ts"]
+    }
+  },
+  "exclude": ["node_modules", "tmp"]
+}
