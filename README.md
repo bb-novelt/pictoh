@@ -22,6 +22,7 @@ Pict'Oh (pictho) is an offline-first, tablet-optimized communication board appli
 
 - See [PROJECT-OVERVIEW.md](./PROJECT-OVERVIEW.md) for detailed technical specifications
 - See [plan.md](./plan.md) for implementation plan
+- See [COPILOT-AGENT-GUIDE.md](./COPILOT-AGENT-GUIDE.md) for GitHub Copilot agent task workflow
 
 ## Test Pictures
 
