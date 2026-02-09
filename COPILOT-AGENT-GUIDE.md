@@ -88,3 +88,74 @@ This is the Pict'Oh (pictho) project - an offline-first, tablet-optimized commun
 - [README.md](./README.md) for project overview
 - [PROJECT-OVERVIEW.md](./PROJECT-OVERVIEW.md) for detailed specifications
 - [plan.md](./plan.md) for the complete implementation plan
+
+---
+
+## GitHub Copilot Agent Environment Setup
+
+This repository includes a GitHub Actions workflow that automatically sets up the development environment when GitHub Copilot agents start working on the project.
+
+### The Setup Workflow
+
+The workflow file is located at: `.github/workflows/copilot-setup-steps.yml`
+
+**CRITICAL NAMING REQUIREMENTS:**
+- The workflow file **MUST** be named exactly `copilot-setup-steps.yml`
+- The job in the workflow **MUST** be named exactly `copilot-setup-steps`
+- These exact names are required for GitHub Copilot agents to recognize and execute the setup
+
+### What It Does
+
+The setup workflow automatically:
+1. Checks out the repository code
+2. Sets up Node.js 20 with npm caching
+3. Installs all project dependencies (`npm ci`)
+4. Verifies Nx installation
+5. Builds the application to ensure everything works
+
+This saves significant time when Copilot agents start working, as the environment is pre-configured and ready.
+
+### When to Update the Workflow
+
+You should update `.github/workflows/copilot-setup-steps.yml` when:
+
+1. **New dependencies are added** that require special setup
+   - Example: If you add a database, add a step to start it
+   
+2. **Build process changes** significantly
+   - Example: If you switch from Vite to Webpack, update the build command
+   
+3. **Additional tools are required**
+   - Example: If you need Python, Docker, or other tools, add setup steps
+
+4. **Environment variables or secrets are needed**
+   - Example: Add steps to configure required environment variables
+
+5. **New project apps are added to the monorepo**
+   - Example: If you add a Next.js backend app, add a build step for it
+
+### How to Update the Workflow
+
+1. Edit `.github/workflows/copilot-setup-steps.yml`
+2. Keep the required job name: `copilot-setup-steps`
+3. Add/modify steps in the `steps:` section as needed
+4. Test the workflow by:
+   - Pushing changes to trigger it
+   - Manually running it via GitHub Actions UI (workflow_dispatch)
+5. Verify it completes successfully in the Actions tab
+
+### Example: Adding a New Step
+
+To add a new setup step, add it to the `steps:` section:
+
+```yaml
+- name: Your new step name
+  run: |
+    echo "Running your setup command"
+    your-command-here
+```
+
+### Additional Resources
+
+- [GitHub Copilot agent environment customization docs](https://docs.github.com/en/copilot/how-tos/use-copilot-agents/coding-agent/customize-the-agent-environment)
+- [GitHub Actions workflow syntax](https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions)

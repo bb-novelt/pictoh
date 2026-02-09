@@ -1,0 +1,30 @@
+.nx/installation
+.nx/cache
+.nx/workspace-data
+vite.config.*.timestamp*
+vitest.config.*.timestamp*
+
+# Node modules
+node_modules
+
+# Build output
+dist
+
+# IDE
+.idea
+.vscode
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
+
+# Environment
+.env
+.env.local
+
+# Test coverage
+coverage
