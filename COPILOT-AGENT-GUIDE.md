@@ -112,7 +112,6 @@ The setup workflow automatically:
 3. Installs all project dependencies (`npm ci`)
 4. Verifies Nx installation
 5. Builds the application to ensure everything works
-6. Runs tests (when available)
 
 This saves significant time when Copilot agents start working, as the environment is pre-configured and ready.
 

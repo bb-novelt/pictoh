@@ -39,9 +39,6 @@ jobs:
       - name: Build the application
         run: npx nx build pictho-app
       
-      - name: Run tests
-        run: npx nx test pictho-app || echo "Tests not yet configured"
-      
       - name: Display setup completion
         run: |
           echo "✅ GitHub Copilot agent environment setup completed successfully!"

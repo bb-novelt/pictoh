@@ -19,6 +19,5 @@ This is a special GitHub Actions workflow that is automatically executed by GitH
 1. Sets up Node.js 20
 2. Installs project dependencies
 3. Builds the application
-4. Runs tests
 
 For more information on maintaining this workflow, see [COPILOT-AGENT-GUIDE.md](../COPILOT-AGENT-GUIDE.md#github-copilot-agent-environment-setup).
