@@ -11,7 +11,9 @@ node_modules
 dist
 
 # IDE
-.idea
+.idea/*
+!.idea/codeStyles
+!.idea/inspectionProfiles
 .vscode
 
 # OS
