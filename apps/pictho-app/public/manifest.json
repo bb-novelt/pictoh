@@ -1,0 +1,18 @@
+{
+  "name": "Pict'Oh",
+  "short_name": "Pict'Oh",
+  "description": "Application de communication par pictogrammes, optimisée pour tablettes",
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "landscape",
+  "background_color": "#ffffff",
+  "theme_color": "#1976d2",
+  "lang": "fr",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "any",
+      "type": "image/x-icon"
+    }
+  ]
+}
