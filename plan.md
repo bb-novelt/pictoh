@@ -15,14 +15,23 @@ Pict'Oh is an offline-first, tablet-optimized communication board application bu
 ## 📊 Epic Structure
 
 ### Epic 1: Project Initialization & Infrastructure Setup
+
 ### Epic 2: Core Data Models & State Management
+
 ### Epic 3: Offline-First Architecture
+
 ### Epic 4: Main Grid Layout & Basic UI
+
 ### Epic 5: Square Interaction & TTS Integration
+
 ### Epic 6: Edit Mode & Configuration
+
 ### Epic 7: Page Management System
+
 ### Epic 8: Picture Management & Selection
+
 ### Epic 9: Persistence & Storage
+
 ### Epic 10: Polish & Testing
 
 ---
@@ -36,6 +45,7 @@ Pict'Oh is an offline-first, tablet-optimized communication board application bu
 **Goal**: Set up Nx monorepo with React application and all required dependencies
 
 ### 1.1 Initialize Nx Workspace
+
 - [ ] Create new Nx workspace with React preset
 - [ ] Configure workspace to support future Next.js apps
 - [ ] Set up workspace structure:
@@ -45,6 +55,7 @@ Pict'Oh is an offline-first, tablet-optimized communication board application bu
 - [ ] Set up path aliases for clean imports
 
 ### 1.2 Create React Frontend Application
+
 - [ ] Generate React app using Nx generator
   - Name: `pictho-app` or `frontend`
   - Framework: React with TypeScript
@@ -53,6 +64,7 @@ Pict'Oh is an offline-first, tablet-optimized communication board application bu
 - [ ] Remove unnecessary boilerplate files
 
 ### 1.3 Install Core Dependencies
+
 - [ ] Install Material UI (`@mui/material`, `@emotion/react`, `@emotion/styled`)
 - [ ] Install Material Icons (`@mui/icons-material`)
 - [ ] Install Tailwind CSS and configure
@@ -60,6 +72,7 @@ Pict'Oh is an offline-first, tablet-optimized communication board application bu
 - [ ] Install type definitions for all packages
 
 ### 1.4 Configure Build Tools
+
 - [ ] Configure Vite/Webpack for production builds
 - [ ] Set up code splitting strategy
 - [ ] Configure service worker for offline support
@@ -67,6 +80,7 @@ Pict'Oh is an offline-first, tablet-optimized communication board application bu
 - [ ] Configure source maps for debugging
 
 ### 1.5 Development Environment Setup
+
 - [ ] Configure ESLint with React/TypeScript rules
 - [ ] Configure Prettier for code formatting
 - [ ] Set up Git hooks (husky) for pre-commit checks
@@ -80,6 +94,7 @@ Pict'Oh is an offline-first, tablet-optimized communication board application bu
 **Goal**: Define TypeScript types alongside features (agile approach) and Valtio state structure
 
 ### 2.1 Define TypeScript Types (created alongside features)
+
 - [ ] Create types as needed when implementing features
 - [ ] Define `Picture` interface when implementing picture feature
   - Include `lastUsedTime` attribute for tracking usage
@@ -92,6 +107,7 @@ Pict'Oh is an offline-first, tablet-optimized communication board application bu
   - Use `homePageId` and `currentPageId` instead of names
 
 ### 2.2 Create Valtio State Store
+
 - [ ] Create `state/store.ts` with main application state
 - [ ] Initialize store with default values
 - [ ] Create default "Home" page with unique `pageId`
@@ -104,6 +120,7 @@ Pict'Oh is an offline-first, tablet-optimized communication board application bu
   - `renamePage(pageId, newName)` - rename using ID
 
 ### 2.3 Create State Actions
+
 - [ ] Create `actions/` directory
 - [ ] Implement page actions:
   - `createPage(name: string)` - auto-generate unique `pageId`
@@ -129,6 +146,7 @@ Pict'Oh is an offline-first, tablet-optimized communication board application bu
 **Goal**: Implement service worker, caching strategy, and background downloads
 
 ### 3.1 Service Worker Setup
+
 - [ ] Create custom service worker file
 - [ ] Configure service worker registration in main app
 - [ ] Implement cache-first strategy for app shell
@@ -136,6 +154,7 @@ Pict'Oh is an offline-first, tablet-optimized communication board application bu
 - [ ] Handle service worker lifecycle events
 
 ### 3.2 Asset Caching Strategy
+
 - [ ] Create cache manifest for static assets
 - [ ] Implement precaching for critical resources:
   - App bundle (JS/CSS)
@@ -149,6 +168,7 @@ Pict'Oh is an offline-first, tablet-optimized communication board application bu
 - [ ] Set cache expiration policies
 
 ### 3.3 Web Worker for Background Tasks
+
 - [ ] Create Web Worker for background downloads
 - [ ] Implement picture library download logic
 - [ ] Implement TTS model download logic
@@ -156,6 +176,7 @@ Pict'Oh is an offline-first, tablet-optimized communication board application bu
 - [ ] Implement message passing between main thread and worker
 
 ### 3.4 First Launch Experience
+
 - [ ] Create `FirstLaunchLoader` component
 - [ ] Show progress bar with percentage
 - [ ] Load everything completely before allowing app use (no lazy loading)
@@ -168,6 +189,7 @@ Pict'Oh is an offline-first, tablet-optimized communication board application bu
 - [ ] Only show app when 100% loaded
 
 ### 3.5 Offline Detection & Feedback
+
 - [ ] Implement online/offline detection
 - [ ] Show offline indicator in UI (optional, subtle)
 - [ ] Ensure all features work offline after first launch
@@ -180,12 +202,14 @@ Pict'Oh is an offline-first, tablet-optimized communication board application bu
 **Goal**: Create the main 6×4 grid layout with Material UI components
 
 ### 4.1 App Layout Structure
+
 - [ ] Create `Layout` component with landscape lock
 - [ ] Set up viewport meta tags for tablet
 - [ ] Configure for landscape-only (not portrait, not phone, not desktop)
 - [ ] Ensure proper touch target sizes (min 44×44px)
 
 ### 4.2 Grid Component
+
 - [ ] Create `Grid` component (6 columns × 4 rows)
 - [ ] Use CSS Grid or MUI Grid for layout
 - [ ] Ensure squares scale to fill space but stay square
@@ -194,6 +218,7 @@ Pict'Oh is an offline-first, tablet-optimized communication board application bu
 - [ ] Handle different tablet sizes gracefully
 
 ### 4.3 Square Component
+
 - [ ] Create `Square` component
 - [ ] Props: `square: Square`, `onClick: () => void`, `isEditMode: boolean`
 - [ ] Display selected picture (if any)
@@ -208,6 +233,7 @@ Pict'Oh is an offline-first, tablet-optimized communication board application bu
 - [ ] No hover effects (tablet-only)
 
 ### 4.4 Theme Configuration
+
 - [ ] Create custom MUI theme
 - [ ] Define French-specific font stack
 - [ ] Set color palette (primary, secondary)
@@ -222,6 +248,7 @@ Pict'Oh is an offline-first, tablet-optimized communication board application bu
 **Goal**: Implement click handling and text-to-speech functionality
 
 ### 5.1 Click Tracking for Edit Mode Activation
+
 - [ ] Implement click counter for the screen (not per square)
 - [ ] Track clicks within time window (e.g., short time)
 - [ ] Activate edit mode on 5th click anywhere on screen
@@ -229,6 +256,7 @@ Pict'Oh is an offline-first, tablet-optimized communication board application bu
 - [ ] Add visual feedback during click counting (optional)
 
 ### 5.2 Normal Mode Click Behavior
+
 - [ ] Handle square touch in normal mode
 - [ ] Trigger on **touch start** (not on release)
 - [ ] **Border color changes for 1 second** as visual feedback
@@ -237,6 +265,7 @@ Pict'Oh is an offline-first, tablet-optimized communication board application bu
 - [ ] Prevent multiple simultaneous touches
 
 ### 5.3 Text-to-Speech Integration
+
 - [ ] Research and select local TTS library
   - Options: Web Speech API, Piper TTS, Coqui TTS
   - Must support French
@@ -250,6 +279,7 @@ Pict'Oh is an offline-first, tablet-optimized communication board application bu
 - [ ] Add TTS state management (speaking, idle, error)
 
 ### 5.4 Navigation Logic
+
 - [ ] Implement page navigation on square touch
 - [ ] Navigate by `pageId` (not `pageName`)
 - [ ] Trigger navigation immediately (do not wait for TTS)
@@ -264,6 +294,7 @@ Pict'Oh is an offline-first, tablet-optimized communication board application bu
 **Goal**: Implement edit mode UI and square editing functionality
 
 ### 6.1 Edit Mode Toolbar
+
 - [ ] Create `EditModeToolbar` component
 - [ ] Position at top of screen
 - [ ] Add "Create New Page" button
@@ -273,6 +304,7 @@ Pict'Oh is an offline-first, tablet-optimized communication board application bu
 - [ ] Toolbar only visible in edit mode
 
 ### 6.2 Create New Page Dialog
+
 - [ ] Create `CreatePageDialog` component
 - [ ] Use MUI Dialog component
 - [ ] Add text input for page name
@@ -282,6 +314,7 @@ Pict'Oh is an offline-first, tablet-optimized communication board application bu
 - [ ] Show error messages for validation
 
 ### 6.3 Manage Pages Dialog
+
 - [ ] Create `ManagePagesDialog` component
 - [ ] Display list of all pages
 - [ ] **Sort pages by name alphabetically**
@@ -295,6 +328,7 @@ Pict'Oh is an offline-first, tablet-optimized communication board application bu
 - [ ] Handle edge cases (deleting current page)
 
 ### 6.4 Square Edit Modal
+
 - [ ] Create `SquareEditModal` component
 - [ ] Show current selected image (large preview)
 - [ ] Display square attribute editors:
@@ -306,6 +340,7 @@ Pict'Oh is an offline-first, tablet-optimized communication board application bu
 - [ ] Close modal on outside click or close button
 
 ### 6.5 Edit Mode Visual Feedback
+
 - [ ] Add visual indicators for edit mode
 - [ ] **All squares show red borders** when edit mode is active
 - [ ] Highlight editable areas
@@ -319,6 +354,7 @@ Pict'Oh is an offline-first, tablet-optimized communication board application bu
 **Goal**: Implement full page creation, navigation, and management
 
 ### 7.1 Page Navigation
+
 - [ ] Implement `navigateToPage(pageId)` function - navigate by ID
 - [ ] Update current page in state (`currentPageId`)
 - [ ] Render new page grid
@@ -327,6 +363,7 @@ Pict'Oh is an offline-first, tablet-optimized communication board application bu
 - [ ] No page transition animations
 
 ### 7.2 Page Creation
+
 - [ ] Implement `createPage(name)` function
 - [ ] Generate unique `pageId` (e.g., UUID or timestamp-based)
 - [ ] Validate unique page name (display name can be same, but warn user)
@@ -336,6 +373,7 @@ Pict'Oh is an offline-first, tablet-optimized communication board application bu
 - [ ] Persist to localStorage
 
 ### 7.3 Page Deletion
+
 - [ ] Implement `deletePage(pageId)` function - delete by ID
 - [ ] Prevent deletion of Home page (check `homePageId`)
 - [ ] Show confirmation dialog
@@ -345,6 +383,7 @@ Pict'Oh is an offline-first, tablet-optimized communication board application bu
 - [ ] Persist changes
 
 ### 7.4 Page Rename
+
 - [ ] Implement `renamePage(pageId, newName)` function - rename by ID
 - [ ] Validate new name is unique (warn if duplicate)
 - [ ] Update `pageName` in state (keep `pageId` unchanged)
@@ -353,6 +392,7 @@ Pict'Oh is an offline-first, tablet-optimized communication board application bu
 - [ ] Persist changes
 
 ### 7.5 Home Page Initialization
+
 - [ ] Create default Home page on first launch
 - [ ] Generate unique `homePageId`
 - [ ] Set as `homePageId` in config
@@ -367,6 +407,7 @@ Pict'Oh is an offline-first, tablet-optimized communication board application bu
 **Goal**: Implement picture library, favorites, and selection UI
 
 ### 8.1 Picture Library Setup
+
 - [ ] Create `/public/assets/pictures/` directory
 - [ ] **Note**: Repository currently includes 8 test images (arbre.svg, chat.svg, eau.svg, fleur.svg, maison.svg, manger.svg, soleil.svg, voiture.svg)
 - [ ] **Image discovery approach** (preferred):
@@ -382,6 +423,7 @@ Pict'Oh is an offline-first, tablet-optimized communication board application bu
 - [ ] Add `lastUsedTime` attribute to track usage
 
 ### 8.2 Picture Service
+
 - [ ] Create `PictureService` class
 - [ ] Implement `getAllPictures()` - returns built-in + user-added (all loaded on first access)
 - [ ] Implement `getBuiltInPictures()` - from `/assets/pictures/*`
@@ -394,6 +436,7 @@ Pict'Oh is an offline-first, tablet-optimized communication board application bu
 - [ ] **Note**: Library will eventually contain thousands of images
 
 ### 8.3 Picture Selection UI
+
 - [ ] Create `PictureSelector` component
 - [ ] Show **search/filter text input** for finding pictures
 - [ ] Add **filter toggle**: Built-in pictures, User-added pictures, or Both
@@ -408,6 +451,7 @@ Pict'Oh is an offline-first, tablet-optimized communication board application bu
 - [ ] Support user adding new pictures (upload functionality)
 
 ### 8.4 Picture Usage Tracking
+
 - [ ] Track `lastUsedTime` when picture is selected for a square
 - [ ] Update timestamp in app state
 - [ ] Persist tracking data to localStorage
@@ -418,6 +462,7 @@ Pict'Oh is an offline-first, tablet-optimized communication board application bu
 - [ ] **Do not track or display favorite count**
 
 ### 8.5 Picture Display in Squares
+
 - [ ] Optimize image loading and display
 - [ ] Use appropriate image sizes
 - [ ] All images **cached on first load** (no lazy loading)
@@ -427,6 +472,7 @@ Pict'Oh is an offline-first, tablet-optimized communication board application bu
 - [ ] Show text above picture when configured
 
 ### 8.6 User-Added Pictures Support
+
 - [ ] Allow users to upload/add custom pictures (not from built-in library)
 - [ ] Store user-added pictures separately from built-in library
 - [ ] Implement picture upload functionality in picture selection dialog
@@ -443,6 +489,7 @@ Pict'Oh is an offline-first, tablet-optimized communication board application bu
 **Goal**: Implement localStorage persistence with auto-save
 
 ### 9.1 Storage Service
+
 - [ ] Create `StorageService` class/module
 - [ ] Implement `saveAppConfig(config: AppConfig)`
 - [ ] Implement `loadAppConfig(): AppConfig | null`
@@ -451,6 +498,7 @@ Pict'Oh is an offline-first, tablet-optimized communication board application bu
 - [ ] Implement data migration if needed
 
 ### 9.2 Auto-Save Implementation
+
 - [ ] Subscribe to Valtio state changes
 - [ ] Debounce save operations (e.g., 500ms)
 - [ ] Save to localStorage on every change
@@ -461,6 +509,7 @@ Pict'Oh is an offline-first, tablet-optimized communication board application bu
   - Fades out after 1-2 seconds
 
 ### 9.3 State Rehydration
+
 - [ ] Load config from localStorage on app start
 - [ ] Restore pages (by `pageId`), squares, picture tracking
 - [ ] Restore current page (`currentPageId`) and edit mode state
@@ -469,6 +518,7 @@ Pict'Oh is an offline-first, tablet-optimized communication board application bu
 - [ ] Restore user-added pictures
 
 ### 9.4 Data Validation
+
 - [ ] Validate loaded data structure
 - [ ] Check for required fields
 - [ ] Fix or discard invalid data
@@ -476,6 +526,7 @@ Pict'Oh is an offline-first, tablet-optimized communication board application bu
 - [ ] Log validation errors
 
 ### 9.5 Data Import/Export
+
 - [ ] **Not implemented yet** - future feature
 - [ ] Reserved for future implementation:
   - Export config to JSON
@@ -489,6 +540,7 @@ Pict'Oh is an offline-first, tablet-optimized communication board application bu
 **Goal**: Finalize UI, test all features, and optimize performance
 
 ### 10.1 UI Polish
+
 - [ ] Review all components for tablet usability
 - [ ] Ensure consistent spacing and alignment
 - [ ] No page transition animations
@@ -500,12 +552,14 @@ Pict'Oh is an offline-first, tablet-optimized communication board application bu
 - [ ] No navigation history
 
 ### 10.2 French Localization
+
 - [ ] Review all UI text in French
 - [ ] Ensure proper French grammar and spelling
 - [ ] Use appropriate French typography
 - [ ] Test with French TTS voice
 
 ### 10.3 Performance Optimization
+
 - [ ] Optimize re-renders with React.memo
 - [ ] Optimize image loading and caching
 - [ ] Minimize bundle size
@@ -513,6 +567,7 @@ Pict'Oh is an offline-first, tablet-optimized communication board application bu
 - [ ] Profile and optimize slow operations
 
 ### 10.4 Manual Testing
+
 - [ ] Test first launch experience
 - [ ] Test offline functionality
 - [ ] Test edit mode activation (5 clicks anywhere on screen)
@@ -526,6 +581,7 @@ Pict'Oh is an offline-first, tablet-optimized communication board application bu
 - [ ] Test landscape orientation lock
 
 ### 10.5 Automated Testing (if applicable)
+
 - [ ] Set up Jest and React Testing Library
 - [ ] Write unit tests for utilities
 - [ ] Write unit tests for state actions
@@ -534,6 +590,7 @@ Pict'Oh is an offline-first, tablet-optimized communication board application bu
 - [ ] Set up test coverage reporting
 
 ### 10.6 Documentation
+
 - [ ] Write README with setup instructions
 - [ ] Document architecture and folder structure
 - [ ] Document state management patterns
@@ -542,6 +599,7 @@ Pict'Oh is an offline-first, tablet-optimized communication board application bu
 - [ ] Add code comments where needed
 
 ### 10.7 Build & Deployment
+
 - [ ] Configure production build
 - [ ] Optimize bundle size
 - [ ] Generate service worker
@@ -594,6 +652,7 @@ Pict'Oh is an offline-first, tablet-optimized communication board application bu
 ## 📦 Dependencies Summary
 
 ### Core Dependencies
+
 - `react` - UI framework
 - `react-dom` - React DOM rendering
 - `typescript` - Type safety
@@ -604,6 +663,7 @@ Pict'Oh is an offline-first, tablet-optimized communication board application bu
 - `tailwindcss` - Utility CSS
 
 ### Dev Dependencies
+
 - `@nx/react` - Nx React plugin
 - `@nx/vite` or `@nx/webpack` - Build tools
 - `eslint` - Linting
@@ -613,6 +673,7 @@ Pict'Oh is an offline-first, tablet-optimized communication board application bu
 - `jest` (optional) - Test runner
 
 ### Additional Libraries (to be determined)
+
 - TTS library (Web Speech API or local model)
 - Service Worker tooling (Workbox)
 
@@ -621,15 +682,19 @@ Pict'Oh is an offline-first, tablet-optimized communication board application bu
 ## 🚀 Implementation Phases
 
 ### Phase 1: Foundation (Epics 1-2)
+
 Setup project infrastructure and define data models
 
 ### Phase 2: Core Features (Epics 3-5)
+
 Implement offline support, grid layout, and basic interactions
 
 ### Phase 3: Advanced Features (Epics 6-8)
+
 Add edit mode, page management, and picture selection
 
 ### Phase 4: Persistence & Polish (Epics 9-10)
+
 Finalize storage, testing, and UI polish
 
 ---
@@ -637,18 +702,22 @@ Finalize storage, testing, and UI polish
 ## ⚠️ Risks & Mitigations
 
 ### Risk: TTS Model Size
+
 - **Mitigation**: Evaluate multiple TTS options, choose smallest viable model
 - **Fallback**: Use Web Speech API if local model too large
 
 ### Risk: localStorage Quota Limits
+
 - **Mitigation**: Implement IndexedDB fallback for large datasets
 - **Fallback**: Warn user and implement data cleanup
 
 ### Risk: Browser Compatibility
+
 - **Mitigation**: Target modern browsers, test on Safari and Chrome
 - **Fallback**: Show unsupported browser message
 
 ### Risk: Picture Library Size
+
 - **Mitigation**: Implement efficient search/filter, virtual scrolling, 50-picture display limit
 - **Note**: Library will eventually contain thousands of images
 - **Strategy**: Use `lastUsedTime` tracking to show most relevant pictures first
