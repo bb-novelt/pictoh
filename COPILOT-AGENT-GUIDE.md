@@ -24,6 +24,7 @@ This guide explains how GitHub Copilot agents should work with this repository's
 When you complete a task:
 
 1. **Move the task file** from `task/Todo/` to `task/Done/`
+
    ```bash
    mv task/Todo/<task-file>.md task/Done/<task-file>.md
    ```
@@ -44,16 +45,19 @@ When you complete a task:
 **Date Completed**: 2026-02-03
 
 **Work Done**:
+
 - Initialized Nx workspace with React preset
 - Configured TypeScript strict mode
 - Set up path aliases for clean imports
 - Configured workspace structure for future Next.js apps
 
 **Notes**:
+
 - Used Nx 18.x for better monorepo support
 - Path aliases configured in `tsconfig.base.json`
 
-**Related Commits**: 
+**Related Commits**:
+
 - abc1234: Initialize Nx workspace
 - def5678: Configure TypeScript and path aliases
 ```
@@ -85,6 +89,7 @@ Task files follow this structure:
 ## Project Context
 
 This is the Pict'Oh (pictho) project - an offline-first, tablet-optimized communication board application. See:
+
 - [README.md](./README.md) for project overview
 - [PROJECT-OVERVIEW.md](./PROJECT-OVERVIEW.md) for detailed specifications
 - [plan.md](./plan.md) for the complete implementation plan
@@ -100,6 +105,7 @@ This repository includes a GitHub Actions workflow that automatically sets up th
 The workflow file is located at: `.github/workflows/copilot-setup-steps.yml`
 
 **CRITICAL NAMING REQUIREMENTS:**
+
 - The workflow file **MUST** be named exactly `copilot-setup-steps.yml`
 - The job in the workflow **MUST** be named exactly `copilot-setup-steps`
 - These exact names are required for GitHub Copilot agents to recognize and execute the setup
@@ -107,6 +113,7 @@ The workflow file is located at: `.github/workflows/copilot-setup-steps.yml`
 ### What It Does
 
 The setup workflow automatically:
+
 1. Checks out the repository code
 2. Sets up Node.js 20 with npm caching
 3. Installs all project dependencies (`npm ci`)
@@ -121,10 +128,8 @@ You should update `.github/workflows/copilot-setup-steps.yml` when:
 
 1. **New dependencies are added** that require special setup
    - Example: If you add a database, add a step to start it
-   
 2. **Build process changes** significantly
    - Example: If you switch from Vite to Webpack, update the build command
-   
 3. **Additional tools are required**
    - Example: If you need Python, Docker, or other tools, add setup steps
 

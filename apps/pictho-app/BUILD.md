@@ -19,7 +19,7 @@ The application uses **Vite** as the build tool, configured via `vite.config.mts
    - **mui-vendor**: Material UI and Emotion styling libraries
    - **state-vendor**: Valtio state management
    - **Main bundle**: Application code
-   
+
    This strategy enables:
    - Better browser caching (vendor code rarely changes)
    - Faster page loads (parallel downloads)
@@ -97,6 +97,7 @@ These will be implemented in later tasks:
 ## Dependencies
 
 Build-time dependencies:
+
 - `vite` - Build tool and dev server
 - `@vitejs/plugin-react` - React support
 - `vite-plugin-pwa` - PWA and service worker support
