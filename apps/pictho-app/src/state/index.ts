@@ -1,12 +1,9 @@
 /**
  * State module exports
  */
-export {
-  store,
-  getCurrentPage,
-  getSquareAtPosition,
-  updateSquare,
-  addPage,
-  deletePage,
-  renamePage,
-} from './store';
+
+// Export the store
+export { store } from './store';
+
+// Export all actions from the actions directory
+export * from './actions';
