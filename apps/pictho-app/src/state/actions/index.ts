@@ -38,7 +38,7 @@ export {
 export {
   updatePictureUsage,
   getPicturesByRecentUsage,
-  getUnusedRecentPictures,
+  getMostRecentlyUsedPictures,
   resetPictureUsage,
   resetAllPictureUsage,
 } from './pictureActions';

@@ -5,7 +5,8 @@ import type { Picture } from '../../types';
 
 /**
  * Update the last used timestamp for a picture
- * This is used to track and limit frequently used pictures in the selection UI
+ * This is used to track picture usage so we can display only the most recently used pictures
+ * in the selection UI (limited to 50 pictures)
  * @param picture - Picture to update
  */
 export function updatePictureUsage(picture: Picture): void {
@@ -27,21 +28,18 @@ export function getPicturesByRecentUsage(pictures: Picture[]): Picture[] {
 }
 
 /**
- * Get pictures that haven't been used recently
- * Useful for hiding frequently used pictures in the selection UI
+ * Get the top N most recently used pictures
+ * Used to limit picture selection UI to 50 most recently used pictures
  * @param pictures - Array of pictures to filter
- * @param recentThreshold - Time in milliseconds to consider "recent" (default: 5 minutes)
- * @returns Pictures that haven't been used within the threshold
+ * @param limit - Maximum number of pictures to return (default: 50)
+ * @returns Top N most recently used pictures
  */
-export function getUnusedRecentPictures(
+export function getMostRecentlyUsedPictures(
   pictures: Picture[],
-  recentThreshold: number = 5 * 60 * 1000
+  limit: number = 50
 ): Picture[] {
-  const now = Date.now();
-  return pictures.filter((picture) => {
-    const lastUsed = picture.lastUsedTime || 0;
-    return now - lastUsed > recentThreshold;
-  });
+  // Sort by most recently used first, then take the top N
+  return getPicturesByRecentUsage(pictures).slice(0, limit);
 }
 
 /**
