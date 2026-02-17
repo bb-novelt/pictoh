@@ -98,8 +98,8 @@ self.addEventListener('fetch', (event) => {
     // Cache-first for JS/CSS assets
     event.respondWith(cacheFirst(request, ASSETS_CACHE));
   } else {
-    // Network-first with cache fallback for other resources
-    event.respondWith(networkFirst(request, CACHE_NAME));
+    // Cache-first for all other resources (100% offline app)
+    event.respondWith(cacheFirst(request, CACHE_NAME));
   }
 });
 
@@ -131,34 +131,6 @@ async function cacheFirst(request, cacheName) {
     return networkResponse;
   } catch (error) {
     console.error('[Service Worker] Cache-first failed:', error);
-    throw error;
-  }
-}
-
-/**
- * Network-first strategy with cache fallback
- * Try network first, fall back to cache if offline
- */
-async function networkFirst(request, cacheName) {
-  try {
-    const networkResponse = await fetch(request);
-
-    // Cache successful network responses
-    if (networkResponse && networkResponse.status === 200) {
-      const cache = await caches.open(cacheName);
-      cache.put(request, networkResponse.clone());
-    }
-
-    return networkResponse;
-  } catch (error) {
-    console.log('[Service Worker] Network failed, trying cache:', request.url);
-    const cache = await caches.open(cacheName);
-    const cachedResponse = await cache.match(request);
-
-    if (cachedResponse) {
-      return cachedResponse;
-    }
-
     throw error;
   }
 }
