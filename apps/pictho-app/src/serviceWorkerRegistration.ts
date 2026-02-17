@@ -3,6 +3,15 @@
  * Handles registration, updates, and lifecycle events
  */
 
+/**
+ * Extended window interface to store update interval ID
+ */
+declare global {
+  interface Window {
+    __swUpdateInterval?: number;
+  }
+}
+
 const isLocalhost = Boolean(
   window.location.hostname === 'localhost' ||
     window.location.hostname === '[::1]' ||
@@ -78,13 +87,16 @@ function registerValidSW(swUrl: string, config?: Config): void {
         };
       };
 
-      // Check for updates every hour
-      setInterval(
+      // Check for updates every hour - store interval ID for cleanup
+      const updateCheckInterval = setInterval(
         () => {
           registration.update();
         },
         60 * 60 * 1000
       );
+
+      // Store interval ID for cleanup in unregister
+      window.__swUpdateInterval = updateCheckInterval;
     })
     .catch((error) => {
       console.error('[Service Worker] Registration failed:', error);
@@ -126,6 +138,12 @@ function checkValidServiceWorker(swUrl: string, config?: Config): void {
  * Unregister the service worker
  */
 export function unregister(): void {
+  // Clear update check interval if it exists
+  if (window.__swUpdateInterval) {
+    clearInterval(window.__swUpdateInterval);
+    delete window.__swUpdateInterval;
+  }
+
   if ('serviceWorker' in navigator) {
     navigator.serviceWorker.ready
       .then((registration) => {

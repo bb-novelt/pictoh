@@ -181,7 +181,7 @@ function isAppShell(url) {
  */
 function isImage(url) {
   const pathname = url.pathname;
-  return pathname.match(/\.(png|jpg|jpeg|svg|gif|webp|ico)$/i);
+  return pathname.match(/\.(png|jpg|jpeg|svg|gif|webp)$/i);
 }
 
 /**
