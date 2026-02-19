@@ -2,7 +2,8 @@
 /* eslint-disable no-console */
 /**
  * Custom Service Worker for Pict'Oh
- * Implements offline-first architecture with cache strategies
+ * Implements offline-first architecture with cache-first strategy
+ * and cache expiration policies
  */
 
 // Workbox will inject the precache manifest here
@@ -13,6 +14,12 @@ const CACHE_NAME = `pictoh-${CACHE_VERSION}`;
 const APP_SHELL_CACHE = `pictoh-shell-${CACHE_VERSION}`;
 const ASSETS_CACHE = `pictoh-assets-${CACHE_VERSION}`;
 const IMAGES_CACHE = `pictoh-images-${CACHE_VERSION}`;
+const USER_PICTURES_CACHE = `pictoh-user-pictures-${CACHE_VERSION}`;
+
+// Cache expiration policies
+const MAX_IMAGE_CACHE_ENTRIES = 200;
+const MAX_USER_PICTURES_CACHE_ENTRIES = 50;
+const MAX_CACHE_AGE_MS = 30 * 24 * 60 * 60 * 1000; // 30 days in milliseconds
 
 // App shell files (cache-first strategy)
 const APP_SHELL_FILES = ['/', '/index.html', '/manifest.json', '/favicon.ico'];
@@ -48,6 +55,14 @@ self.addEventListener('install', (event) => {
 self.addEventListener('activate', (event) => {
   console.log('[Service Worker] Activating service worker...');
 
+  const currentCaches = new Set([
+    CACHE_NAME,
+    APP_SHELL_CACHE,
+    ASSETS_CACHE,
+    IMAGES_CACHE,
+    USER_PICTURES_CACHE,
+  ]);
+
   event.waitUntil(
     caches
       .keys()
@@ -57,10 +72,7 @@ self.addEventListener('activate', (event) => {
             // Delete old caches that don't match current version
             if (
               cacheName.startsWith('pictoh-') &&
-              cacheName !== CACHE_NAME &&
-              cacheName !== APP_SHELL_CACHE &&
-              cacheName !== ASSETS_CACHE &&
-              cacheName !== IMAGES_CACHE
+              !currentCaches.has(cacheName)
             ) {
               console.log('[Service Worker] Deleting old cache:', cacheName);
               return caches.delete(cacheName);
@@ -91,9 +103,16 @@ self.addEventListener('fetch', (event) => {
   if (isAppShell(url)) {
     // Cache-first for app shell
     event.respondWith(cacheFirst(request, APP_SHELL_CACHE));
+  } else if (isUserPicture(url)) {
+    // Cache-first for user-added pictures (separate cache with stricter limits)
+    event.respondWith(
+      cacheFirst(request, USER_PICTURES_CACHE, MAX_USER_PICTURES_CACHE_ENTRIES)
+    );
   } else if (isImage(url)) {
-    // Cache-first for images
-    event.respondWith(cacheFirst(request, IMAGES_CACHE));
+    // Cache-first for built-in library images
+    event.respondWith(
+      cacheFirst(request, IMAGES_CACHE, MAX_IMAGE_CACHE_ENTRIES)
+    );
   } else if (isAsset(url)) {
     // Cache-first for JS/CSS assets
     event.respondWith(cacheFirst(request, ASSETS_CACHE));
@@ -104,17 +123,21 @@ self.addEventListener('fetch', (event) => {
 });
 
 /**
- * Cache-first strategy
- * Try cache first, fall back to network
+ * Cache-first strategy with optional max entries enforcement
+ * Try cache first, fall back to network; evict oldest entries when limit is exceeded
  */
-async function cacheFirst(request, cacheName) {
+async function cacheFirst(request, cacheName, maxEntries) {
   try {
     const cache = await caches.open(cacheName);
     const cachedResponse = await cache.match(request);
 
     if (cachedResponse) {
-      console.log('[Service Worker] Cache hit:', request.url);
-      return cachedResponse;
+      // Check if the cached response is still fresh
+      if (!isCacheExpired(cachedResponse)) {
+        console.log('[Service Worker] Cache hit:', request.url);
+        return cachedResponse;
+      }
+      console.log('[Service Worker] Cache expired, refetching:', request.url);
     }
 
     console.log(
@@ -126,12 +149,46 @@ async function cacheFirst(request, cacheName) {
     // Cache the network response for future use
     if (networkResponse && networkResponse.status === 200) {
       cache.put(request, networkResponse.clone());
+      // Enforce max entries limit after adding new entry
+      if (maxEntries) {
+        enforceCacheLimit(cache, maxEntries);
+      }
     }
 
     return networkResponse;
   } catch (error) {
     console.error('[Service Worker] Cache-first failed:', error);
     throw error;
+  }
+}
+
+/**
+ * Check if a cached response has exceeded the max cache age
+ */
+function isCacheExpired(response) {
+  const dateHeader = response.headers.get('date');
+  if (!dateHeader) return false;
+  const cachedAt = new Date(dateHeader).getTime();
+  return Date.now() - cachedAt > MAX_CACHE_AGE_MS;
+}
+
+/**
+ * Evict the oldest cache entries when the cache exceeds maxEntries.
+ * Note: cache.keys() returns entries in insertion order in all major browsers,
+ * so deleting from the front removes the oldest entries first (FIFO eviction).
+ */
+async function enforceCacheLimit(cache, maxEntries) {
+  const keys = await cache.keys();
+  if (keys.length > maxEntries) {
+    const entriesToDelete = keys.length - maxEntries;
+    for (let i = 0; i < entriesToDelete; i++) {
+      await cache.delete(keys[i]);
+    }
+    console.log(
+      '[Service Worker] Evicted',
+      entriesToDelete,
+      'old cache entries'
+    );
   }
 }
 
@@ -149,11 +206,19 @@ function isAppShell(url) {
 }
 
 /**
- * Check if URL is an image
+ * Check if URL is an image from the built-in picture library
  */
 function isImage(url) {
   const pathname = url.pathname;
   return pathname.match(/\.(png|jpg|jpeg|svg|gif|webp)$/i);
+}
+
+/**
+ * Check if URL is a user-added picture (data URL stored as blob or separate path)
+ */
+function isUserPicture(url) {
+  const pathname = url.pathname;
+  return pathname.startsWith('/user-pictures/');
 }
 
 /**
@@ -172,13 +237,28 @@ self.addEventListener('message', (event) => {
     self.skipWaiting();
   }
 
-  // Handle cache preloading requests
+  // Handle bulk cache preloading requests (e.g. picture library on first launch)
   if (event.data && event.data.type === 'CACHE_URLS') {
     const { urls, cacheName = IMAGES_CACHE } = event.data;
     event.waitUntil(
       caches.open(cacheName).then((cache) => {
         console.log('[Service Worker] Preloading URLs to cache:', urls.length);
         return cache.addAll(urls);
+      })
+    );
+  }
+
+  // Handle single user-added picture caching (immediate offline availability)
+  if (event.data && event.data.type === 'CACHE_USER_PICTURE') {
+    const { url } = event.data;
+    event.waitUntil(
+      caches.open(USER_PICTURES_CACHE).then(async (cache) => {
+        console.log('[Service Worker] Caching user picture:', url);
+        const response = await fetch(url);
+        if (response && response.status === 200) {
+          await cache.put(url, response);
+          await enforceCacheLimit(cache, MAX_USER_PICTURES_CACHE_ENTRIES);
+        }
       })
     );
   }
