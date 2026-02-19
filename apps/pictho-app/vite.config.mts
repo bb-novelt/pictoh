@@ -53,10 +53,9 @@ export default defineConfig(() => ({
       },
     }),
   ],
-  // Uncomment this if you are using workers.
-  // worker: {
-  //   plugins: () => [ nxViteTsPaths() ],
-  // },
+  worker: {
+    plugins: () => [nxViteTsPaths()],
+  },
   build: {
     outDir: '../../dist/apps/pictho-app',
     emptyOutDir: true,
