@@ -2,8 +2,9 @@
 /* eslint-disable no-console */
 /**
  * Custom Service Worker for Pict'Oh
- * Implements offline-first architecture with cache-first strategy
- * and cache expiration policies
+ * Implements offline-first architecture with cache-first strategy.
+ * Cached assets are kept indefinitely; a manual update mechanism will
+ * handle invalidation when the asset library changes in the future.
  */
 
 // Workbox will inject the precache manifest here
@@ -16,10 +17,9 @@ const ASSETS_CACHE = `pictoh-assets-${CACHE_VERSION}`;
 const IMAGES_CACHE = `pictoh-images-${CACHE_VERSION}`;
 const USER_PICTURES_CACHE = `pictoh-user-pictures-${CACHE_VERSION}`;
 
-// Cache expiration policies
+// Cache entry limits
 const MAX_IMAGE_CACHE_ENTRIES = 200;
-const MAX_USER_PICTURES_CACHE_ENTRIES = 50;
-const MAX_CACHE_AGE_MS = 30 * 24 * 60 * 60 * 1000; // 30 days in milliseconds
+const MAX_USER_PICTURES_CACHE_ENTRIES = 100;
 
 // App shell files (cache-first strategy)
 const APP_SHELL_FILES = ['/', '/index.html', '/manifest.json', '/favicon.ico'];
@@ -123,8 +123,9 @@ self.addEventListener('fetch', (event) => {
 });
 
 /**
- * Cache-first strategy with optional max entries enforcement
- * Try cache first, fall back to network; evict oldest entries when limit is exceeded
+ * Cache-first strategy with optional max entries enforcement.
+ * Cached entries are kept indefinitely (no expiration).
+ * Try cache first, fall back to network; evict oldest entries when limit is exceeded.
  */
 async function cacheFirst(request, cacheName, maxEntries) {
   try {
@@ -132,12 +133,8 @@ async function cacheFirst(request, cacheName, maxEntries) {
     const cachedResponse = await cache.match(request);
 
     if (cachedResponse) {
-      // Check if the cached response is still fresh
-      if (!isCacheExpired(cachedResponse)) {
-        console.log('[Service Worker] Cache hit:', request.url);
-        return cachedResponse;
-      }
-      console.log('[Service Worker] Cache expired, refetching:', request.url);
+      console.log('[Service Worker] Cache hit:', request.url);
+      return cachedResponse;
     }
 
     console.log(
@@ -160,16 +157,6 @@ async function cacheFirst(request, cacheName, maxEntries) {
     console.error('[Service Worker] Cache-first failed:', error);
     throw error;
   }
-}
-
-/**
- * Check if a cached response has exceeded the max cache age
- */
-function isCacheExpired(response) {
-  const dateHeader = response.headers.get('date');
-  if (!dateHeader) return false;
-  const cachedAt = new Date(dateHeader).getTime();
-  return Date.now() - cachedAt > MAX_CACHE_AGE_MS;
 }
 
 /**
