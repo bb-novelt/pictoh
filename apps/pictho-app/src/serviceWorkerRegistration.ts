@@ -168,7 +168,7 @@ export function skipWaiting(): void {
 }
 
 /**
- * Preload URLs into cache via service worker
+ * Preload URLs into cache via service worker (e.g. bulk picture library caching)
  */
 export function cacheUrls(urls: string[], cacheName?: string): void {
   if ('serviceWorker' in navigator && navigator.serviceWorker.controller) {
@@ -176,6 +176,25 @@ export function cacheUrls(urls: string[], cacheName?: string): void {
       type: 'CACHE_URLS',
       urls,
       cacheName,
+    });
+  }
+}
+
+/**
+ * Cache the complete built-in picture library for offline use
+ */
+export function cachePictureLibrary(urls: string[]): void {
+  cacheUrls(urls);
+}
+
+/**
+ * Cache a single user-added picture immediately for offline availability
+ */
+export function cacheUserPicture(url: string): void {
+  if ('serviceWorker' in navigator && navigator.serviceWorker.controller) {
+    navigator.serviceWorker.controller.postMessage({
+      type: 'CACHE_USER_PICTURE',
+      url,
     });
   }
 }

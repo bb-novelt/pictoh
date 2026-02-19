@@ -42,6 +42,7 @@ export default defineConfig(() => ({
       filename: 'service-worker.js',
       injectManifest: {
         globPatterns: ['**/*.{js,css,html,ico,png,jpg,jpeg,svg,woff,woff2}'],
+        globDirectory: '../../dist/apps/pictho-app',
         // Don't include the service worker itself in precache
         globIgnores: ['**/service-worker.js'],
       },
