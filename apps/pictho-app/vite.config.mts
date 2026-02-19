@@ -33,18 +33,23 @@ export default defineConfig(() => ({
       algorithm: 'brotliCompress',
       exclude: [/\.(br)$/, /\.(gz)$/],
     }),
-    // PWA support with service worker (basic setup, will be customized in Task 3.1)
+    // PWA support with custom service worker
     VitePWA({
       registerType: 'autoUpdate',
       manifest: false, // Using existing manifest.json
-      workbox: {
-        // Placeholder configuration - will be enhanced in Task 3.1
+      strategies: 'injectManifest',
+      srcDir: 'public',
+      filename: 'service-worker.js',
+      injectManifest: {
         globPatterns: ['**/*.{js,css,html,ico,png,jpg,jpeg,svg,woff,woff2}'],
-        runtimeCaching: [],
+        // Don't include the service worker itself in precache
+        globIgnores: ['**/service-worker.js'],
       },
-      // Don't generate service worker yet - will be customized in Task 3.1
-      injectRegister: false,
-      strategies: 'generateSW',
+      injectRegister: false, // We handle registration manually
+      devOptions: {
+        enabled: true,
+        type: 'module',
+      },
     }),
   ],
   // Uncomment this if you are using workers.
