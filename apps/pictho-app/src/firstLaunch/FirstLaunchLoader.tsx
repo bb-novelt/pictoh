@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { Alert, Box, LinearProgress, Typography } from '@mui/material';
-import type { WorkerOutgoingMessage } from '../workers/downloadWorkerMessages';
-import DownloadWorker from '../workers/downloadWorker?worker';
+import type { WorkerOutgoingMessage } from './downloadWorkerMessages';
+import DownloadWorker from './downloadWorker?worker';
 import {
   getPictureUrls,
   getTtsModelUrls,

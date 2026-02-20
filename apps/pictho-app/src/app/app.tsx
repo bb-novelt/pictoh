@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { FirstLaunchLoader, isFirstLaunch } from '../firstLaunch';
+import { OfflineIndicator } from '../offline/OfflineIndicator';
 
 export function App() {
   const [firstLaunchDone, setFirstLaunchDone] = useState(!isFirstLaunch());
@@ -9,10 +10,13 @@ export function App() {
   }
 
   return (
-    <div>
-      <h1>Pict&apos;Oh</h1>
-      <p>Application de communication par pictogrammes</p>
-    </div>
+    <>
+      <div>
+        <h1>Pict&apos;Oh</h1>
+        <p>Application de communication par pictogrammes</p>
+      </div>
+      <OfflineIndicator />
+    </>
   );
 }
 
