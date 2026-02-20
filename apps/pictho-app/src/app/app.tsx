@@ -1,4 +1,13 @@
+import { useState } from 'react';
+import { FirstLaunchLoader, isFirstLaunch } from '../firstLaunch';
+
 export function App() {
+  const [firstLaunchDone, setFirstLaunchDone] = useState(!isFirstLaunch());
+
+  if (!firstLaunchDone) {
+    return <FirstLaunchLoader onComplete={() => setFirstLaunchDone(true)} />;
+  }
+
   return (
     <div>
       <h1>Pict&apos;Oh</h1>
