@@ -1,6 +1,6 @@
 import { Chip } from '@mui/material';
 import WifiOffIcon from '@mui/icons-material/WifiOff';
-import { useOnlineStatus } from '../hooks/useOnlineStatus';
+import { useOnlineStatus } from './useOnlineStatus';
 
 /**
  * Subtle offline indicator displayed in the bottom-right corner.

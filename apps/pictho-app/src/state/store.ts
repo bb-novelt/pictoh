@@ -2,7 +2,7 @@
  * Valtio state store for Pict'Oh application
  */
 import { proxy } from 'valtio';
-import type { AppConfig, Page, Square } from '../types';
+import type { AppConfig, Page, Square } from '../shared/types';
 
 /**
  * Generate a unique ID using crypto.randomUUID

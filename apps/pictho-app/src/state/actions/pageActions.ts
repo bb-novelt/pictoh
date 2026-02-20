@@ -2,7 +2,7 @@
  * Page-related state actions
  */
 import { store } from '../store';
-import type { Page } from '../../types';
+import type { Page } from '../../shared/types';
 
 /**
  * Navigate to a page by its pageId

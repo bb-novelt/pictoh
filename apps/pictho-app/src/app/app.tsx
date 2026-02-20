@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { FirstLaunchLoader, isFirstLaunch } from '../firstLaunch';
-import { OfflineIndicator } from '../components/OfflineIndicator';
+import { OfflineIndicator } from '../offline/OfflineIndicator';
 
 export function App() {
   const [firstLaunchDone, setFirstLaunchDone] = useState(!isFirstLaunch());

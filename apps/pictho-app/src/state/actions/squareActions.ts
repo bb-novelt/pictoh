@@ -1,7 +1,7 @@
 /**
  * Square-related state actions
  */
-import type { Square, Picture } from '../../types';
+import type { Square, Picture } from '../../shared/types';
 import { getCurrentPage } from './pageActions';
 
 /**

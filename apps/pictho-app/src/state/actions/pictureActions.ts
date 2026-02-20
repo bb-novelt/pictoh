@@ -1,7 +1,7 @@
 /**
  * Picture tracking and usage actions
  */
-import type { Picture } from '../../types';
+import type { Picture } from '../../shared/types';
 
 /**
  * Update the last used timestamp for a picture

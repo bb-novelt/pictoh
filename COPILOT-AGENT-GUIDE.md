@@ -96,6 +96,43 @@ This is the Pict'Oh (pictho) project - an offline-first, tablet-optimized commun
 
 ---
 
+## Folder Structure Convention
+
+**Files are organised by feature/module, not by type.**
+
+Do **not** create generic type-based folders such as `components/`, `hooks/`, `utils/`,
+`services/`, or `tests/`.
+
+Instead, group every file belonging to the same feature inside **one feature folder**:
+
+```
+src/
+  firstLaunch/           ← feature: first-launch loader + download workers
+  offline/               ← feature: offline detection UI + service worker registration
+  state/                 ← feature: Valtio state store + actions (already feature-based)
+  shared/
+    types/               ← shared TypeScript types used across multiple features
+  app/                   ← app entry-point (App component)
+```
+
+### Rules
+
+1. **Feature folder** — All files related to a feature live together:
+   - React components, custom hooks, utilities, workers, messages, tests
+   - Example: `offline/OfflineIndicator.tsx` and `offline/useOnlineStatus.ts`
+     live in the same `offline/` folder instead of separate `components/` and `hooks/` folders.
+2. **`shared/` folder** — Only for files that are genuinely reused across **more than one**
+   feature (e.g. shared TypeScript type definitions in `shared/types/`).
+3. **New features** — When starting a task that introduces a new concern, create a new
+   feature folder named after the feature. Examples of expected future folders:
+   - `grid/` — Grid + Square layout components (Epic 4)
+   - `editMode/` — Edit-mode toolbar + dialogs (Epic 6)
+   - `pictures/` — Picture library, selector, usage tracking (Epic 8)
+   - `storage/` — Persistence / auto-save (Epic 9)
+   - `tts/` — Text-to-speech integration (Epic 5)
+
+---
+
 ## GitHub Copilot Agent Environment Setup
 
 This repository includes a GitHub Actions workflow that automatically sets up the development environment when GitHub Copilot agents start working on the project.

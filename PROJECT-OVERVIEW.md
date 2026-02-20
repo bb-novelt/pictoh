@@ -239,11 +239,11 @@ Each square contains:
 - **No ARIA labels** (not for blind people)
 - **No page transition animations**
 - **No navigation history**
-- Clear separation of concerns:
-  - UI components
-  - State (Valtio)
-  - Persistence
-  - Offline / worker logic
+- Clear separation of concerns, organised **by feature/module** (not by type):
+  - Each feature has its own folder containing all related files (components, hooks, workers, utils…)
+  - `shared/` folder for files used across multiple features (e.g. `shared/types/`)
+  - Do **not** use generic type-based folders (`components/`, `hooks/`, `utils/`, etc.)
+  - See `COPILOT-AGENT-GUIDE.md` for the full folder-structure convention
 - **Agile approach to types**: Create types **alongside features**, not before
 - Strong TypeScript typing for:
   - App configuration
