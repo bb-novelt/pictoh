@@ -1,5 +1,4 @@
-import { Box, Typography } from '@mui/material';
-import ScreenRotationIcon from '@mui/icons-material/ScreenRotation';
+import { Box } from '@mui/material';
 import type { ReactNode } from 'react';
 
 interface Props {
@@ -10,10 +9,19 @@ interface Props {
  * Top-level layout wrapper for Pict'Oh.
  *
  * - Fills the full viewport in landscape orientation.
- * - Displays a "please rotate" overlay when the device is in portrait mode
- *   so the app is never used in portrait orientation.
+ * - In portrait mode the content is rotated 90° clockwise so it always
+ *   renders as landscape — no "please rotate" message is shown.
  * - Sets the global minimum touch-target size (44 × 44 px) via CSS custom
  *   property used by descendant interactive elements.
+ *
+ * Portrait → landscape rotation maths:
+ *   Portrait viewport: W (short) × H (tall)
+ *   Inner box sized H × W (landscape proportions), positioned at top=100vh so
+ *   its top-left corner sits at the bottom-left of the viewport.
+ *   A 90° CW rotation around that corner swings the box into view:
+ *     top-right corner → (0, 0)  (screen top-left)
+ *     bottom-right corner → (W, 0)  (screen top-right)
+ *   Result: content fills the full portrait viewport in landscape orientation.
  */
 export function Layout({ children }: Props) {
   return (
@@ -30,36 +38,26 @@ export function Layout({ children }: Props) {
         },
       }}
     >
-      {/* Portrait-mode overlay: shown only when orientation is portrait */}
-      <Box
-        sx={{
-          display: 'none',
-          '@media (orientation: portrait)': {
-            display: 'flex',
-          },
-          position: 'fixed',
-          inset: 0,
-          zIndex: 9999,
-          flexDirection: 'column',
-          alignItems: 'center',
-          justifyContent: 'center',
-          gap: 3,
-          backgroundColor: 'background.default',
-        }}
-      >
-        <ScreenRotationIcon sx={{ fontSize: 80, color: 'primary.main' }} />
-        <Typography variant="h5" align="center">
-          Veuillez tourner votre tablette en mode paysage
-        </Typography>
-      </Box>
-
-      {/* App content — only meaningfully visible in landscape */}
+      {/*
+       * Content wrapper.
+       * In landscape: fills parent normally (100% × 100%).
+       * In portrait: fixed-positioned, rotated 90° CW so the app displays
+       *   in landscape without any "please rotate" message.
+       * position:fixed is used so the transform is not clipped by the parent's
+       *   overflow:hidden.
+       */}
       <Box
         sx={{
           width: '100%',
           height: '100%',
           '@media (orientation: portrait)': {
-            visibility: 'hidden',
+            position: 'fixed',
+            top: '100vh',
+            left: 0,
+            width: '100vh',
+            height: '100vw',
+            transformOrigin: 'left top',
+            transform: 'rotate(90deg)',
           },
         }}
       >
