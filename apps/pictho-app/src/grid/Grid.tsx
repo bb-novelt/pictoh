@@ -50,7 +50,12 @@ export function Grid() {
         }}
       >
         {currentPage.squares.map((square) => (
-          <Square key={square.position} square={square} />
+          <Square
+            key={square.position}
+            square={square}
+            isEditMode={snap.isEditMode}
+            onClick={() => {}}
+          />
         ))}
       </Box>
     </Box>
