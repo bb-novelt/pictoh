@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { FirstLaunchLoader, isFirstLaunch } from '../firstLaunch';
 import { OfflineIndicator } from '../offline/OfflineIndicator';
 import { Layout } from '../grid/Layout';
+import { Grid } from '../grid/Grid';
 
 export function App() {
   const [firstLaunchDone, setFirstLaunchDone] = useState(!isFirstLaunch());
@@ -12,10 +13,7 @@ export function App() {
 
   return (
     <Layout>
-      <div>
-        <h1>Pict&apos;Oh</h1>
-        <p>Application de communication par pictogrammes</p>
-      </div>
+      <Grid />
       <OfflineIndicator />
     </Layout>
   );
