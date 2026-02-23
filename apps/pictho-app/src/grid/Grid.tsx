@@ -2,6 +2,7 @@ import { Box } from '@mui/material';
 import { useSnapshot } from 'valtio';
 import { store } from '../state';
 import { Square } from './Square';
+import { useSquareInteraction } from './useSquareInteraction';
 
 /**
  * Main 6-column × 4-row grid layout.
@@ -16,6 +17,7 @@ export function Grid() {
   const currentPage = snap.pages.find(
     (page) => page.pageId === snap.currentPageId
   );
+  const { handleInteraction } = useSquareInteraction();
 
   if (!currentPage) return null;
 
@@ -54,7 +56,7 @@ export function Grid() {
             key={square.position}
             square={square}
             isEditMode={snap.isEditMode}
-            onClick={() => {}}
+            onClick={() => handleInteraction(square)}
           />
         ))}
       </Box>
