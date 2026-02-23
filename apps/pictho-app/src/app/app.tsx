@@ -1,12 +1,17 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { FirstLaunchLoader, isFirstLaunch } from '../firstLaunch';
 import { OfflineIndicator } from '../offline/OfflineIndicator';
 import { Layout } from '../grid/Layout';
 import { Grid } from '../grid/Grid';
 import { useClickTracker } from '../editMode';
+import { initTts } from '../tts';
 
 export function App() {
   const [firstLaunchDone, setFirstLaunchDone] = useState(!isFirstLaunch());
+
+  useEffect(() => {
+    initTts();
+  }, []);
 
   useClickTracker();
 
