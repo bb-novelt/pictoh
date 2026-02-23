@@ -1,0 +1,1 @@
+export { useClickTracker } from './useClickTracker';
