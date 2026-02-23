@@ -1,6 +1,9 @@
 import { StrictMode } from 'react';
 import * as ReactDOM from 'react-dom/client';
+import { ThemeProvider } from '@mui/material/styles';
+import CssBaseline from '@mui/material/CssBaseline';
 import App from './app/app';
+import theme from './shared/theme';
 import * as serviceWorkerRegistration from './offline/serviceWorkerRegistration';
 
 const root = ReactDOM.createRoot(
@@ -9,7 +12,10 @@ const root = ReactDOM.createRoot(
 
 root.render(
   <StrictMode>
-    <App />
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      <App />
+    </ThemeProvider>
   </StrictMode>
 );
 
