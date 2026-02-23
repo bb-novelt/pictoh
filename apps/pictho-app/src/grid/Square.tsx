@@ -1,8 +1,11 @@
+import { useEffect, useRef, useState } from 'react';
 import { Box } from '@mui/material';
 import type { Square as SquareType } from '../shared/types';
 
 interface Props {
   square: SquareType;
+  onClick: () => void;
+  isEditMode: boolean;
 }
 
 /**
@@ -11,14 +14,43 @@ interface Props {
  * - Stays perfectly square via the aspect-ratio CSS property.
  * - Has rounded corners.
  * - Displays the selected picture if one is set; otherwise renders an empty placeholder.
+ * - Shows a blue border flash on touch start (normal mode) as visual feedback.
+ * - Shows a persistent red border when edit mode is active.
  */
-export function Square({ square }: Props) {
+export function Square({ square, onClick, isEditMode }: Props) {
+  const [touched, setTouched] = useState(false);
+  const touchTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  useEffect(() => {
+    return () => {
+      if (touchTimeoutRef.current !== null) {
+        clearTimeout(touchTimeoutRef.current);
+      }
+    };
+  }, []);
+
+  function handleTouchStart() {
+    setTouched(true);
+    touchTimeoutRef.current = setTimeout(() => setTouched(false), 1000);
+    onClick();
+  }
+
+  // Determine border: red in edit mode, blue flash on touch, none otherwise
+  let borderColor: string | undefined;
+  if (isEditMode) {
+    borderColor = 'error.main';
+  } else if (touched) {
+    borderColor = 'primary.main';
+  }
+
   return (
     <Box
+      onTouchStart={handleTouchStart}
+      onClick={isEditMode ? onClick : undefined}
       sx={{
         aspectRatio: '1 / 1',
         borderRadius: 2,
-        bgcolor: 'grey.100',
+        bgcolor: square.selectedPicture ? 'background.paper' : 'grey.100',
         overflow: 'hidden',
         display: 'flex',
         flexDirection: 'column',
@@ -26,6 +58,10 @@ export function Square({ square }: Props) {
         justifyContent: 'center',
         userSelect: 'none',
         width: '100%',
+        cursor: 'pointer',
+        border: '2px solid',
+        borderColor: borderColor ?? 'transparent',
+        boxSizing: 'border-box',
       }}
     >
       {square.selectedPicture && (
