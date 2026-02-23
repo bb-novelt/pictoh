@@ -1,1 +1,2 @@
-export { speak } from './ttsService';
+export { speak, initTts, ttsState } from './ttsService';
+export type { TtsStatus } from './ttsService';

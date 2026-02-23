@@ -31,7 +31,9 @@ export function getPictureUrls(): string[] {
 
 /**
  * URLs of TTS model files to pre-cache.
- * This list will be populated in Task 5.3 (TTS Integration).
+ * The app uses the Web Speech API (device-local engine), so no model
+ * files need to be downloaded.  The download worker handles an empty
+ * list by sending PHASE_COMPLETE immediately.
  */
 export function getTtsModelUrls(): string[] {
   return [];
