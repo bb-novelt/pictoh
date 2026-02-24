@@ -2,7 +2,8 @@
  * Valtio state store for Pict'Oh application
  */
 import { proxy } from 'valtio';
-import type { AppConfig, Page, Picture, Square } from '../shared/types';
+import type { AppConfig, Page, Square } from '../shared/types';
+import { createBuiltInPicture } from '../pictures/pictureLibrary';
 
 /**
  * Generate a unique ID using crypto.randomUUID
@@ -21,19 +22,6 @@ function createEmptySquare(position: number): Square {
     associatedText: '',
     displayTextAbovePicture: false,
     openPageId: '',
-  };
-}
-
-/**
- * Create a built-in Picture object from a filename stem (without extension).
- * e.g. 'manger' → { id: 'builtin-manger', text: 'Manger', src: '/assets/pictures/manger.svg', … }
- */
-function createBuiltInPicture(stem: string): Picture {
-  return {
-    id: `builtin-${stem}`,
-    text: stem.charAt(0).toUpperCase() + stem.slice(1),
-    src: `/assets/pictures/${stem}.svg`,
-    isUserAdded: false,
   };
 }
 
