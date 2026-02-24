@@ -36,6 +36,11 @@ When you complete a task:
      - Brief description of what was done
      - Any important notes or decisions made
      - Links to related commits or PRs if applicable
+   - **UI tasks**: if the task involved any visible UI changes, include at least
+     one screenshot in the summary so reviewers can see the result at a glance.
+     Take the screenshot with the `browser_take_screenshot` tool and embed it in
+     the markdown using standard image syntax, for example:
+     `![Screenshot](./screenshot.png)`
 
 ### Example Completion Summary
 
