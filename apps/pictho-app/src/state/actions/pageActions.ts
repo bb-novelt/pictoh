@@ -78,6 +78,16 @@ export function deletePage(pageId: string): void {
     store.currentPageId = store.homePageId;
   }
 
+  // Clear openPageId from any squares on other pages that reference the deleted page
+  for (const page of store.pages) {
+    if (page.pageId === pageId) continue;
+    for (const square of page.squares) {
+      if (square.openPageId === pageId) {
+        square.openPageId = '';
+      }
+    }
+  }
+
   store.pages.splice(pageIndex, 1);
 }
 

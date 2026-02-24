@@ -120,6 +120,22 @@ describe('deletePage', () => {
     deletePage(page.pageId);
     expect(store.currentPageId).toBe(homeId);
   });
+
+  it('clears openPageId from squares pointing to the deleted page', () => {
+    const target = createPage('Target');
+    // Set a square on the home page to navigate to the target
+    const homePage = store.pages.find((p) => p.pageId === store.homePageId)!;
+    homePage.squares[0].openPageId = target.pageId;
+    // Also set a square on another page
+    const other = createPage('Other');
+    other.squares[1].openPageId = target.pageId;
+
+    deletePage(target.pageId);
+
+    expect(homePage.squares[0].openPageId).toBe('');
+    const otherPage = store.pages.find((p) => p.pageId === other.pageId)!;
+    expect(otherPage.squares[1].openPageId).toBe('');
+  });
 });
 
 describe('renamePage', () => {
