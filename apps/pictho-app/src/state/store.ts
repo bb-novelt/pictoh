@@ -2,7 +2,7 @@
  * Valtio state store for Pict'Oh application
  */
 import { proxy } from 'valtio';
-import type { AppConfig, Page, Square } from '../shared/types';
+import type { AppConfig, Page, Picture, Square } from '../shared/types';
 
 /**
  * Generate a unique ID using crypto.randomUUID
@@ -21,6 +21,19 @@ function createEmptySquare(position: number): Square {
     associatedText: '',
     displayTextAbovePicture: false,
     openPageId: '',
+  };
+}
+
+/**
+ * Create a built-in Picture object from a filename stem (without extension).
+ * e.g. 'manger' → { id: 'builtin-manger', text: 'Manger', src: '/assets/pictures/manger.svg', … }
+ */
+function createBuiltInPicture(stem: string): Picture {
+  return {
+    id: `builtin-${stem}`,
+    text: stem.charAt(0).toUpperCase() + stem.slice(1),
+    src: `/assets/pictures/${stem}.svg`,
+    isUserAdded: false,
   };
 }
 
@@ -51,15 +64,15 @@ function initializeStore(): AppConfig {
   const homePage = createPage('Home');
 
   // Configure Home page squares
-  homePage.squares[0].selectedPicture = '/assets/pictures/manger.svg';
+  homePage.squares[0].selectedPicture = createBuiltInPicture('manger');
   homePage.squares[0].associatedText = 'Manger';
   homePage.squares[0].displayTextAbovePicture = true;
 
-  homePage.squares[1].selectedPicture = '/assets/pictures/chat.svg';
+  homePage.squares[1].selectedPicture = createBuiltInPicture('chat');
   homePage.squares[1].associatedText = 'Chat';
   homePage.squares[1].displayTextAbovePicture = true;
 
-  homePage.squares[2].selectedPicture = '/assets/pictures/maison.svg';
+  homePage.squares[2].selectedPicture = createBuiltInPicture('maison');
   homePage.squares[2].associatedText = '';
   homePage.squares[2].displayTextAbovePicture = false;
 
@@ -67,15 +80,15 @@ function initializeStore(): AppConfig {
   const repasPage = createPage('Repas');
 
   // Configure Repas page squares
-  repasPage.squares[0].selectedPicture = '/assets/pictures/eau.svg';
+  repasPage.squares[0].selectedPicture = createBuiltInPicture('eau');
   repasPage.squares[0].associatedText = 'Eau';
   repasPage.squares[0].displayTextAbovePicture = true;
 
-  repasPage.squares[1].selectedPicture = '/assets/pictures/arbre.svg';
+  repasPage.squares[1].selectedPicture = createBuiltInPicture('arbre');
   repasPage.squares[1].associatedText = '';
   repasPage.squares[1].displayTextAbovePicture = false;
 
-  repasPage.squares[2].selectedPicture = '/assets/pictures/soleil.svg';
+  repasPage.squares[2].selectedPicture = createBuiltInPicture('soleil');
   repasPage.squares[2].associatedText = 'Soleil';
   repasPage.squares[2].displayTextAbovePicture = true;
 

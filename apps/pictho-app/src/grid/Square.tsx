@@ -35,12 +35,14 @@ export function Square({ square, onClick, isEditMode }: Props) {
     onClick();
   }
 
-  // Determine border: red in edit mode, blue flash on touch, none otherwise
-  let borderColor: string | undefined;
+  // Determine border: red in edit mode, blue flash on touch, grey otherwise
+  let borderColor: string;
   if (isEditMode) {
     borderColor = 'error.main';
   } else if (touched) {
     borderColor = 'primary.main';
+  } else {
+    borderColor = 'grey.300';
   }
 
   return (
@@ -60,7 +62,7 @@ export function Square({ square, onClick, isEditMode }: Props) {
         width: '100%',
         cursor: 'pointer',
         border: '2px solid',
-        borderColor: borderColor ?? 'transparent',
+        borderColor: borderColor,
         boxSizing: 'border-box',
       }}
     >
