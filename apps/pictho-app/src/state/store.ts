@@ -50,10 +50,42 @@ function initializeStore(): AppConfig {
   // Create the default "Home" page
   const homePage = createPage('Home');
 
+  // Configure Home page squares
+  homePage.squares[0].selectedPicture = '/assets/pictures/manger.svg';
+  homePage.squares[0].associatedText = 'Manger';
+  homePage.squares[0].displayTextAbovePicture = true;
+
+  homePage.squares[1].selectedPicture = '/assets/pictures/chat.svg';
+  homePage.squares[1].associatedText = 'Chat';
+  homePage.squares[1].displayTextAbovePicture = true;
+
+  homePage.squares[2].selectedPicture = '/assets/pictures/maison.svg';
+  homePage.squares[2].associatedText = '';
+  homePage.squares[2].displayTextAbovePicture = false;
+
+  // Create the "Repas" page
+  const repasPage = createPage('Repas');
+
+  // Configure Repas page squares
+  repasPage.squares[0].selectedPicture = '/assets/pictures/eau.svg';
+  repasPage.squares[0].associatedText = 'Eau';
+  repasPage.squares[0].displayTextAbovePicture = true;
+
+  repasPage.squares[1].selectedPicture = '/assets/pictures/arbre.svg';
+  repasPage.squares[1].associatedText = '';
+  repasPage.squares[1].displayTextAbovePicture = false;
+
+  repasPage.squares[2].selectedPicture = '/assets/pictures/soleil.svg';
+  repasPage.squares[2].associatedText = 'Soleil';
+  repasPage.squares[2].displayTextAbovePicture = true;
+
+  // Link Home square 0 to the Repas page
+  homePage.squares[0].openPageId = repasPage.pageId;
+
   return {
     homePageId: homePage.pageId,
     currentPageId: homePage.pageId,
-    pages: [homePage],
+    pages: [homePage, repasPage],
     isEditMode: false,
   };
 }
