@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { Box } from '@mui/material';
+import { Box, Typography } from '@mui/material';
 import type { Square as SquareType } from '../shared/types';
 
 interface Props {
@@ -19,6 +19,9 @@ interface Props {
  */
 export function Square({ square, onClick, isEditMode }: Props) {
   const [touched, setTouched] = useState(false);
+  // Track which src caused an error; imgError is true when the current src failed
+  const [errorSrc, setErrorSrc] = useState<string | null>(null);
+  const imgError = errorSrc === square.selectedPicture?.src;
   const touchTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   useEffect(() => {
@@ -83,17 +86,28 @@ export function Square({ square, onClick, isEditMode }: Props) {
               {square.associatedText}
             </Box>
           )}
-          <Box
-            component="img"
-            src={square.selectedPicture.src}
-            alt={square.selectedPicture.text}
-            sx={{
-              maxWidth: '100%',
-              maxHeight: '100%',
-              objectFit: 'contain',
-              flex: 1,
-            }}
-          />
+          {imgError ? (
+            <Typography
+              variant="caption"
+              color="text.disabled"
+              sx={{ flex: 1, display: 'flex', alignItems: 'center' }}
+            >
+              ?
+            </Typography>
+          ) : (
+            <Box
+              component="img"
+              src={square.selectedPicture.src}
+              alt={square.selectedPicture.text}
+              onError={() => setErrorSrc(square.selectedPicture?.src ?? null)}
+              sx={{
+                maxWidth: '100%',
+                maxHeight: '100%',
+                objectFit: 'contain',
+                flex: 1,
+              }}
+            />
+          )}
           {!square.displayTextAbovePicture && square.associatedText && (
             <Box
               component="span"
