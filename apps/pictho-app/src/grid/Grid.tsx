@@ -1,8 +1,11 @@
+import { useState } from 'react';
 import { Box } from '@mui/material';
 import { useSnapshot } from 'valtio';
 import { store } from '../state';
 import { Square } from './Square';
 import { useSquareInteraction } from './useSquareInteraction';
+import { SquareEditModal } from '../editMode';
+import type { Square as SquareType } from '../shared/types';
 
 /**
  * Main 6-column × 4-row grid layout.
@@ -11,6 +14,7 @@ import { useSquareInteraction } from './useSquareInteraction';
  * - Gaps scale proportionally so the grid fits any tablet width/height.
  * - The grid is constrained so the squares remain square: the container
  *   uses `aspect-ratio: 6/4` and is bounded by both viewport dimensions.
+ * - In edit mode, tapping a square opens the SquareEditModal.
  */
 export function Grid() {
   const snap = useSnapshot(store);
@@ -18,8 +22,17 @@ export function Grid() {
     (page) => page.pageId === snap.currentPageId
   );
   const { handleInteraction } = useSquareInteraction();
+  const [editingPosition, setEditingPosition] = useState<number | null>(null);
 
   if (!currentPage) return null;
+
+  function handleSquareClick(square: SquareType): void {
+    if (snap.isEditMode) {
+      setEditingPosition(square.position);
+    } else {
+      handleInteraction(square);
+    }
+  }
 
   return (
     <Box
@@ -56,10 +69,17 @@ export function Grid() {
             key={square.position}
             square={square}
             isEditMode={snap.isEditMode}
-            onClick={() => handleInteraction(square)}
+            onClick={() => handleSquareClick(square)}
           />
         ))}
       </Box>
+
+      {editingPosition !== null && (
+        <SquareEditModal
+          position={editingPosition}
+          onClose={() => setEditingPosition(null)}
+        />
+      )}
     </Box>
   );
 }
