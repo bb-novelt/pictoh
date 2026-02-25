@@ -13,6 +13,8 @@ import {
 } from '../editMode';
 import { initTts } from '../tts';
 import { store } from '../state';
+import { initAutoSave } from '../storage/autoSave';
+import { SaveIndicator } from '../storage/SaveIndicator';
 
 export function App() {
   const [firstLaunchDone, setFirstLaunchDone] = useState(!isFirstLaunch());
@@ -23,6 +25,8 @@ export function App() {
   useEffect(() => {
     initTts();
   }, []);
+
+  useEffect(() => initAutoSave(), []);
 
   useClickTracker();
 
@@ -51,6 +55,7 @@ export function App() {
         </Box>
       </Box>
       <OfflineIndicator />
+      <SaveIndicator />
       <CreatePageDialog
         open={createPageOpen}
         onClose={() => setCreatePageOpen(false)}
