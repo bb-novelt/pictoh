@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import {
   Box,
   Button,
@@ -10,7 +9,6 @@ import {
   FormControl,
   FormControlLabel,
   IconButton,
-  InputAdornment,
   InputLabel,
   MenuItem,
   Select,
@@ -18,13 +16,12 @@ import {
   Typography,
 } from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
-import SearchIcon from '@mui/icons-material/Search';
 import DeleteIcon from '@mui/icons-material/Delete';
 import { useSnapshot } from 'valtio';
 import { store } from '../state/store';
 import type { Picture } from '../shared/types';
 import { updateSquare, setSquarePicture } from '../state/actions/squareActions';
-import { updatePictureUsage } from '../state/actions/pictureActions';
+import { PictureSelector } from '../pictures/PictureSelector';
 
 interface Props {
   /** Grid position (0-23) of the square being edited */
@@ -46,20 +43,11 @@ interface Props {
  */
 export function SquareEditModal({ position, onClose }: Props) {
   const snap = useSnapshot(store);
-  const [pictureSearch, setPictureSearch] = useState('');
 
   const currentPage = snap.pages.find((p) => p.pageId === snap.currentPageId);
   const square = currentPage?.squares.find((s) => s.position === position);
 
   if (!square) return null;
-
-  // Pictures will be supplied by the picture service (Task 8.2).
-  // For now we use an empty array so the UI renders correctly.
-  const availablePictures: Picture[] = [];
-
-  const filteredPictures = availablePictures.filter((p) =>
-    p.text.toLowerCase().includes(pictureSearch.toLowerCase())
-  );
 
   // --- Auto-save handlers ------------------------------------------------
 
@@ -76,8 +64,6 @@ export function SquareEditModal({ position, onClose }: Props) {
   }
 
   function handlePictureSelect(picture: Picture) {
-    // Track usage so the 50-picture limit works correctly (Task 8.4)
-    updatePictureUsage(picture);
     setSquarePicture(position, picture);
   }
 
@@ -190,79 +176,10 @@ export function SquareEditModal({ position, onClose }: Props) {
           Sélectionner une image
         </Typography>
 
-        <TextField
-          placeholder="Rechercher une image…"
-          value={pictureSearch}
-          onChange={(e) => setPictureSearch(e.target.value)}
-          size="small"
-          fullWidth
-          sx={{ mb: 2 }}
-          InputProps={{
-            startAdornment: (
-              <InputAdornment position="start">
-                <SearchIcon fontSize="small" />
-              </InputAdornment>
-            ),
-          }}
+        <PictureSelector
+          selectedPictureId={square.selectedPicture?.id}
+          onSelect={handlePictureSelect}
         />
-
-        {filteredPictures.length === 0 ? (
-          <Typography color="text.secondary" variant="body2" textAlign="center">
-            Aucune image disponible.
-          </Typography>
-        ) : (
-          <Box
-            sx={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fill, minmax(100px, 1fr))',
-              gap: 1,
-              maxHeight: 300,
-              overflowY: 'auto',
-            }}
-          >
-            {filteredPictures.map((picture) => {
-              const isSelected = square.selectedPicture?.id === picture.id;
-              return (
-                <Box
-                  key={picture.id}
-                  onClick={() => handlePictureSelect(picture)}
-                  sx={{
-                    display: 'flex',
-                    flexDirection: 'column',
-                    alignItems: 'center',
-                    p: 1,
-                    borderRadius: 1,
-                    cursor: 'pointer',
-                    border: '2px solid',
-                    borderColor: isSelected ? 'primary.main' : 'transparent',
-                    bgcolor: isSelected ? 'action.selected' : 'grey.100',
-                    '&:hover': { bgcolor: 'action.hover' },
-                  }}
-                >
-                  <Box
-                    component="img"
-                    src={picture.src}
-                    alt={picture.text}
-                    sx={{ width: 64, height: 64, objectFit: 'contain' }}
-                  />
-                  <Typography
-                    variant="caption"
-                    textAlign="center"
-                    sx={{
-                      mt: 0.5,
-                      overflow: 'hidden',
-                      textOverflow: 'ellipsis',
-                      whiteSpace: 'nowrap',
-                      width: '100%',
-                    }}
-                  >
-                    {picture.text}
-                  </Typography>
-                </Box>
-              );
-            })}
-          </Box>
-        )}
       </DialogContent>
 
       <DialogActions>
