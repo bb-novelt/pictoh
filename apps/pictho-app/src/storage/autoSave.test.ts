@@ -36,12 +36,19 @@ vi.mock('./storageService', () => ({
 
 // Import after mocks are set up
 import { storageService } from './storageService';
+import { store } from '../state';
 
 // ---------------------------------------------------------------------------
 // Helpers
 // ---------------------------------------------------------------------------
 function triggerStoreChange() {
   if (subscribedCallback) subscribedCallback();
+}
+
+/** Simulate a page navigation by mutating the mock store then triggering. */
+function triggerNavigation(pageId: string) {
+  (store as { currentPageId: string }).currentPageId = pageId;
+  triggerStoreChange();
 }
 
 // ---------------------------------------------------------------------------
@@ -51,6 +58,8 @@ beforeEach(() => {
   vi.useFakeTimers();
   vi.clearAllMocks();
   subscribedCallback = null;
+  // Reset store currentPageId between tests so navigation detection starts fresh
+  (store as { currentPageId: string }).currentPageId = 'h1';
 });
 
 afterEach(() => {
@@ -120,6 +129,32 @@ describe('initAutoSave', () => {
     triggerStoreChange();
     vi.advanceTimersByTime(500);
     expect(storageService.saveAppConfig).not.toHaveBeenCalled();
+  });
+
+  it('still saves on navigation but does not notify listeners', () => {
+    const listener = vi.fn();
+    const unsubscribe = onSave(listener);
+    const cleanup = initAutoSave();
+    triggerNavigation('page-2');
+    vi.advanceTimersByTime(500);
+    expect(storageService.saveAppConfig).toHaveBeenCalledTimes(1);
+    expect(listener).not.toHaveBeenCalled();
+    unsubscribe();
+    cleanup();
+  });
+
+  it('notifies listeners when a non-navigation change accompanies navigation in same window', () => {
+    const listener = vi.fn();
+    const unsubscribe = onSave(listener);
+    const cleanup = initAutoSave();
+    triggerNavigation('page-2');
+    vi.advanceTimersByTime(200);
+    triggerStoreChange(); // non-navigation edit within same debounce window
+    vi.advanceTimersByTime(500);
+    expect(storageService.saveAppConfig).toHaveBeenCalledTimes(1);
+    expect(listener).toHaveBeenCalledTimes(1);
+    unsubscribe();
+    cleanup();
   });
 });
 
