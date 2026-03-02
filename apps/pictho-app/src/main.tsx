@@ -5,6 +5,10 @@ import CssBaseline from '@mui/material/CssBaseline';
 import App from './app/app';
 import theme from './shared/theme';
 import * as serviceWorkerRegistration from './offline/serviceWorkerRegistration';
+import { rehydrateStore } from './storage/rehydrateStore';
+
+// Restore persisted state before the first render
+rehydrateStore();
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
