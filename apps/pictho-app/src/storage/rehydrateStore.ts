@@ -6,45 +6,9 @@
  * before mounting the React tree.  If no saved data exists, or if the data
  * fails validation, the store retains its default values.
  */
-import type { AppConfig } from '../shared/types';
 import { store } from '../state';
+import { validateAppConfig } from './dataValidation';
 import { storageService } from './storageService';
-
-/**
- * Validate that a value loaded from localStorage has the minimum structure
- * required to be a usable AppConfig.
- *
- * Only the top-level shape is checked here; deeper structural issues are
- * handled gracefully by the sanitisation step.
- */
-function isValidConfig(config: unknown): config is AppConfig {
-  if (typeof config !== 'object' || config === null) return false;
-  const c = config as Record<string, unknown>;
-  return (
-    typeof c.homePageId === 'string' &&
-    typeof c.currentPageId === 'string' &&
-    typeof c.isEditMode === 'boolean' &&
-    Array.isArray(c.pages)
-  );
-}
-
-/**
- * Sanitise a loaded AppConfig to ensure internal consistency.
- *
- * - If `currentPageId` does not match any page in the config it is reset to
- *   `homePageId` to avoid a blank / broken initial view.
- *
- * The config is mutated in place and returned.
- */
-function sanitizeConfig(config: AppConfig): AppConfig {
-  const currentPageExists = config.pages.some(
-    (p) => p.pageId === config.currentPageId
-  );
-  if (!currentPageExists) {
-    config.currentPageId = config.homePageId;
-  }
-  return config;
-}
 
 /**
  * Load the persisted AppConfig from localStorage and overwrite the Valtio
@@ -62,17 +26,16 @@ function sanitizeConfig(config: AppConfig): AppConfig {
  * - The stored data fails the structure validation check
  */
 export function rehydrateStore(): void {
-  const config = storageService.loadAppConfig();
-  if (!config) return;
+  const raw = storageService.loadAppConfig();
+  if (!raw) return;
 
-  if (!isValidConfig(config)) {
+  const config = validateAppConfig(raw);
+  if (!config) {
     console.warn(
       '[rehydrateStore] Loaded config failed validation. Using defaults.'
     );
     return;
   }
-
-  sanitizeConfig(config);
 
   store.homePageId = config.homePageId;
   store.currentPageId = config.currentPageId;
