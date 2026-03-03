@@ -1,4 +1,4 @@
-import { useRef } from 'react';
+import { useCallback, useRef } from 'react';
 import type { Square } from '../shared/types';
 import { navigateToPage } from '../state/actions/pageActions';
 import { speak } from '../tts';
@@ -21,7 +21,7 @@ const TOUCH_LOCK_MS = 1000;
 export function useSquareInteraction() {
   const activeTouchRef = useRef(false);
 
-  function handleInteraction(square: Square): void {
+  const handleInteraction = useCallback((square: Square): void => {
     if (activeTouchRef.current) return;
 
     activeTouchRef.current = true;
@@ -38,7 +38,7 @@ export function useSquareInteraction() {
     if (square.openPageId) {
       navigateToPage(square.openPageId);
     }
-  }
+  }, []); // No reactive deps: uses only refs and module-level stable functions
 
   return { handleInteraction };
 }

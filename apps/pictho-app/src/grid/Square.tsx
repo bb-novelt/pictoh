@@ -1,10 +1,10 @@
-import { useEffect, useRef, useState } from 'react';
+import { memo, useEffect, useRef, useState } from 'react';
 import { Box, Typography } from '@mui/material';
 import type { Square as SquareType } from '../shared/types';
 
 interface Props {
   square: SquareType;
-  onClick: () => void;
+  onSquareClick: (square: SquareType) => void;
   isEditMode: boolean;
 }
 
@@ -17,7 +17,11 @@ interface Props {
  * - Shows a blue border flash on touch start (normal mode) as visual feedback.
  * - Shows a persistent red border when edit mode is active.
  */
-export function Square({ square, onClick, isEditMode }: Props) {
+export const Square = memo(function Square({
+  square,
+  onSquareClick,
+  isEditMode,
+}: Props) {
   const [touched, setTouched] = useState(false);
   // Track which src caused an error; imgError is true when the current src failed
   const [errorSrc, setErrorSrc] = useState<string | null>(null);
@@ -35,7 +39,11 @@ export function Square({ square, onClick, isEditMode }: Props) {
   function handleTouchStart() {
     setTouched(true);
     touchTimeoutRef.current = setTimeout(() => setTouched(false), 1000);
-    onClick();
+    onSquareClick(square);
+  }
+
+  function handleClick() {
+    onSquareClick(square);
   }
 
   // Determine border: red in edit mode, blue flash on touch, grey otherwise
@@ -51,7 +59,7 @@ export function Square({ square, onClick, isEditMode }: Props) {
   return (
     <Box
       onTouchStart={handleTouchStart}
-      onClick={isEditMode ? onClick : undefined}
+      onClick={isEditMode ? handleClick : undefined}
       sx={{
         aspectRatio: '1 / 1',
         borderRadius: 2,
@@ -99,6 +107,7 @@ export function Square({ square, onClick, isEditMode }: Props) {
               component="img"
               src={square.selectedPicture.src}
               alt={square.selectedPicture.text}
+              decoding="async"
               onError={() => setErrorSrc(square.selectedPicture?.src ?? null)}
               sx={{
                 maxWidth: '100%',
@@ -127,6 +136,6 @@ export function Square({ square, onClick, isEditMode }: Props) {
       )}
     </Box>
   );
-}
+});
 
 export default Square;
