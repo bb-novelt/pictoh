@@ -83,7 +83,7 @@ export function FirstLaunchLoader({ onComplete }: Props) {
           if (!isCompleteRef.current) {
             isCompleteRef.current = true;
             setProgress(100);
-            setStatusMessage('Prêt !');
+            setStatusMessage('Prêt\u00a0!');
             markFirstLaunchComplete();
             // Brief pause so the user sees 100% before the app appears
             setTimeout(() => onComplete(), 500);
@@ -99,7 +99,7 @@ export function FirstLaunchLoader({ onComplete }: Props) {
     worker.onerror = (error: ErrorEvent) => {
       setErrors((prev) => [
         ...prev,
-        `Erreur du worker : ${error.message ?? 'inconnue'}`,
+        `Erreur du worker\u00a0: ${error.message ?? 'inconnue'}`,
       ]);
     };
 
