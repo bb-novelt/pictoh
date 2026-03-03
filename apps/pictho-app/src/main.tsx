@@ -3,6 +3,7 @@ import * as ReactDOM from 'react-dom/client';
 import { ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import App from './app/app';
+import { ErrorBoundary } from './app/ErrorBoundary';
 import theme from './shared/theme';
 import * as serviceWorkerRegistration from './offline/serviceWorkerRegistration';
 import { rehydrateStore } from './storage/rehydrateStore';
@@ -16,10 +17,12 @@ const root = ReactDOM.createRoot(
 
 root.render(
   <StrictMode>
-    <ThemeProvider theme={theme}>
-      <CssBaseline />
-      <App />
-    </ThemeProvider>
+    <ErrorBoundary>
+      <ThemeProvider theme={theme}>
+        <CssBaseline />
+        <App />
+      </ThemeProvider>
+    </ErrorBoundary>
   </StrictMode>
 );
 
