@@ -225,7 +225,7 @@ export function ManagePagesDialog({ open, onClose }: Props) {
         <DialogContent>
           <DialogContentText>
             Êtes-vous sûr de vouloir supprimer la page «&nbsp;
-            {deleteConfirmPage?.pageName}&nbsp;» ? Cette action est
+            {deleteConfirmPage?.pageName}&nbsp;»{'\u00a0'}? Cette action est
             irréversible.
           </DialogContentText>
         </DialogContent>
