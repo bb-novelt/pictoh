@@ -9,7 +9,7 @@
  * - Currently selected picture is highlighted
  * - Upload button to add new user pictures (immediately cached for offline use)
  */
-import { useRef, useState } from 'react';
+import { memo, useCallback, useRef, useState } from 'react';
 import {
   Box,
   Button,
@@ -33,7 +33,11 @@ interface ThumbnailProps {
 }
 
 /** Individual picture thumbnail with broken-image fallback. */
-function PictureThumbnail({ picture, isSelected, onSelect }: ThumbnailProps) {
+const PictureThumbnail = memo(function PictureThumbnail({
+  picture,
+  isSelected,
+  onSelect,
+}: ThumbnailProps) {
   const [imgError, setImgError] = useState(false);
 
   return (
@@ -72,6 +76,7 @@ function PictureThumbnail({ picture, isSelected, onSelect }: ThumbnailProps) {
           component="img"
           src={picture.src}
           alt={picture.text}
+          decoding="async"
           onError={() => setImgError(true)}
           sx={{ width: 64, height: 64, objectFit: 'contain' }}
         />
@@ -91,8 +96,7 @@ function PictureThumbnail({ picture, isSelected, onSelect }: ThumbnailProps) {
       </Typography>
     </Box>
   );
-}
-
+});
 /**
  * PictureSelector component.
  *
@@ -116,11 +120,14 @@ export function PictureSelector({ selectedPictureId, onSelect }: Props) {
 
   const pictures = getDisplayPictures(searchText, filter);
 
-  function handleSelect(picture: Picture) {
-    pictureService.updateLastUsedTime(picture.id);
-    setRevision((r) => r + 1);
-    onSelect(picture);
-  }
+  const handleSelect = useCallback(
+    (picture: Picture) => {
+      pictureService.updateLastUsedTime(picture.id);
+      setRevision((r) => r + 1);
+      onSelect(picture);
+    },
+    [onSelect, setRevision]
+  );
 
   function handleUploadClick() {
     fileInputRef.current?.click();

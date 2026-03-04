@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useCallback, useState } from 'react';
 import { Box } from '@mui/material';
 import { useSnapshot } from 'valtio';
 import { store } from '../state';
@@ -21,18 +21,22 @@ export function Grid() {
   const currentPage = snap.pages.find(
     (page) => page.pageId === snap.currentPageId
   );
+  const isEditMode = snap.isEditMode;
   const { handleInteraction } = useSquareInteraction();
   const [editingPosition, setEditingPosition] = useState<number | null>(null);
 
-  if (!currentPage) return null;
+  const handleSquareClick = useCallback(
+    (square: SquareType): void => {
+      if (isEditMode) {
+        setEditingPosition(square.position);
+      } else {
+        handleInteraction(square);
+      }
+    },
+    [isEditMode, handleInteraction, setEditingPosition]
+  );
 
-  function handleSquareClick(square: SquareType): void {
-    if (snap.isEditMode) {
-      setEditingPosition(square.position);
-    } else {
-      handleInteraction(square);
-    }
-  }
+  if (!currentPage) return null;
 
   return (
     <Box
@@ -69,7 +73,7 @@ export function Grid() {
             key={square.position}
             square={square}
             isEditMode={snap.isEditMode}
-            onClick={() => handleSquareClick(square)}
+            onSquareClick={handleSquareClick}
           />
         ))}
       </Box>
