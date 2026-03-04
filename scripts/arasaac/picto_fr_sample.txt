@@ -1,0 +1,842 @@
+[
+  {
+    "schematic": false,
+    "sex": false,
+    "violence": false,
+    "aac": false,
+    "aacColor": false,
+    "skin": true,
+    "hair": true,
+    "downloads": 0,
+    "categories": [
+      "elderly",
+      "family"
+    ],
+    "synsets": [
+      "10161911-n"
+    ],
+    "tags": [
+      "person",
+      "elderly",
+      "family"
+    ],
+    "_id": 2244,
+    "created": "2007-12-12T09:57:36.000Z",
+    "lastUpdated": "2021-02-10T11:11:13.889Z",
+    "keywords": [
+      {
+        "type": 2,
+        "keyword": "grand-père",
+        "hasLocution": true,
+        "plural": "grands-pères"
+      },
+      {
+        "type": 2,
+        "keyword": "papi",
+        "hasLocution": false,
+        "plural": "papis"
+      }
+    ]
+  },
+  {
+    "schematic": false,
+    "sex": false,
+    "violence": false,
+    "aac": false,
+    "aacColor": false,
+    "skin": true,
+    "hair": false,
+    "downloads": 0,
+    "categories": [
+      "qualifying adjective",
+      "feeling"
+    ],
+    "synsets": [
+      "01348155-s"
+    ],
+    "tags": [
+      "communication",
+      "language",
+      "adjective",
+      "qualifying adjective",
+      "psychology",
+      "feeling",
+      "emotion"
+    ],
+    "_id": 2245,
+    "created": "2007-12-12T09:58:31.000Z",
+    "lastUpdated": "2021-07-29T00:09:37.940Z",
+    "keywords": [
+      {
+        "type": 4,
+        "keyword": "ennuyeux",
+        "hasLocution": true,
+        "plural": "ennuyeux"
+      },
+      {
+        "keyword": "monotone",
+        "hasLocution": false,
+        "type": 4,
+        "plural": "monotones"
+      }
+    ]
+  },
+  {
+    "schematic": false,
+    "sex": false,
+    "violence": false,
+    "aac": false,
+    "aacColor": false,
+    "skin": true,
+    "hair": true,
+    "downloads": 0,
+    "categories": [
+      "elderly",
+      "family"
+    ],
+    "synsets": [
+      "10162267-n"
+    ],
+    "tags": [
+      "person",
+      "elderly",
+      "family"
+    ],
+    "_id": 2243,
+    "created": "2007-12-12T09:56:39.000Z",
+    "lastUpdated": "2021-03-25T22:04:11.204Z",
+    "keywords": [
+      {
+        "type": 2,
+        "keyword": "grand-mère",
+        "hasLocution": true,
+        "plural": "grands-mères"
+      },
+      {
+        "type": 2,
+        "keyword": "mamie",
+        "hasLocution": false,
+        "plural": "mamies"
+      }
+    ]
+  },
+  {
+    "schematic": false,
+    "sex": false,
+    "violence": false,
+    "aac": true,
+    "aacColor": false,
+    "skin": false,
+    "hair": false,
+    "downloads": 0,
+    "categories": [
+      "condiment",
+      "cookery",
+      "core vocabulary-feeding",
+      "gastronomy"
+    ],
+    "synsets": [
+      "07690253-n",
+      "07689142-n"
+    ],
+    "tags": [
+      "feeding",
+      "food",
+      "ultra-processed food",
+      "condiment",
+      "cookery",
+      "core vocabulary",
+      "gastronomy"
+    ],
+    "_id": 2246,
+    "created": "2007-12-12T10:02:25.000Z",
+    "lastUpdated": "2024-12-09T06:13:24.992Z",
+    "keywords": [
+      {
+        "type": 2,
+        "keyword": "huile d'olive",
+        "hasLocution": true,
+        "plural": "huiles d'olive"
+      },
+      {
+        "keyword": "huile",
+        "hasLocution": true,
+        "type": 2,
+        "plural": "huiles"
+      }
+    ]
+  },
+  {
+    "schematic": false,
+    "sex": false,
+    "violence": false,
+    "aac": false,
+    "aacColor": false,
+    "skin": false,
+    "hair": false,
+    "downloads": 0,
+    "categories": [
+      "infrastructure",
+      "land transport",
+      "road safety"
+    ],
+    "synsets": [
+      "04222469-n"
+    ],
+    "tags": [
+      "place",
+      "infrastructure",
+      "movement",
+      "traffic",
+      "mode of transport",
+      "land transport",
+      "road safety"
+    ],
+    "_id": 2247,
+    "created": "2007-12-12T10:04:45.000Z",
+    "lastUpdated": "2021-04-12T17:34:38.274Z",
+    "keywords": [
+      {
+        "type": 2,
+        "keyword": "trottoir",
+        "hasLocution": true,
+        "plural": "trottoirs"
+      }
+    ]
+  },
+  {
+    "schematic": false,
+    "sex": false,
+    "violence": false,
+    "aac": true,
+    "aacColor": true,
+    "skin": false,
+    "hair": false,
+    "downloads": 0,
+    "categories": [
+      "clothes",
+      "core vocabulary-object",
+      "fashion"
+    ],
+    "synsets": [
+      "03061006-n",
+      "03461607-n",
+      "04195013-n"
+    ],
+    "tags": [
+      "object",
+      "fashion",
+      "clothes",
+      "core vocabulary"
+    ],
+    "_id": 2242,
+    "created": "2007-12-12T09:33:40.000Z",
+    "lastUpdated": "2024-12-09T06:11:43.097Z",
+    "keywords": [
+      {
+        "type": 2,
+        "keyword": "manteau",
+        "hasLocution": true,
+        "plural": "manteaux"
+      },
+      {
+        "keyword": "pardessus",
+        "hasLocution": false,
+        "type": 2,
+        "plural": "pardessus"
+      }
+    ]
+  },
+  {
+    "schematic": false,
+    "sex": false,
+    "violence": false,
+    "aac": false,
+    "aacColor": false,
+    "skin": false,
+    "hair": false,
+    "downloads": 0,
+    "categories": [
+      "trousseau"
+    ],
+    "synsets": [
+      "04125115-n"
+    ],
+    "tags": [
+      "object",
+      "household",
+      "trousseau",
+      "home"
+    ],
+    "_id": 2249,
+    "created": "2007-12-12T10:11:40.000Z",
+    "lastUpdated": "2021-03-25T22:06:12.054Z",
+    "keywords": [
+      {
+        "type": 2,
+        "keyword": "tapis",
+        "hasLocution": true,
+        "plural": "tapis"
+      },
+      {
+        "keyword": "carpette",
+        "hasLocution": false,
+        "type": 2,
+        "plural": "carpettes"
+      }
+    ]
+  },
+  {
+    "schematic": false,
+    "sex": false,
+    "violence": false,
+    "aac": false,
+    "aacColor": false,
+    "skin": false,
+    "hair": false,
+    "downloads": 0,
+    "categories": [
+      "beverage",
+      "mineral rich food"
+    ],
+    "synsets": [
+      "07951744-n",
+      "14869913-n"
+    ],
+    "tags": [
+      "feeding",
+      "food",
+      "beverage",
+      "mineral rich food"
+    ],
+    "_id": 2248,
+    "created": "2007-12-12T10:05:23.000Z",
+    "lastUpdated": "2021-03-25T22:05:25.805Z",
+    "keywords": [
+      {
+        "type": 2,
+        "keyword": "eau",
+        "hasLocution": true,
+        "plural": "eaux"
+      }
+    ]
+  },
+  {
+    "schematic": false,
+    "sex": false,
+    "violence": false,
+    "aac": false,
+    "aacColor": false,
+    "skin": false,
+    "hair": false,
+    "downloads": 0,
+    "categories": [
+      "jewelry",
+      "accessories"
+    ],
+    "synsets": [
+      "04099721-n"
+    ],
+    "tags": [
+      "object",
+      "fashion",
+      "jewelry",
+      "accessories"
+    ],
+    "_id": 2252,
+    "created": "2007-12-12T10:26:14.000Z",
+    "lastUpdated": "2021-02-10T11:09:14.887Z",
+    "keywords": [
+      {
+        "type": 2,
+        "keyword": "bague",
+        "hasLocution": true,
+        "plural": "bagues"
+      }
+    ]
+  },
+  {
+    "schematic": false,
+    "sex": false,
+    "violence": false,
+    "aac": false,
+    "aacColor": false,
+    "skin": false,
+    "hair": false,
+    "downloads": 0,
+    "categories": [
+      "mass media device",
+      "building facility"
+    ],
+    "synsets": [
+      "03212026-n"
+    ],
+    "tags": [
+      "object",
+      "appliance",
+      "mass media device",
+      "mass media",
+      "place",
+      "building",
+      "building facility"
+    ],
+    "_id": 2253,
+    "created": "2007-12-12T10:27:32.000Z",
+    "lastUpdated": "2024-12-04T15:12:43.725Z",
+    "keywords": [
+      {
+        "type": 2,
+        "keyword": "antenne",
+        "hasLocution": true,
+        "plural": "antennes"
+      },
+      {
+        "type": 2,
+        "keyword": "parabole",
+        "hasLocution": false,
+        "plural": "paraboles"
+      },
+      {
+        "keyword": "antenne parabolique",
+        "hasLocution": true,
+        "plural": "antennes paraboliques",
+        "type": 2
+      }
+    ]
+  },
+  {
+    "schematic": false,
+    "sex": false,
+    "violence": false,
+    "aac": true,
+    "aacColor": false,
+    "skin": false,
+    "hair": false,
+    "downloads": 0,
+    "categories": [
+      "trousseau",
+      "core vocabulary-object"
+    ],
+    "synsets": [
+      "03944520-n"
+    ],
+    "tags": [
+      "object",
+      "household",
+      "trousseau",
+      "home",
+      "core vocabulary"
+    ],
+    "_id": 2250,
+    "created": "2007-12-12T10:12:18.000Z",
+    "lastUpdated": "2021-03-25T22:06:44.042Z",
+    "keywords": [
+      {
+        "type": 2,
+        "keyword": "oreiller",
+        "hasLocution": true,
+        "plural": "oreillers"
+      },
+      {
+        "keyword": "coussin",
+        "hasLocution": true,
+        "type": 2,
+        "plural": "coussins"
+      }
+    ]
+  },
+  {
+    "schematic": true,
+    "sex": false,
+    "violence": false,
+    "aac": true,
+    "aacColor": false,
+    "skin": false,
+    "hair": false,
+    "downloads": 0,
+    "categories": [
+      "arachnid",
+      "oviparous",
+      "terrestrial animal",
+      "carnivorous",
+      "halloween",
+      "wild animal",
+      "core vocabulary-living being",
+      "core vocabulary-time"
+    ],
+    "synsets": [
+      "01774863-n"
+    ],
+    "tags": [
+      "animal",
+      "invertebrate",
+      "arthropod",
+      "arachnid",
+      "oviparous",
+      "terrestrial animal",
+      "carnivorous",
+      "event",
+      "popular event",
+      "halloween",
+      "wild",
+      "core vocabulary"
+    ],
+    "_id": 2254,
+    "created": "2007-12-12T10:28:23.000Z",
+    "lastUpdated": "2021-03-11T10:52:25.695Z",
+    "keywords": [
+      {
+        "type": 2,
+        "keyword": "araignée",
+        "hasLocution": true,
+        "plural": "araignées"
+      }
+    ]
+  },
+  {
+    "schematic": false,
+    "sex": false,
+    "violence": false,
+    "aac": false,
+    "aacColor": false,
+    "skin": false,
+    "hair": false,
+    "downloads": 0,
+    "categories": [
+      "tree",
+      "playground"
+    ],
+    "synsets": [
+      "13124818-n"
+    ],
+    "tags": [
+      "plant",
+      "tree",
+      "place",
+      "facility",
+      "recreational facility",
+      "leisure",
+      "playground"
+    ],
+    "_id": 2256,
+    "created": "2007-12-12T10:29:21.000Z",
+    "lastUpdated": "2021-02-06T23:00:58.396Z",
+    "keywords": [
+      {
+        "type": 2,
+        "keyword": "arbre",
+        "hasLocution": true,
+        "plural": "arbres"
+      }
+    ]
+  },
+  {
+    "schematic": false,
+    "sex": false,
+    "violence": false,
+    "aac": false,
+    "aacColor": false,
+    "skin": false,
+    "hair": false,
+    "downloads": 0,
+    "categories": [
+      "land transport",
+      "covid-19"
+    ],
+    "synsets": [
+      "02703861-n"
+    ],
+    "tags": [
+      "movement",
+      "traffic",
+      "mode of transport",
+      "land transport",
+      "covid-19"
+    ],
+    "_id": 2251,
+    "created": "2007-12-12T10:22:20.000Z",
+    "lastUpdated": "2021-02-06T22:58:25.496Z",
+    "keywords": [
+      {
+        "type": 2,
+        "keyword": "ambulance",
+        "hasLocution": true,
+        "plural": "ambulances"
+      }
+    ]
+  },
+  {
+    "schematic": false,
+    "sex": false,
+    "violence": false,
+    "aac": false,
+    "aacColor": false,
+    "skin": true,
+    "hair": true,
+    "downloads": 0,
+    "categories": [
+      "group"
+    ],
+    "synsets": [
+      "10132360-n"
+    ],
+    "tags": [
+      "person",
+      "group"
+    ],
+    "_id": 2255,
+    "created": "2007-12-12T10:28:51.000Z",
+    "lastUpdated": "2021-03-25T22:08:53.030Z",
+    "keywords": [
+      {
+        "type": 2,
+        "keyword": "amis",
+        "hasLocution": true,
+        "plural": "amis"
+      },
+      {
+        "keyword": "copains",
+        "hasLocution": false,
+        "plural": "copains",
+        "type": 2
+      }
+    ]
+  },
+  {
+    "schematic": false,
+    "sex": false,
+    "violence": false,
+    "aac": false,
+    "aacColor": false,
+    "skin": false,
+    "hair": false,
+    "downloads": 0,
+    "categories": [
+      "herbivorous",
+      "mammal",
+      "viviparous",
+      "terrestrial animal"
+    ],
+    "synsets": [
+      "02357879-n"
+    ],
+    "tags": [
+      "animal",
+      "herbivorous",
+      "vertebrate",
+      "mammal",
+      "viviparous",
+      "terrestrial animal"
+    ],
+    "_id": 2257,
+    "created": "2007-12-12T10:29:41.000Z",
+    "lastUpdated": "2021-02-06T23:01:11.035Z",
+    "keywords": [
+      {
+        "type": 2,
+        "keyword": "écureuil",
+        "hasLocution": true,
+        "plural": "écureuils"
+      }
+    ]
+  },
+  {
+    "schematic": false,
+    "sex": false,
+    "violence": false,
+    "aac": false,
+    "aacColor": false,
+    "skin": false,
+    "hair": false,
+    "downloads": 0,
+    "categories": [
+      "gastronomy"
+    ],
+    "synsets": [
+      "07820299-n",
+      "07820633-n"
+    ],
+    "tags": [
+      "feeding",
+      "food",
+      "gastronomy"
+    ],
+    "_id": 2259,
+    "created": "2007-12-12T10:51:48.000Z",
+    "lastUpdated": "2021-03-25T22:10:46.123Z",
+    "keywords": [
+      {
+        "type": 2,
+        "keyword": "riz à la sauce tomate",
+        "hasLocution": false,
+        "plural": "riz à la sauce tomate"
+      },
+      {
+        "keyword": "riz  à la tomate",
+        "hasLocution": false,
+        "plural": "riz  à la tomate",
+        "type": 2
+      }
+    ]
+  },
+  {
+    "schematic": false,
+    "sex": false,
+    "violence": false,
+    "aac": true,
+    "aacColor": true,
+    "skin": false,
+    "hair": false,
+    "downloads": 0,
+    "categories": [
+      "furniture",
+      "core vocabulary-object"
+    ],
+    "synsets": [
+      "04557470-n"
+    ],
+    "tags": [
+      "object",
+      "furniture",
+      "core vocabulary"
+    ],
+    "_id": 2258,
+    "created": "2007-12-12T10:49:58.000Z",
+    "lastUpdated": "2021-03-25T22:09:58.508Z",
+    "keywords": [
+      {
+        "type": 2,
+        "keyword": "armoire",
+        "hasLocution": true,
+        "plural": "armoires"
+      },
+      {
+        "keyword": "placard",
+        "hasLocution": false,
+        "type": 2,
+        "plural": "placards"
+      },
+      {
+        "keyword": "penderie",
+        "hasLocution": true,
+        "type": 2,
+        "plural": "penderies"
+      }
+    ]
+  },
+  {
+    "schematic": false,
+    "sex": false,
+    "violence": false,
+    "aac": true,
+    "aacColor": true,
+    "skin": false,
+    "hair": false,
+    "downloads": 0,
+    "categories": [
+      "land transport",
+      "core vocabulary-movement"
+    ],
+    "synsets": [
+      "02927500-n"
+    ],
+    "tags": [
+      "movement",
+      "traffic",
+      "mode of transport",
+      "land transport",
+      "core vocabulary"
+    ],
+    "_id": 2262,
+    "created": "2007-12-12T10:57:00.000Z",
+    "lastUpdated": "2021-02-10T11:10:52.165Z",
+    "keywords": [
+      {
+        "type": 2,
+        "keyword": "autocar",
+        "hasLocution": false,
+        "plural": "autocars"
+      },
+      {
+        "keyword": "car",
+        "type": 2,
+        "plural": "cars",
+        "hasLocution": false
+      }
+    ]
+  },
+  {
+    "schematic": false,
+    "sex": false,
+    "violence": false,
+    "aac": false,
+    "aacColor": false,
+    "skin": false,
+    "hair": false,
+    "downloads": 0,
+    "categories": [
+      "land transport"
+    ],
+    "synsets": [
+      "02927500-n"
+    ],
+    "tags": [
+      "movement",
+      "traffic",
+      "mode of transport",
+      "land transport"
+    ],
+    "_id": 2263,
+    "created": "2007-12-12T10:58:30.000Z",
+    "lastUpdated": "2021-02-10T11:10:48.160Z",
+    "keywords": [
+      {
+        "type": 2,
+        "keyword": "autobus",
+        "hasLocution": true,
+        "plural": "autobus"
+      }
+    ]
+  },
+  {
+    "schematic": false,
+    "sex": false,
+    "violence": false,
+    "aac": true,
+    "aacColor": true,
+    "skin": false,
+    "hair": false,
+    "downloads": 0,
+    "categories": [
+      "land transport",
+      "core vocabulary-movement"
+    ],
+    "synsets": [
+      "02927500-n"
+    ],
+    "tags": [
+      "movement",
+      "traffic",
+      "mode of transport",
+      "land transport",
+      "core vocabulary"
+    ],
+    "_id": 2261,
+    "created": "2007-12-12T10:56:00.000Z",
+    "lastUpdated": "2021-02-10T11:10:52.165Z",
+    "keywords": [
+      {
+        "type": 2,
+        "keyword": "autocar",
+        "hasLocution": false,
+        "plural": "autocars"
+      },
+      {
+        "keyword": "car",
+        "type": 2,
+        "plural": "cars",
+        "hasLocution": false
+      }
+    ]
+  }
+]

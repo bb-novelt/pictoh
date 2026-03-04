@@ -1,0 +1,3561 @@
+[
+  {
+    "_id": 2246,
+    "keywords": ["huile d'olive", "huile"]
+  },
+  {
+    "_id": 2242,
+    "keywords": ["manteau", "pardessus"]
+  },
+  {
+    "_id": 2250,
+    "keywords": ["oreiller", "coussin"]
+  },
+  {
+    "_id": 2254,
+    "keywords": ["araignée"]
+  },
+  {
+    "_id": 2258,
+    "keywords": ["armoire", "placard", "penderie"]
+  },
+  {
+    "_id": 2262,
+    "keywords": ["autocar", "car"]
+  },
+  {
+    "_id": 2260,
+    "keywords": ["ascenseur", "monte-charge"]
+  },
+  {
+    "_id": 2264,
+    "keywords": ["avion"]
+  },
+  {
+    "_id": 2268,
+    "keywords": ["baleine"]
+  },
+  {
+    "_id": 2270,
+    "keywords": ["maillot de bain", "maillot une pièce"]
+  },
+  {
+    "_id": 2281,
+    "keywords": ["sandwich"]
+  },
+  {
+    "_id": 2284,
+    "keywords": ["sac", "sac à main"]
+  },
+  {
+    "_id": 2287,
+    "keywords": ["bottes", "bottes en caoutchouc"]
+  },
+  {
+    "_id": 2290,
+    "keywords": ["écharpe"]
+  },
+  {
+    "_id": 2291,
+    "keywords": ["âne"]
+  },
+  {
+    "_id": 2294,
+    "keywords": ["cheval"]
+  },
+  {
+    "_id": 2298,
+    "keywords": ["chaussettes"]
+  },
+  {
+    "_id": 2299,
+    "keywords": ["rue", "avenue", "boulevard"]
+  },
+  {
+    "_id": 2303,
+    "keywords": ["caleçon", "slip"]
+  },
+  {
+    "_id": 2309,
+    "keywords": ["tee-shirt", "T-shirt"]
+  },
+  {
+    "_id": 2312,
+    "keywords": ["crabe"]
+  },
+  {
+    "_id": 2316,
+    "keywords": ["viande"]
+  },
+  {
+    "_id": 2313,
+    "keywords": ["kangourou", "wallaby"]
+  },
+  {
+    "_id": 2324,
+    "keywords": ["zèbre"]
+  },
+  {
+    "_id": 2322,
+    "keywords": ["CD", "CD-ROM"]
+  },
+  {
+    "_id": 2329,
+    "keywords": ["cerises"]
+  },
+  {
+    "_id": 2328,
+    "keywords": ["céréales", "bol de céréales", "boîte de céréales"]
+  },
+  {
+    "_id": 2332,
+    "keywords": ["survêtement", "jogging"]
+  },
+  {
+    "_id": 2338,
+    "keywords": ["Coca-Cola"]
+  },
+  {
+    "_id": 2339,
+    "keywords": ["voiture", "automobile"]
+  },
+  {
+    "_id": 2344,
+    "keywords": ["fusée"]
+  },
+  {
+    "_id": 2351,
+    "keywords": ["lapin"]
+  },
+  {
+    "_id": 2348,
+    "keywords": ["peindre", "colorier"]
+  },
+  {
+    "_id": 2342,
+    "keywords": ["cuisiner", "préparer", "mijoter"]
+  },
+  {
+    "_id": 2358,
+    "keywords": ["croissant"]
+  },
+  {
+    "_id": 2362,
+    "keywords": ["cuillère"]
+  },
+  {
+    "_id": 2364,
+    "keywords": ["conte", "livre d'histoires"]
+  },
+  {
+    "_id": 2366,
+    "keywords": ["tablier"]
+  },
+  {
+    "_id": 2361,
+    "keywords": ["seau et pelle"]
+  },
+  {
+    "_id": 2372,
+    "keywords": ["éléphant"]
+  },
+  {
+    "_id": 2377,
+    "keywords": ["salade", "crudités"]
+  },
+  {
+    "_id": 2379,
+    "keywords": ["escaliers", "marches"]
+  },
+  {
+    "_id": 2380,
+    "keywords": ["écrire", "écriture"]
+  },
+  {
+    "_id": 2386,
+    "keywords": ["étagère"]
+  },
+  {
+    "_id": 2391,
+    "keywords": ["jupe"]
+  },
+  {
+    "_id": 2392,
+    "keywords": ["famille"]
+  },
+  {
+    "_id": 2397,
+    "keywords": ["phoque"]
+  },
+  {
+    "_id": 2399,
+    "keywords": ["évier"]
+  },
+  {
+    "_id": 2400,
+    "keywords": ["fraise"]
+  },
+  {
+    "_id": 2403,
+    "keywords": ["poule", "poulet"]
+  },
+  {
+    "_id": 2402,
+    "keywords": ["galettes", "gâteaux secs", "biscuits secs"]
+  },
+  {
+    "_id": 2405,
+    "keywords": ["pois chiches"]
+  },
+  {
+    "_id": 2408,
+    "keywords": ["ballon"]
+  },
+  {
+    "_id": 2412,
+    "keywords": ["bonnet"]
+  },
+  {
+    "_id": 2417,
+    "keywords": ["guitare"]
+  },
+  {
+    "_id": 2419,
+    "keywords": ["hamburger", "burger"]
+  },
+  {
+    "_id": 2420,
+    "keywords": ["glace", "cornet de glace", "cône de glace"]
+  },
+  {
+    "_id": 2422,
+    "keywords": ["soeur", "sœur"]
+  },
+  {
+    "_id": 2427,
+    "keywords": ["œuf", "oeuf"]
+  },
+  {
+    "_id": 2433,
+    "keywords": ["jambon"]
+  },
+  {
+    "_id": 2436,
+    "keywords": ["pull-over", "pull"]
+  },
+  {
+    "_id": 2437,
+    "keywords": ["girafe"]
+  },
+  {
+    "_id": 2438,
+    "keywords": ["petits pois"]
+  },
+  {
+    "_id": 2440,
+    "keywords": ["crayon", "crayon à papier"]
+  },
+  {
+    "_id": 2445,
+    "keywords": ["lait", "brique de lait"]
+  },
+  {
+    "_id": 2448,
+    "keywords": ["lentilles"]
+  },
+  {
+    "_id": 2455,
+    "keywords": ["macaronis", "macaronis à la tomate"]
+  },
+  {
+    "_id": 2459,
+    "keywords": ["couverture"]
+  },
+  {
+    "_id": 2461,
+    "keywords": ["beurre", "plaque de beurre", "plaquette de beurre"]
+  },
+  {
+    "_id": 2463,
+    "keywords": ["maracas"]
+  },
+  {
+    "_id": 2462,
+    "keywords": ["pomme"]
+  },
+  {
+    "_id": 2458,
+    "keywords": ["maman", "mère"]
+  },
+  {
+    "_id": 2469,
+    "keywords": ["pastèque"]
+  },
+  {
+    "_id": 2466,
+    "keywords": ["bas"]
+  },
+  {
+    "_id": 2475,
+    "keywords": ["sac à dos"]
+  },
+  {
+    "_id": 2477,
+    "keywords": ["singe"]
+  },
+  {
+    "_id": 2479,
+    "keywords": ["moustique"]
+  },
+  {
+    "_id": 2483,
+    "keywords": ["orange"]
+  },
+  {
+    "_id": 2488,
+    "keywords": ["ours"]
+  },
+  {
+    "_id": 2489,
+    "keywords": ["mouton", "brebis", "agneau"]
+  },
+  {
+    "_id": 2490,
+    "keywords": ["oiseau"]
+  },
+  {
+    "_id": 2494,
+    "keywords": ["pain", "baguette"]
+  },
+  {
+    "_id": 2500,
+    "keywords": ["parapluie"]
+  },
+  {
+    "_id": 2502,
+    "keywords": ["gâteau", "gâteau au chocolat"]
+  },
+  {
+    "_id": 2503,
+    "keywords": ["pomme de terre", "patate"]
+  },
+  {
+    "_id": 2515,
+    "keywords": ["boucles d'oreilles"]
+  },
+  {
+    "_id": 2520,
+    "keywords": ["poisson"]
+  },
+  {
+    "_id": 2521,
+    "keywords": ["piano", "piano à queue"]
+  },
+  {
+    "_id": 2511,
+    "keywords": ["coller"]
+  },
+  {
+    "_id": 2522,
+    "keywords": ["pyjama"]
+  },
+  {
+    "_id": 2523,
+    "keywords": ["pinceau"]
+  },
+  {
+    "_id": 2527,
+    "keywords": ["pizza"]
+  },
+  {
+    "_id": 2529,
+    "keywords": ["pâte à modeler"]
+  },
+  {
+    "_id": 2526,
+    "keywords": ["tableau", "tableau noir"]
+  },
+  {
+    "_id": 2530,
+    "keywords": ["banane"]
+  },
+  {
+    "_id": 2533,
+    "keywords": ["poussin"]
+  },
+  {
+    "_id": 2538,
+    "keywords": ["poinçon", "alène"]
+  },
+  {
+    "_id": 2539,
+    "keywords": ["purée"]
+  },
+  {
+    "_id": 2540,
+    "keywords": ["puzzle", "casse-tête"]
+  },
+  {
+    "_id": 2541,
+    "keywords": ["fromage"]
+  },
+  {
+    "_id": 2547,
+    "keywords": ["découper", "couper avec des ciseaux"]
+  },
+  {
+    "_id": 2549,
+    "keywords": ["montre", "montre-bracelet"]
+  },
+  {
+    "_id": 2561,
+    "keywords": ["poire"]
+  },
+  {
+    "_id": 2564,
+    "keywords": ["tambourin"]
+  },
+  {
+    "_id": 2565,
+    "keywords": ["pantalon"]
+  },
+  {
+    "_id": 2566,
+    "keywords": ["sécher", "essuyer les mains"]
+  },
+  {
+    "_id": 2568,
+    "keywords": ["serpent"]
+  },
+  {
+    "_id": 2573,
+    "keywords": ["soupe", "potage", "velouté"]
+  },
+  {
+    "_id": 2576,
+    "keywords": ["soutien-gorge"]
+  },
+  {
+    "_id": 2578,
+    "keywords": ["tambour"]
+  },
+  {
+    "_id": 2582,
+    "keywords": ["tasse", "mug"]
+  },
+  {
+    "_id": 2588,
+    "keywords": ["fourchette"]
+  },
+  {
+    "_id": 2593,
+    "keywords": [
+      "serviette de bain",
+      "serviette de toilette",
+      "serviette éponge"
+    ]
+  },
+  {
+    "_id": 2590,
+    "keywords": ["tigre"]
+  },
+  {
+    "_id": 2591,
+    "keywords": ["ciseaux"]
+  },
+  {
+    "_id": 2594,
+    "keywords": ["tomate"]
+  },
+  {
+    "_id": 2592,
+    "keywords": ["sonnette", "sonnerie électrique"]
+  },
+  {
+    "_id": 2600,
+    "keywords": ["tracteur"]
+  },
+  {
+    "_id": 2607,
+    "keywords": ["trompette"]
+  },
+  {
+    "_id": 2610,
+    "keywords": ["verre", "gobelet"]
+  },
+  {
+    "_id": 2611,
+    "keywords": ["fenêtre"]
+  },
+  {
+    "_id": 2609,
+    "keywords": ["vache"]
+  },
+  {
+    "_id": 2622,
+    "keywords": ["chaussures", "mocassins"]
+  },
+  {
+    "_id": 2618,
+    "keywords": ["yaourt"]
+  },
+  {
+    "_id": 2612,
+    "keywords": ["ventilateur"]
+  },
+  {
+    "_id": 2648,
+    "keywords": ["jaune"]
+  },
+  {
+    "_id": 2663,
+    "keywords": ["bouche"]
+  },
+  {
+    "_id": 2666,
+    "keywords": ["forêt", "bois"]
+  },
+  {
+    "_id": 2668,
+    "keywords": ["bouton"]
+  },
+  {
+    "_id": 2669,
+    "keywords": ["bras"]
+  },
+  {
+    "_id": 2684,
+    "keywords": ["visage", "figure"]
+  },
+  {
+    "_id": 2686,
+    "keywords": ["bonbon"]
+  },
+  {
+    "_id": 2688,
+    "keywords": ["lettre", "correspondance ", "courrier"]
+  },
+  {
+    "_id": 2694,
+    "keywords": ["brosse", "brosse à dents"]
+  },
+  {
+    "_id": 2699,
+    "keywords": ["shampoing"]
+  },
+  {
+    "_id": 2704,
+    "keywords": ["ville", "métropole"]
+  },
+  {
+    "_id": 2698,
+    "keywords": ["gilet"]
+  },
+  {
+    "_id": 2709,
+    "keywords": ["colle"]
+  },
+  {
+    "_id": 2714,
+    "keywords": ["compter", "énumérer"]
+  },
+  {
+    "_id": 2727,
+    "keywords": ["cou"]
+  },
+  {
+    "_id": 2722,
+    "keywords": ["coudre", "piquer", "broder", "faire un point"]
+  },
+  {
+    "_id": 2735,
+    "keywords": ["déodorant", "désodorisant"]
+  },
+  {
+    "_id": 2737,
+    "keywords": ["dents", "dentition"]
+  },
+  {
+    "_id": 2738,
+    "keywords": ["dinosaure"]
+  },
+  {
+    "_id": 2748,
+    "keywords": ["dos"]
+  },
+  {
+    "_id": 2749,
+    "keywords": ["éponge", "éponge de bain"]
+  },
+  {
+    "_id": 2732,
+    "keywords": ["dauphin"]
+  },
+  {
+    "_id": 2775,
+    "keywords": ["chaussures", "chaussures à talons hauts"]
+  },
+  {
+    "_id": 2784,
+    "keywords": ["nougat", "touron"]
+  },
+  {
+    "_id": 2786,
+    "keywords": ["ventre", "abdomen", "estomac"]
+  },
+  {
+    "_id": 2803,
+    "keywords": ["sang"]
+  },
+  {
+    "_id": 2811,
+    "keywords": ["fleuve", "rivière"]
+  },
+  {
+    "_id": 2816,
+    "keywords": ["arroser"]
+  },
+  {
+    "_id": 2840,
+    "keywords": ["peau"]
+  },
+  {
+    "_id": 2845,
+    "keywords": ["journal"]
+  },
+  {
+    "_id": 2823,
+    "keywords": ["village", "commune", "ville", "municipalité"]
+  },
+  {
+    "_id": 2851,
+    "keywords": ["cheveu"]
+  },
+  {
+    "_id": 2852,
+    "keywords": ["peigne"]
+  },
+  {
+    "_id": 2858,
+    "keywords": ["dentifrice"]
+  },
+  {
+    "_id": 2859,
+    "keywords": ["parc", "aire de jeux", "terrain de jeux"]
+  },
+  {
+    "_id": 2862,
+    "keywords": ["papier hygiénique", "papier toilettes"]
+  },
+  {
+    "_id": 2871,
+    "keywords": ["oreille"]
+  },
+  {
+    "_id": 2874,
+    "keywords": ["olives", "olives vertes"]
+  },
+  {
+    "_id": 2876,
+    "keywords": ["yeux", "oeils"]
+  },
+  {
+    "_id": 2875,
+    "keywords": ["olives", "olives noires"]
+  },
+  {
+    "_id": 2886,
+    "keywords": ["noir"]
+  },
+  {
+    "_id": 2887,
+    "keywords": ["nez"]
+  },
+  {
+    "_id": 2888,
+    "keywords": ["orange"]
+  },
+  {
+    "_id": 2909,
+    "keywords": ["montagne", "mont"]
+  },
+  {
+    "_id": 2925,
+    "keywords": ["mer", "océan"]
+  },
+  {
+    "_id": 2940,
+    "keywords": ["lilas", "mauve", "lavande"]
+  },
+  {
+    "_id": 2944,
+    "keywords": ["langue"]
+  },
+  {
+    "_id": 2950,
+    "keywords": ["lézard"]
+  },
+  {
+    "_id": 2974,
+    "keywords": ["potager", "jardin maraîcher", "jardin de légumes"]
+  },
+  {
+    "_id": 3000,
+    "keywords": ["hanche"]
+  },
+  {
+    "_id": 3005,
+    "keywords": ["cannelloni"]
+  },
+  {
+    "_id": 3012,
+    "keywords": ["panier", "panier en osier "]
+  },
+  {
+    "_id": 3020,
+    "keywords": ["croquettes"]
+  },
+  {
+    "_id": 3022,
+    "keywords": ["citron"]
+  },
+  {
+    "_id": 3057,
+    "keywords": ["arbre"]
+  },
+  {
+    "_id": 3083,
+    "keywords": ["commissariat", "poste de police", "gendarmerie"]
+  },
+  {
+    "_id": 3092,
+    "keywords": ["Noël", "jour de Noël", "25 décembre"]
+  },
+  {
+    "_id": 3113,
+    "keywords": ["herbe", "gazon"]
+  },
+  {
+    "_id": 3118,
+    "keywords": ["église", "temple"]
+  },
+  {
+    "_id": 3129,
+    "keywords": ["table"]
+  },
+  {
+    "_id": 3127,
+    "keywords": ["marguerite"]
+  },
+  {
+    "_id": 3143,
+    "keywords": ["plante"]
+  },
+  {
+    "_id": 3151,
+    "keywords": ["rose"]
+  },
+  {
+    "_id": 3148,
+    "keywords": ["racine"]
+  },
+  {
+    "_id": 3155,
+    "keywords": ["chaise", "siège"]
+  },
+  {
+    "_id": 3180,
+    "keywords": ["camping-car"]
+  },
+  {
+    "_id": 3200,
+    "keywords": ["tiret", "-", "trait d'union"]
+  },
+  {
+    "_id": 3220,
+    "keywords": ["+", "plus"]
+  },
+  {
+    "_id": 3233,
+    "keywords": ["chemise", "dossier"]
+  },
+  {
+    "_id": 3241,
+    "keywords": ["ballon", "ballon de plage", "balle"]
+  },
+  {
+    "_id": 3244,
+    "keywords": ["porte"]
+  },
+  {
+    "_id": 3249,
+    "keywords": ["boulettes de viande"]
+  },
+  {
+    "_id": 3287,
+    "keywords": ["pétanque", "boules de pétanque", "jeu de pétanque"]
+  },
+  {
+    "_id": 3298,
+    "keywords": ["doigt"]
+  },
+  {
+    "_id": 3293,
+    "keywords": ["toucher", "palper", "sentir"]
+  },
+  {
+    "_id": 3294,
+    "keywords": ["haricots", "haricots blancs", "haricots blancs à la tomate"]
+  },
+  {
+    "_id": 3329,
+    "keywords": ["lunettes"]
+  },
+  {
+    "_id": 3351,
+    "keywords": ["nettoyer", "faire le ménage", "laver"]
+  },
+  {
+    "_id": 3401,
+    "keywords": ["bande dessinée", "BD"]
+  },
+  {
+    "_id": 3410,
+    "keywords": ["vagin", "vulve", "sexe féminin"]
+  },
+  {
+    "_id": 3421,
+    "keywords": ["jeu de l'oie"]
+  },
+  {
+    "_id": 4551,
+    "keywords": ["accident", "heurter", "s'écraser", "percuter"]
+  },
+  {
+    "_id": 4575,
+    "keywords": ["boissons"]
+  },
+  {
+    "_id": 4578,
+    "keywords": ["mou"]
+  },
+  {
+    "_id": 4592,
+    "keywords": ["dîner", "souper"]
+  },
+  {
+    "_id": 4603,
+    "keywords": ["cercle", "rond"]
+  },
+  {
+    "_id": 4604,
+    "keywords": ["clair"]
+  },
+  {
+    "_id": 4608,
+    "keywords": ["balançoire"]
+  },
+  {
+    "_id": 4613,
+    "keywords": ["coeur"]
+  },
+  {
+    "_id": 4614,
+    "keywords": ["cravate"]
+  },
+  {
+    "_id": 4616,
+    "keywords": ["carré"]
+  },
+  {
+    "_id": 4621,
+    "keywords": [
+      "billet de loterie",
+      "loterie",
+      "loterie nationale ",
+      "loto",
+      "tombola"
+    ]
+  },
+  {
+    "_id": 4626,
+    "keywords": ["petit déjeuner", "petit-déjeuner", "petit-déj"]
+  },
+  {
+    "_id": 4628,
+    "keywords": ["inégal", "différent", "différent", "divers"]
+  },
+  {
+    "_id": 4630,
+    "keywords": ["argent", "monnaie", "fric"]
+  },
+  {
+    "_id": 4610,
+    "keywords": ["nourriture", "aliment", "alimentation"]
+  },
+  {
+    "_id": 4611,
+    "keywords": ["déjeuner", "repas"]
+  },
+  {
+    "_id": 4649,
+    "keywords": ["foire", "fête foraine"]
+  },
+  {
+    "_id": 4651,
+    "keywords": ["formes"]
+  },
+  {
+    "_id": 4654,
+    "keywords": ["feu", "flamme"]
+  },
+  {
+    "_id": 4637,
+    "keywords": ["dur"]
+  },
+  {
+    "_id": 4658,
+    "keywords": ["grand", "plus grand", "large", "gros"]
+  },
+  {
+    "_id": 4667,
+    "keywords": ["égal", "pareil", "même", "tel", "similaire", "semblable"]
+  },
+  {
+    "_id": 4673,
+    "keywords": ["jeune", "adolescent", "jeune"]
+  },
+  {
+    "_id": 4676,
+    "keywords": ["lent", "doucement", "lentement", "tranquillement"]
+  },
+  {
+    "_id": 4685,
+    "keywords": ["lisse", "plat", "doux"]
+  },
+  {
+    "_id": 4693,
+    "keywords": ["moyen"]
+  },
+  {
+    "_id": 4695,
+    "keywords": ["goûter", "en-cas"]
+  },
+  {
+    "_id": 4710,
+    "keywords": ["sombre", "foncé"]
+  },
+  {
+    "_id": 4716,
+    "keywords": ["petit", "inférieur", "petite"]
+  },
+  {
+    "_id": 4734,
+    "keywords": ["losange"]
+  },
+  {
+    "_id": 4731,
+    "keywords": ["rectangle"]
+  },
+  {
+    "_id": 4738,
+    "keywords": ["sac de couchage", "duvet"]
+  },
+  {
+    "_id": 4869,
+    "keywords": ["bleu", "bleu marine"]
+  },
+  {
+    "_id": 4872,
+    "keywords": ["veste ", "gilet", "cardigan"]
+  },
+  {
+    "_id": 4887,
+    "keywords": ["vert", "vert foncé"]
+  },
+  {
+    "_id": 4924,
+    "keywords": ["caisse chinoise", "woodblock"]
+  },
+  {
+    "_id": 4927,
+    "keywords": ["ciré", "imperméable"]
+  },
+  {
+    "_id": 4935,
+    "keywords": ["constructions", "blocs", "jeu de construction "]
+  },
+  {
+    "_id": 4931,
+    "keywords": ["couteau", "couteau de table"]
+  },
+  {
+    "_id": 4936,
+    "keywords": ["lampe", "lampe de chevet"]
+  },
+  {
+    "_id": 4940,
+    "keywords": ["lait au cacao", "Cacolac", "boisson chocolatée"]
+  },
+  {
+    "_id": 4952,
+    "keywords": ["poulet", "poulet rôti", "poulet grillé "]
+  },
+  {
+    "_id": 5064,
+    "keywords": ["Jeux Olympiques", "anneaux olympiques"]
+  },
+  {
+    "_id": 4967,
+    "keywords": ["omelette", "oeufs brouillés"]
+  },
+  {
+    "_id": 5077,
+    "keywords": ["feuille", "feuille verte"]
+  },
+  {
+    "_id": 5092,
+    "keywords": ["euro", "€"]
+  },
+  {
+    "_id": 5355,
+    "keywords": ["dessous", "en dessous", "en bas", "sous"]
+  },
+  {
+    "_id": 5358,
+    "keywords": ["terminer", "finir", "fini"]
+  },
+  {
+    "_id": 5364,
+    "keywords": ["Afrique"]
+  },
+  {
+    "_id": 5367,
+    "keywords": [
+      "à côté de",
+      "près de",
+      "proche",
+      "près",
+      "les deux",
+      "conjoint"
+    ]
+  },
+  {
+    "_id": 5377,
+    "keywords": ["Amérique"]
+  },
+  {
+    "_id": 5379,
+    "keywords": ["stationner", "se garer"]
+  },
+  {
+    "_id": 5390,
+    "keywords": ["Asie"]
+  },
+  {
+    "_id": 5397,
+    "keywords": ["bien", "super", "d'accord"]
+  },
+  {
+    "_id": 5388,
+    "keywords": ["en-haut"]
+  },
+  {
+    "_id": 5431,
+    "keywords": ["commencer", "débuter", "début", "départ"]
+  },
+  {
+    "_id": 5439,
+    "keywords": ["dedans", "contenu", "intérieur"]
+  },
+  {
+    "_id": 5447,
+    "keywords": ["jeter", "lancer"]
+  },
+  {
+    "_id": 5441,
+    "keywords": [
+      "vouloir",
+      "désirer",
+      "je veux",
+      "je veux celui-là",
+      "avoir envie"
+    ]
+  },
+  {
+    "_id": 5465,
+    "keywords": ["être"]
+  },
+  {
+    "_id": 5466,
+    "keywords": ["être"]
+  },
+  {
+    "_id": 5475,
+    "keywords": ["dehors", "à l'extérieur", "en dehors"]
+  },
+  {
+    "_id": 5504,
+    "keywords": ["mal", "mauvais", "pas d'accord"]
+  },
+  {
+    "_id": 5493,
+    "keywords": ["hiver"]
+  },
+  {
+    "_id": 5514,
+    "keywords": ["mettre"]
+  },
+  {
+    "_id": 5528,
+    "keywords": ["Océanie"]
+  },
+  {
+    "_id": 5531,
+    "keywords": ["automne"]
+  },
+  {
+    "_id": 5534,
+    "keywords": ["pop-corn", "popcorn"]
+  },
+  {
+    "_id": 5526,
+    "keywords": ["non"]
+  },
+  {
+    "_id": 5568,
+    "keywords": ["retirer", "enlever", "sortir"]
+  },
+  {
+    "_id": 5553,
+    "keywords": ["printemps"]
+  },
+  {
+    "_id": 5596,
+    "keywords": ["tout", "tous", "toutes", "toute", "totalement"]
+  },
+  {
+    "_id": 5604,
+    "keywords": ["été"]
+  },
+  {
+    "_id": 5584,
+    "keywords": ["oui", "ok"]
+  },
+  {
+    "_id": 5605,
+    "keywords": ["vinaigre"]
+  },
+  {
+    "_id": 5892,
+    "keywords": ["loup"]
+  },
+  {
+    "_id": 5898,
+    "keywords": ["agenda"]
+  },
+  {
+    "_id": 5921,
+    "keywords": ["toilettes", "WC", "sanitaires", "W.C.", "cabinets"]
+  },
+  {
+    "_id": 5929,
+    "keywords": ["rebondir"]
+  },
+  {
+    "_id": 5949,
+    "keywords": ["grelot", "clochette"]
+  },
+  {
+    "_id": 5935,
+    "keywords": ["boîte"]
+  },
+  {
+    "_id": 5970,
+    "keywords": ["salle à manger"]
+  },
+  {
+    "_id": 5971,
+    "keywords": ["communicateur"]
+  },
+  {
+    "_id": 5975,
+    "keywords": ["couper"]
+  },
+  {
+    "_id": 5985,
+    "keywords": ["déguisement", "costume"]
+  },
+  {
+    "_id": 5988,
+    "keywords": ["chambre à coucher", "chambre"]
+  },
+  {
+    "_id": 6027,
+    "keywords": ["se coucher", "aller au lit", "s'allonger"]
+  },
+  {
+    "_id": 6028,
+    "keywords": ["au revoir", "à tout à l'heure", "bye", "à plus"]
+  },
+  {
+    "_id": 6031,
+    "keywords": ["aéroport"]
+  },
+  {
+    "_id": 6034,
+    "keywords": ["Août"]
+  },
+  {
+    "_id": 6024,
+    "keywords": ["Avril"]
+  },
+  {
+    "_id": 6044,
+    "keywords": ["marcher"]
+  },
+  {
+    "_id": 6046,
+    "keywords": ["encourager", "réconforter", "soutenir"]
+  },
+  {
+    "_id": 6045,
+    "keywords": [
+      "se balader en vélo",
+      "monter à vélo",
+      "rouler",
+      "faire du vélo"
+    ]
+  },
+  {
+    "_id": 6047,
+    "keywords": ["éteindre", "souffler"]
+  },
+  {
+    "_id": 6050,
+    "keywords": ["infirmier", "infirmière"]
+  },
+  {
+    "_id": 6052,
+    "keywords": ["danser"]
+  },
+  {
+    "_id": 6058,
+    "keywords": ["se baigner", "prendre un bain"]
+  },
+  {
+    "_id": 6060,
+    "keywords": ["bébé", "nourrisson", "nouveau-né", "petit"]
+  },
+  {
+    "_id": 6061,
+    "keywords": ["boire"]
+  },
+  {
+    "_id": 6062,
+    "keywords": ["embrasser", "faire un bisou"]
+  },
+  {
+    "_id": 6063,
+    "keywords": ["bibliothèque"]
+  },
+  {
+    "_id": 6065,
+    "keywords": ["sac de poubelle", "poubelle", "sac de déchets"]
+  },
+  {
+    "_id": 6067,
+    "keywords": ["tomber", "chuter"]
+  },
+  {
+    "_id": 6066,
+    "keywords": ["pompier", "sapeur-pompier"]
+  },
+  {
+    "_id": 6143,
+    "keywords": ["bois", "planche", "panneau"]
+  },
+  {
+    "_id": 6156,
+    "keywords": ["je ne veux pas", "ne pas vouloir"]
+  },
+  {
+    "_id": 6161,
+    "keywords": ["or"]
+  },
+  {
+    "_id": 6148,
+    "keywords": ["métallique", "métal", "objet en métal"]
+  },
+  {
+    "_id": 6183,
+    "keywords": ["argent"]
+  },
+  {
+    "_id": 6195,
+    "keywords": ["contacteur", "commutateur", "bouton"]
+  },
+  {
+    "_id": 6194,
+    "keywords": ["pont"]
+  },
+  {
+    "_id": 6215,
+    "keywords": ["lâcher", "faire tomber"]
+  },
+  {
+    "_id": 6209,
+    "keywords": ["roue"]
+  },
+  {
+    "_id": 6222,
+    "keywords": ["tableau de communication", "tableau"]
+  },
+  {
+    "_id": 6239,
+    "keywords": ["vampire"]
+  },
+  {
+    "_id": 6246,
+    "keywords": ["voler", "battre des ailes"]
+  },
+  {
+    "_id": 6450,
+    "keywords": ["chapiteau", "cirque", "tente"]
+  },
+  {
+    "_id": 6453,
+    "keywords": ["prendre", "ramasser", "cueillir"]
+  },
+  {
+    "_id": 6456,
+    "keywords": ["manger", "se nourrir"]
+  },
+  {
+    "_id": 6457,
+    "keywords": ["acheter", "payer", "acquérir"]
+  },
+  {
+    "_id": 6458,
+    "keywords": ["conduire", "rouler"]
+  },
+  {
+    "_id": 6464,
+    "keywords": ["poste", "bureau de poste", "service postal"]
+  },
+  {
+    "_id": 6465,
+    "keywords": ["courir"]
+  },
+  {
+    "_id": 6473,
+    "keywords": ["corps"]
+  },
+  {
+    "_id": 6476,
+    "keywords": ["Décembre"]
+  },
+  {
+    "_id": 6485,
+    "keywords": ["pousser", "déplacer"]
+  },
+  {
+    "_id": 6488,
+    "keywords": ["Janvier"]
+  },
+  {
+    "_id": 6493,
+    "keywords": ["disparaitre", "cacher", "se cacher"]
+  },
+  {
+    "_id": 6495,
+    "keywords": ["étudier", "apprendre", "réviser", "faire des études"]
+  },
+  {
+    "_id": 6497,
+    "keywords": ["pharmacie", "parapharmacie"]
+  },
+  {
+    "_id": 6498,
+    "keywords": ["Février"]
+  },
+  {
+    "_id": 6478,
+    "keywords": ["dimanche"]
+  },
+  {
+    "_id": 6479,
+    "keywords": ["dormir", "s'endormir"]
+  },
+  {
+    "_id": 6517,
+    "keywords": ["parler", "discuter", "causer", "dialoguer"]
+  },
+  {
+    "_id": 6522,
+    "keywords": ["salut", "bonjour", "coucou", "hello"]
+  },
+  {
+    "_id": 6523,
+    "keywords": ["hôpital", "clinique", "dispensaire"]
+  },
+  {
+    "_id": 6536,
+    "keywords": ["jeudi"]
+  },
+  {
+    "_id": 6537,
+    "keywords": ["jouer"]
+  },
+  {
+    "_id": 6538,
+    "keywords": ["Juillet"]
+  },
+  {
+    "_id": 6539,
+    "keywords": ["Juin"]
+  },
+  {
+    "_id": 6543,
+    "keywords": ["jeter", "lancer"]
+  },
+  {
+    "_id": 6548,
+    "keywords": ["lever", "se lever"]
+  },
+  {
+    "_id": 6549,
+    "keywords": ["lever", "se lever"]
+  },
+  {
+    "_id": 6551,
+    "keywords": ["limonade"]
+  },
+  {
+    "_id": 6532,
+    "keywords": ["excursion", "partir en excursion", "randonnée", "randonner"]
+  },
+  {
+    "_id": 6552,
+    "keywords": ["crier", "appeler", "vociférer"]
+  },
+  {
+    "_id": 6553,
+    "keywords": ["porter"]
+  },
+  {
+    "_id": 6554,
+    "keywords": ["lundi"]
+  },
+  {
+    "_id": 6556,
+    "keywords": ["enseignant", "maître", "professeur"]
+  },
+  {
+    "_id": 6561,
+    "keywords": ["médecin", "docteur", "médical"]
+  },
+  {
+    "_id": 6563,
+    "keywords": ["mercredi"]
+  },
+  {
+    "_id": 6564,
+    "keywords": ["voir", "regarder", "observer"]
+  },
+  {
+    "_id": 6568,
+    "keywords": ["nager"]
+  },
+  {
+    "_id": 6569,
+    "keywords": ["orangeade"]
+  },
+  {
+    "_id": 6570,
+    "keywords": ["Novembre"]
+  },
+  {
+    "_id": 6571,
+    "keywords": ["Octobre"]
+  },
+  {
+    "_id": 6572,
+    "keywords": ["entendre", "écouter"]
+  },
+  {
+    "_id": 6576,
+    "keywords": ["boulangerie"]
+  },
+  {
+    "_id": 6557,
+    "keywords": ["mardi"]
+  },
+  {
+    "_id": 6558,
+    "keywords": ["Mars"]
+  },
+  {
+    "_id": 6559,
+    "keywords": ["Mai"]
+  },
+  {
+    "_id": 6587,
+    "keywords": ["salon de coiffure", "coiffeur", "barbier"]
+  },
+  {
+    "_id": 6600,
+    "keywords": ["aimer"]
+  },
+  {
+    "_id": 6604,
+    "keywords": ["casser", "briser", "rompre"]
+  },
+  {
+    "_id": 6605,
+    "keywords": ["samedi"]
+  },
+  {
+    "_id": 6588,
+    "keywords": ["coiffeur"]
+  },
+  {
+    "_id": 6611,
+    "keywords": ["assoir", "s'assoir", "asseoir", "s'asseoir"]
+  },
+  {
+    "_id": 6607,
+    "keywords": ["sauter", "bondir"]
+  },
+  {
+    "_id": 6613,
+    "keywords": ["Septembre"]
+  },
+  {
+    "_id": 6625,
+    "keywords": ["tu", "toi", "vous"]
+  },
+  {
+    "_id": 6624,
+    "keywords": ["travailler"]
+  },
+  {
+    "_id": 6627,
+    "keywords": ["s'habiller"]
+  },
+  {
+    "_id": 6629,
+    "keywords": ["vendredi"]
+  },
+  {
+    "_id": 6630,
+    "keywords": ["revenir", "tour", "demi-tour", "retourner"]
+  },
+  {
+    "_id": 6632,
+    "keywords": ["je", "me", "moi"]
+  },
+  {
+    "_id": 6652,
+    "keywords": ["vendre", "commerce"]
+  },
+  {
+    "_id": 6829,
+    "keywords": ["passer", "faire une passe"]
+  },
+  {
+    "_id": 6647,
+    "keywords": ["saucisse", "saucisse de Francfort "]
+  },
+  {
+    "_id": 6888,
+    "keywords": ["prendre", "tenir", "saisir"]
+  },
+  {
+    "_id": 6898,
+    "keywords": ["aimer"]
+  },
+  {
+    "_id": 6899,
+    "keywords": ["ambulance"]
+  },
+  {
+    "_id": 6900,
+    "keywords": ["bague", "bague de fiançailles", "bague solitaire"]
+  },
+  {
+    "_id": 6901,
+    "keywords": ["animaux", "animal", "faune"]
+  },
+  {
+    "_id": 6903,
+    "keywords": ["année", "an"]
+  },
+  {
+    "_id": 6905,
+    "keywords": ["empiler", "entasser"]
+  },
+  {
+    "_id": 6926,
+    "keywords": ["hier"]
+  },
+  {
+    "_id": 6932,
+    "keywords": ["bateau", "paquebot", "paquebot de croisière"]
+  },
+  {
+    "_id": 6937,
+    "keywords": ["poche", "pochette"]
+  },
+  {
+    "_id": 6935,
+    "keywords": ["bicyclette", "vélo", "bécane"]
+  },
+  {
+    "_id": 6943,
+    "keywords": ["bon après-midi"]
+  },
+  {
+    "_id": 6944,
+    "keywords": ["bonjour"]
+  },
+  {
+    "_id": 6945,
+    "keywords": ["bulles"]
+  },
+  {
+    "_id": 6947,
+    "keywords": ["chercher"]
+  },
+  {
+    "_id": 6952,
+    "keywords": ["avoir cha"]
+  },
+  {
+    "_id": 6956,
+    "keywords": ["camion", "poids lourd"]
+  },
+  {
+    "_id": 6960,
+    "keywords": ["chanter"]
+  },
+  {
+    "_id": 6964,
+    "keywords": ["maison", "domicile", "logement"]
+  },
+  {
+    "_id": 6989,
+    "keywords": ["mettre", "placer", "situer"]
+  },
+  {
+    "_id": 7010,
+    "keywords": ["sport", "sports"]
+  },
+  {
+    "_id": 7040,
+    "keywords": ["tomber malade"]
+  },
+  {
+    "_id": 7044,
+    "keywords": ["devant"]
+  },
+  {
+    "_id": 7047,
+    "keywords": ["sous"]
+  },
+  {
+    "_id": 7054,
+    "keywords": ["carton"]
+  },
+  {
+    "_id": 7061,
+    "keywords": ["comment t'appelles-tu ?", "prénom"]
+  },
+  {
+    "_id": 7064,
+    "keywords": ["avec"]
+  },
+  {
+    "_id": 7070,
+    "keywords": ["quadrillé"]
+  },
+  {
+    "_id": 7071,
+    "keywords": ["combien ça coute ?"]
+  },
+  {
+    "_id": 7075,
+    "keywords": ["couleur", "de quelle couleur est-il ?"]
+  },
+  {
+    "_id": 7104,
+    "keywords": ["fleur"]
+  },
+  {
+    "_id": 7107,
+    "keywords": ["photo", "photographie"]
+  },
+  {
+    "_id": 7114,
+    "keywords": ["chat", "minet"]
+  },
+  {
+    "_id": 7124,
+    "keywords": ["aimer"]
+  },
+  {
+    "_id": 7126,
+    "keywords": ["hélicoptère"]
+  },
+  {
+    "_id": 7129,
+    "keywords": ["heure", "60 minutes", "h", "60 mn"]
+  },
+  {
+    "_id": 7131,
+    "keywords": ["aujourd'hui"]
+  },
+  {
+    "_id": 7141,
+    "keywords": ["lire"]
+  },
+  {
+    "_id": 7147,
+    "keywords": ["pleurer"]
+  },
+  {
+    "_id": 7148,
+    "keywords": ["pleuvoir"]
+  },
+  {
+    "_id": 7152,
+    "keywords": ["demain"]
+  },
+  {
+    "_id": 7161,
+    "keywords": ["mois"]
+  },
+  {
+    "_id": 7166,
+    "keywords": ["motocyclette", "moto"]
+  },
+  {
+    "_id": 7171,
+    "keywords": ["j'ai besoin d'aide"]
+  },
+  {
+    "_id": 7172,
+    "keywords": ["neiger"]
+  },
+  {
+    "_id": 7176,
+    "keywords": ["enfant", "garçon", "petit garçon"]
+  },
+  {
+    "_id": 7179,
+    "keywords": [
+      "ne pas aimer",
+      "je n'aime pas cela",
+      "désagréable",
+      "déplaire",
+      "dégoutant"
+    ]
+  },
+  {
+    "_id": 7180,
+    "keywords": [
+      "je ne sais pas",
+      "je ne te comprends pas",
+      "je ne sais pas ",
+      "incompréhensible",
+      "ne pas comprendre"
+    ]
+  },
+  {
+    "_id": 7168,
+    "keywords": ["nombreux", "beaucoup", "divers", "diverses"]
+  },
+  {
+    "_id": 7182,
+    "keywords": ["petits pois"]
+  },
+  {
+    "_id": 7181,
+    "keywords": ["nuit"]
+  },
+  {
+    "_id": 7190,
+    "keywords": ["ordinateur", "PC"]
+  },
+  {
+    "_id": 7196,
+    "keywords": ["arrêter", "stopper"]
+  },
+  {
+    "_id": 7202,
+    "keywords": ["chien"]
+  },
+  {
+    "_id": 7209,
+    "keywords": ["peu nombreux", "peu", "un petit peu de"]
+  },
+  {
+    "_id": 7215,
+    "keywords": ["carte postale"]
+  },
+  {
+    "_id": 7216,
+    "keywords": ["dessert"]
+  },
+  {
+    "_id": 7218,
+    "keywords": ["gagner", "récompenser"]
+  },
+  {
+    "_id": 7225,
+    "keywords": ["rayé"]
+  },
+  {
+    "_id": 7233,
+    "keywords": ["vêtements"]
+  },
+  {
+    "_id": 7223,
+    "keywords": ["quel temps fait-il ?"]
+  },
+  {
+    "_id": 7252,
+    "keywords": ["soleil"]
+  },
+  {
+    "_id": 7258,
+    "keywords": ["souffler", "expirer"]
+  },
+  {
+    "_id": 7268,
+    "keywords": ["après-midi"]
+  },
+  {
+    "_id": 7271,
+    "keywords": ["avoir", "tenir", "posséder"]
+  },
+  {
+    "_id": 7280,
+    "keywords": ["apporter"]
+  },
+  {
+    "_id": 7288,
+    "keywords": ["éclair"]
+  },
+  {
+    "_id": 7284,
+    "keywords": ["jeu du morpion", "tic-tac-toe", "oxo"]
+  },
+  {
+    "_id": 7297,
+    "keywords": ["verbe", "action"]
+  },
+  {
+    "_id": 7764,
+    "keywords": ["où", "où ?"]
+  },
+  {
+    "_id": 7765,
+    "keywords": ["entre", "parmi"]
+  },
+  {
+    "_id": 7776,
+    "keywords": ["pois", "à pois"]
+  },
+  {
+    "_id": 7814,
+    "keywords": ["sur"]
+  },
+  {
+    "_id": 7819,
+    "keywords": ["tronc"]
+  },
+  {
+    "_id": 8025,
+    "keywords": ["animal", "bestiole "]
+  },
+  {
+    "_id": 8043,
+    "keywords": ["blanc"]
+  },
+  {
+    "_id": 8061,
+    "keywords": ["escargot", "escargot de jardin", "escargot petit-gris"]
+  },
+  {
+    "_id": 8078,
+    "keywords": ["matelas"]
+  },
+  {
+    "_id": 8088,
+    "keywords": ["dessiner"]
+  },
+  {
+    "_id": 8094,
+    "keywords": ["savon"]
+  },
+  {
+    "_id": 8104,
+    "keywords": ["salade russe"]
+  },
+  {
+    "_id": 8122,
+    "keywords": ["imperméable"]
+  },
+  {
+    "_id": 8129,
+    "keywords": ["merci"]
+  },
+  {
+    "_id": 8142,
+    "keywords": ["aller"]
+  },
+  {
+    "_id": 8152,
+    "keywords": ["lever", "se lever", "se redresser"]
+  },
+  {
+    "_id": 8195,
+    "keywords": ["s'il vous plaît", "supplier", "prier"]
+  },
+  {
+    "_id": 8349,
+    "keywords": ["papier", "feuille"]
+  },
+  {
+    "_id": 8367,
+    "keywords": ["drap"]
+  },
+  {
+    "_id": 8506,
+    "keywords": ["billets"]
+  },
+  {
+    "_id": 8511,
+    "keywords": ["sac de sport"]
+  },
+  {
+    "_id": 8522,
+    "keywords": ["chameau"]
+  },
+  {
+    "_id": 8545,
+    "keywords": ["couverts"]
+  },
+  {
+    "_id": 8554,
+    "keywords": ["charcuterie"]
+  },
+  {
+    "_id": 8573,
+    "keywords": ["miroir"]
+  },
+  {
+    "_id": 8587,
+    "keywords": ["photocopier"]
+  },
+  {
+    "_id": 8600,
+    "keywords": ["farine"]
+  },
+  {
+    "_id": 8619,
+    "keywords": ["lumière", "luminosité"]
+  },
+  {
+    "_id": 8649,
+    "keywords": ["se promener", "marcher", "se balader"]
+  },
+  {
+    "_id": 8661,
+    "keywords": ["penser"]
+  },
+  {
+    "_id": 8666,
+    "keywords": ["jambe"]
+  },
+  {
+    "_id": 8710,
+    "keywords": ["luge"]
+  },
+  {
+    "_id": 8977,
+    "keywords": [
+      "laver",
+      "laver les mains",
+      "se laver les mains",
+      "lavage des mains"
+    ]
+  },
+  {
+    "_id": 8983,
+    "keywords": ["charger", "chargé", "porter", "transporter"]
+  },
+  {
+    "_id": 8986,
+    "keywords": ["acheter", "faire des courses", "faire les courses"]
+  },
+  {
+    "_id": 8989,
+    "keywords": ["réveiller", "se réveiller", "s'étirer"]
+  },
+  {
+    "_id": 9001,
+    "keywords": ["il y a"]
+  },
+  {
+    "_id": 9031,
+    "keywords": ["répondre"]
+  },
+  {
+    "_id": 9140,
+    "keywords": ["cristal", "verre"]
+  },
+  {
+    "_id": 9203,
+    "keywords": ["gauche", "à gauche"]
+  },
+  {
+    "_id": 9693,
+    "keywords": ["dire", "exprimer"]
+  },
+  {
+    "_id": 9810,
+    "keywords": ["jeu", "jeux", "jeux de table", "jeux de plateau"]
+  },
+  {
+    "_id": 9815,
+    "keywords": ["salle de classe", "salle de cours", "classe"]
+  },
+  {
+    "_id": 9819,
+    "keywords": ["endroit", "place", "lieu"]
+  },
+  {
+    "_id": 9813,
+    "keywords": ["jouets", "jouet"]
+  },
+  {
+    "_id": 9840,
+    "keywords": ["demander", "questionner", "interroger"]
+  },
+  {
+    "_id": 9847,
+    "keywords": ["demander", "questionner", "interroger"]
+  },
+  {
+    "_id": 9853,
+    "keywords": [
+      "qui",
+      "inconnu",
+      "Qu'est-ce que c'est ?",
+      "qui c'est?",
+      "sans nom",
+      "anonyme"
+    ]
+  },
+  {
+    "_id": 10148,
+    "keywords": ["prendre"]
+  },
+  {
+    "_id": 10166,
+    "keywords": ["basket"]
+  },
+  {
+    "_id": 10206,
+    "keywords": ["jeune", "adolescente"]
+  },
+  {
+    "_id": 10273,
+    "keywords": ["comment vas-tu ?", "comment ça va "]
+  },
+  {
+    "_id": 10288,
+    "keywords": ["plastique"]
+  },
+  {
+    "_id": 10310,
+    "keywords": ["fiche"]
+  },
+  {
+    "_id": 10351,
+    "keywords": ["transports", "transport", "moyens de transport"]
+  },
+  {
+    "_id": 10752,
+    "keywords": ["cuisine"]
+  },
+  {
+    "_id": 11194,
+    "keywords": ["joli", "beau", "jolie", "belle"]
+  },
+  {
+    "_id": 11233,
+    "keywords": ["déshabiller", "se déshabiller"]
+  },
+  {
+    "_id": 11227,
+    "keywords": ["dattes"]
+  },
+  {
+    "_id": 11228,
+    "keywords": ["devoirs"]
+  },
+  {
+    "_id": 11238,
+    "keywords": ["dessin"]
+  },
+  {
+    "_id": 11253,
+    "keywords": ["galette spirale"]
+  },
+  {
+    "_id": 11264,
+    "keywords": ["fleuri"]
+  },
+  {
+    "_id": 11306,
+    "keywords": ["monstre"]
+  },
+  {
+    "_id": 11314,
+    "keywords": ["aucun", "aucune", "personne"]
+  },
+  {
+    "_id": 11316,
+    "keywords": ["nouveau", "nouvelle"]
+  },
+  {
+    "_id": 11322,
+    "keywords": ["bâton"]
+  },
+  {
+    "_id": 11352,
+    "keywords": ["signet", "marque-page"]
+  },
+  {
+    "_id": 11355,
+    "keywords": ["bizarre", "rare", "étrange"]
+  },
+  {
+    "_id": 11389,
+    "keywords": ["tonner"]
+  },
+  {
+    "_id": 11394,
+    "keywords": ["vieux", "vieille"]
+  },
+  {
+    "_id": 11461,
+    "keywords": ["jus"]
+  },
+  {
+    "_id": 11536,
+    "keywords": ["aimer"]
+  },
+  {
+    "_id": 11538,
+    "keywords": ["aimer"]
+  },
+  {
+    "_id": 11593,
+    "keywords": ["moi non plus!"]
+  },
+  {
+    "_id": 11590,
+    "keywords": ["gui"]
+  },
+  {
+    "_id": 11597,
+    "keywords": ["comment ça va ?", "ça va?"]
+  },
+  {
+    "_id": 11595,
+    "keywords": ["ne pas toucher", "ne touche pas !"]
+  },
+  {
+    "_id": 11599,
+    "keywords": [
+      "succès",
+      "très sympa !",
+      "fantastique !",
+      "génial!",
+      "génial",
+      "fantastique",
+      "très bien",
+      "très bien !"
+    ]
+  },
+  {
+    "_id": 11605,
+    "keywords": ["vivre", "résider"]
+  },
+  {
+    "_id": 11591,
+    "keywords": ["moi aussi!"]
+  },
+  {
+    "_id": 11627,
+    "keywords": ["bon appétit !"]
+  },
+  {
+    "_id": 11625,
+    "keywords": [
+      "je suis désolé",
+      "pardonner",
+      "je regrette !",
+      "pardon !",
+      "pardon"
+    ]
+  },
+  {
+    "_id": 11611,
+    "keywords": ["que dis-tu?", "qu'as-tu dit?"]
+  },
+  {
+    "_id": 11645,
+    "keywords": ["c'est drôle!"]
+  },
+  {
+    "_id": 11694,
+    "keywords": ["choisir", "sélectionner", "décider", "préférer"]
+  },
+  {
+    "_id": 11749,
+    "keywords": ["faire", "créer", "fabriquer"]
+  },
+  {
+    "_id": 12264,
+    "keywords": ["le mien", "mon", "à moi", "ma", "mienne"]
+  },
+  {
+    "_id": 12281,
+    "keywords": [
+      "ton",
+      "le tien",
+      "la tienne",
+      "ta",
+      "votre",
+      "le vôtre",
+      "la vôtre"
+    ]
+  },
+  {
+    "_id": 12305,
+    "keywords": ["Tronc de Noël", "tronc"]
+  },
+  {
+    "_id": 13018,
+    "keywords": ["félicitations", "Félicitations !"]
+  },
+  {
+    "_id": 13024,
+    "keywords": [
+      "prendre",
+      "prendre par la main",
+      "saisir la main",
+      "poignée",
+      "se tenir la main"
+    ]
+  },
+  {
+    "_id": 13370,
+    "keywords": ["être debout"]
+  },
+  {
+    "_id": 13354,
+    "keywords": ["rire", "sourire", "sourire"]
+  },
+  {
+    "_id": 13630,
+    "keywords": ["ça va", "Ça va !", "Je vais bien !"]
+  },
+  {
+    "_id": 13640,
+    "keywords": ["chemise"]
+  },
+  {
+    "_id": 15483,
+    "keywords": ["bêtise", "ânerie", "sottise", "idiotie"]
+  },
+  {
+    "_id": 15485,
+    "keywords": ["utiliser"]
+  },
+  {
+    "_id": 15730,
+    "keywords": ["hôtel"]
+  },
+  {
+    "_id": 16475,
+    "keywords": ["fêter", "célébrer"]
+  },
+  {
+    "_id": 16643,
+    "keywords": ["se reposer", "reposer"]
+  },
+  {
+    "_id": 16649,
+    "keywords": ["fête", "fêter", "célébrer"]
+  },
+  {
+    "_id": 16697,
+    "keywords": ["attendre"]
+  },
+  {
+    "_id": 16701,
+    "keywords": ["skier", "ski"]
+  },
+  {
+    "_id": 16717,
+    "keywords": ["inviter"]
+  },
+  {
+    "_id": 16713,
+    "keywords": ["faire pipi", "uriner"]
+  },
+  {
+    "_id": 16743,
+    "keywords": ["football", "jouer au football"]
+  },
+  {
+    "_id": 16807,
+    "keywords": ["arriver"]
+  },
+  {
+    "_id": 16823,
+    "keywords": ["montrer", "indiquer", "présenter"]
+  },
+  {
+    "_id": 16851,
+    "keywords": ["pétard"]
+  },
+  {
+    "_id": 16885,
+    "keywords": ["savoir", "lever le doigt"]
+  },
+  {
+    "_id": 16857,
+    "keywords": ["assiette", "assiette creuse"]
+  },
+  {
+    "_id": 17288,
+    "keywords": ["foulard"]
+  },
+  {
+    "_id": 17330,
+    "keywords": ["griller"]
+  },
+  {
+    "_id": 21399,
+    "keywords": ["train à grande vitesse", "TGV"]
+  },
+  {
+    "_id": 21878,
+    "keywords": ["fourgonnette"]
+  },
+  {
+    "_id": 22017,
+    "keywords": ["couche"]
+  },
+  {
+    "_id": 22619,
+    "keywords": ["comment", "comment ?"]
+  },
+  {
+    "_id": 22620,
+    "keywords": ["quel", "quoi ?", "quel ?", "quelle ?", "quels ?", "quelles ?"]
+  },
+  {
+    "_id": 22799,
+    "keywords": ["rampe"]
+  },
+  {
+    "_id": 23392,
+    "keywords": ["jouer"]
+  },
+  {
+    "_id": 23710,
+    "keywords": ["grand-mère", "mamy", "mémé"]
+  },
+  {
+    "_id": 23718,
+    "keywords": ["grand-père", "papy", "pépé"]
+  },
+  {
+    "_id": 24208,
+    "keywords": ["obtenir", "attraper", "atteindre"]
+  },
+  {
+    "_id": 24177,
+    "keywords": ["mosquée"]
+  },
+  {
+    "_id": 24364,
+    "keywords": ["revue"]
+  },
+  {
+    "_id": 24408,
+    "keywords": ["synagogue"]
+  },
+  {
+    "_id": 24479,
+    "keywords": ["café"]
+  },
+  {
+    "_id": 24507,
+    "keywords": ["entreprise", "usine"]
+  },
+  {
+    "_id": 24621,
+    "keywords": ["femme"]
+  },
+  {
+    "_id": 24723,
+    "keywords": ["baisser", "descendre"]
+  },
+  {
+    "_id": 24725,
+    "keywords": ["monter", "remonter"]
+  },
+  {
+    "_id": 24731,
+    "keywords": [
+      "combien y en a-t-il ?",
+      "quantité",
+      "combien ?",
+      "combien",
+      "nombre"
+    ]
+  },
+  {
+    "_id": 24742,
+    "keywords": ["trouver", "apparaître"]
+  },
+  {
+    "_id": 24733,
+    "keywords": ["amusant", "joyeux", "gai"]
+  },
+  {
+    "_id": 24749,
+    "keywords": ["cogner", "maltraiter", "frapper", "taper", "boxer", "battre"]
+  },
+  {
+    "_id": 24760,
+    "keywords": ["perdre", "égarer"]
+  },
+  {
+    "_id": 24755,
+    "keywords": ["parking", "parc de stationnement"]
+  },
+  {
+    "_id": 24773,
+    "keywords": ["trouver"]
+  },
+  {
+    "_id": 24779,
+    "keywords": ["perdre"]
+  },
+  {
+    "_id": 24785,
+    "keywords": ["gymnase"]
+  },
+  {
+    "_id": 24791,
+    "keywords": [
+      "musique",
+      "composition",
+      "partition",
+      "portée",
+      "chanson",
+      "note"
+    ]
+  },
+  {
+    "_id": 24823,
+    "keywords": ["abeille"]
+  },
+  {
+    "_id": 24825,
+    "keywords": ["ouvrir", "déplier", "s'ouvrir"]
+  },
+  {
+    "_id": 24850,
+    "keywords": ["déambulateur"]
+  },
+  {
+    "_id": 24873,
+    "keywords": ["Crèche de Noël", "Nativité"]
+  },
+  {
+    "_id": 24885,
+    "keywords": ["boccia"]
+  },
+  {
+    "_id": 24887,
+    "keywords": ["mariage", "noce"]
+  },
+  {
+    "_id": 24925,
+    "keywords": ["appareil photo", "reflex", "caméra"]
+  },
+  {
+    "_id": 24933,
+    "keywords": ["brancard"]
+  },
+  {
+    "_id": 24951,
+    "keywords": [
+      "Fête de la châtaigne ",
+      "vendeur de châtaignes",
+      "Fête de la châtaigne en Galice",
+      "Castañada",
+      "Magosto"
+    ]
+  },
+  {
+    "_id": 24972,
+    "keywords": ["cochon", "porc", "goret"]
+  },
+  {
+    "_id": 24976,
+    "keywords": ["fermer"]
+  },
+  {
+    "_id": 25044,
+    "keywords": ["faible"]
+  },
+  {
+    "_id": 25048,
+    "keywords": ["mince", "maigre"]
+  },
+  {
+    "_id": 25062,
+    "keywords": ["demander", "donner un ordre", "ordonner", "confier une tâche"]
+  },
+  {
+    "_id": 25111,
+    "keywords": ["flan", "crème caramel"]
+  },
+  {
+    "_id": 25121,
+    "keywords": ["fort", "musclé", "costaud"]
+  },
+  {
+    "_id": 25133,
+    "keywords": ["gros", "obèse", "potelé", "rondelet"]
+  },
+  {
+    "_id": 25187,
+    "keywords": ["lion"]
+  },
+  {
+    "_id": 25191,
+    "keywords": ["livre"]
+  },
+  {
+    "_id": 25179,
+    "keywords": ["jeu du béret"]
+  },
+  {
+    "_id": 25211,
+    "keywords": ["madeleine", "cupcake", "muffin"]
+  },
+  {
+    "_id": 25253,
+    "keywords": ["mouillé", "mouillée"]
+  },
+  {
+    "_id": 25269,
+    "keywords": ["portable", "téléphone portable", "cellulaire"]
+  },
+  {
+    "_id": 25298,
+    "keywords": ["Père-Noël", "Père Noël", "Saint Nicolas"]
+  },
+  {
+    "_id": 25275,
+    "keywords": ["sentir"]
+  },
+  {
+    "_id": 25301,
+    "keywords": ["noter les présents", "faire l'appel"]
+  },
+  {
+    "_id": 25327,
+    "keywords": ["pied"]
+  },
+  {
+    "_id": 25381,
+    "keywords": ["cadeau"]
+  },
+  {
+    "_id": 25427,
+    "keywords": ["Saint Georges"]
+  },
+  {
+    "_id": 25441,
+    "keywords": ["semaine de Pâques espagnole"]
+  },
+  {
+    "_id": 25437,
+    "keywords": ["sécher", "sec", "sèche"]
+  },
+  {
+    "_id": 25479,
+    "keywords": ["canapé", "sofa", "divan"]
+  },
+  {
+    "_id": 25498,
+    "keywords": [
+      "télé",
+      "télévision",
+      "écran",
+      "écran LCD",
+      "téléviseur",
+      "TV",
+      "moniteur"
+    ]
+  },
+  {
+    "_id": 25471,
+    "keywords": [
+      "fauteuil roulant électrique",
+      "fauteuil électrique",
+      "fauteuil roulant à moteur",
+      "fauteuil"
+    ]
+  },
+  {
+    "_id": 25524,
+    "keywords": ["caméra vidéo", "caméscope"]
+  },
+  {
+    "_id": 25560,
+    "keywords": ["sucre", "paquet de sucre"]
+  },
+  {
+    "_id": 25576,
+    "keywords": ["sel"]
+  },
+  {
+    "_id": 25704,
+    "keywords": ["matin", "matinée"]
+  },
+  {
+    "_id": 25729,
+    "keywords": ["résidence", "internat"]
+  },
+  {
+    "_id": 25790,
+    "keywords": ["ami"]
+  },
+  {
+    "_id": 25796,
+    "keywords": ["vieux", "âgé"]
+  },
+  {
+    "_id": 25815,
+    "keywords": ["écureuil"]
+  },
+  {
+    "_id": 25839,
+    "keywords": ["petit", "plus petit"]
+  },
+  {
+    "_id": 25782,
+    "keywords": ["grand"]
+  },
+  {
+    "_id": 25887,
+    "keywords": ["chèvre"]
+  },
+  {
+    "_id": 25900,
+    "keywords": ["lit"]
+  },
+  {
+    "_id": 25924,
+    "keywords": ["carnaval"]
+  },
+  {
+    "_id": 25940,
+    "keywords": ["chocolat", "tablette", "tablette de chocolat"]
+  },
+  {
+    "_id": 25974,
+    "keywords": ["camp de vacances", "camp"]
+  },
+  {
+    "_id": 25966,
+    "keywords": ["dinette"]
+  },
+  {
+    "_id": 26016,
+    "keywords": ["autocollants", "cartes de collection"]
+  },
+  {
+    "_id": 26030,
+    "keywords": ["fesses", "derrière"]
+  },
+  {
+    "_id": 26002,
+    "keywords": ["court"]
+  },
+  {
+    "_id": 26090,
+    "keywords": ["laid"]
+  },
+  {
+    "_id": 26094,
+    "keywords": ["kinésithérapeute"]
+  },
+  {
+    "_id": 26114,
+    "keywords": ["beau"]
+  },
+  {
+    "_id": 26146,
+    "keywords": ["jeune"]
+  },
+  {
+    "_id": 26150,
+    "keywords": ["Jeu de l'espion", "jeu de devinettes"]
+  },
+  {
+    "_id": 26138,
+    "keywords": ["imprimante", "imprimante laser"]
+  },
+  {
+    "_id": 26162,
+    "keywords": ["long"]
+  },
+  {
+    "_id": 26172,
+    "keywords": ["propre"]
+  },
+  {
+    "_id": 26176,
+    "keywords": ["plein", "rempli"]
+  },
+  {
+    "_id": 26178,
+    "keywords": ["filet"]
+  },
+  {
+    "_id": 26182,
+    "keywords": ["télécommande", "commande"]
+  },
+  {
+    "_id": 26200,
+    "keywords": ["papillon"]
+  },
+  {
+    "_id": 26238,
+    "keywords": ["poupée"]
+  },
+  {
+    "_id": 26258,
+    "keywords": ["oublier"]
+  },
+  {
+    "_id": 26358,
+    "keywords": ["radio"]
+  },
+  {
+    "_id": 26390,
+    "keywords": ["Rois Mages", "3 Rois Mages"]
+  },
+  {
+    "_id": 26392,
+    "keywords": ["frisé", "boucle", "frisure", "bouclé"]
+  },
+  {
+    "_id": 26503,
+    "keywords": ["tortue", "tortue géante"]
+  },
+  {
+    "_id": 26479,
+    "keywords": ["téléphone"]
+  },
+  {
+    "_id": 26527,
+    "keywords": ["vide"]
+  },
+  {
+    "_id": 26529,
+    "keywords": ["voisins", "quartier", "voisinage"]
+  },
+  {
+    "_id": 26799,
+    "keywords": ["jour"]
+  },
+  {
+    "_id": 26803,
+    "keywords": ["doucher", "prendre une douche", "se doucher"]
+  },
+  {
+    "_id": 26845,
+    "keywords": ["prix", "récompense"]
+  },
+  {
+    "_id": 26897,
+    "keywords": ["marionnette"]
+  },
+  {
+    "_id": 26925,
+    "keywords": ["métro", "métropolitain"]
+  },
+  {
+    "_id": 26947,
+    "keywords": ["peigner", "coiffer"]
+  },
+  {
+    "_id": 26993,
+    "keywords": ["sombre"]
+  },
+  {
+    "_id": 26997,
+    "keywords": ["nuit"]
+  },
+  {
+    "_id": 27126,
+    "keywords": ["visiter", "visite"]
+  },
+  {
+    "_id": 27125,
+    "keywords": ["visiter", "visite"]
+  },
+  {
+    "_id": 27329,
+    "keywords": ["week-end", "fin de semaine"]
+  },
+  {
+    "_id": 27509,
+    "keywords": ["fille", "petite fille", "fillette"]
+  },
+  {
+    "_id": 27547,
+    "keywords": ["attendre"]
+  },
+  {
+    "_id": 27817,
+    "keywords": ["gants chirurgicaux"]
+  },
+  {
+    "_id": 28099,
+    "keywords": ["tablette"]
+  },
+  {
+    "_id": 28173,
+    "keywords": [
+      "voyager",
+      "voyageur",
+      "voyageuse",
+      "prendre le bus",
+      "monter dans le bus"
+    ]
+  },
+  {
+    "_id": 28339,
+    "keywords": ["fruit", "fruits"]
+  },
+  {
+    "_id": 28429,
+    "keywords": [
+      "terminer",
+      "finir",
+      "j'ai fini",
+      "c'est fini !",
+      "ça suffit !"
+    ]
+  },
+  {
+    "_id": 28431,
+    "keywords": ["donner", "offrir"]
+  },
+  {
+    "_id": 28479,
+    "keywords": ["canard"]
+  },
+  {
+    "_id": 28485,
+    "keywords": ["ver"]
+  },
+  {
+    "_id": 28473,
+    "keywords": ["grenouille"]
+  },
+  {
+    "_id": 29123,
+    "keywords": ["regarder la télévision", "regarder la télé"]
+  },
+  {
+    "_id": 29131,
+    "keywords": ["légumes"]
+  },
+  {
+    "_id": 29175,
+    "keywords": ["quelle heure est-il ?", "il est quelle heure ?"]
+  },
+  {
+    "_id": 29208,
+    "keywords": ["billet", "ticket", "billet de transport"]
+  },
+  {
+    "_id": 29714,
+    "keywords": ["rentrer"]
+  },
+  {
+    "_id": 29839,
+    "keywords": ["rien"]
+  },
+  {
+    "_id": 29863,
+    "keywords": ["mourir", "décéder"]
+  },
+  {
+    "_id": 29905,
+    "keywords": ["gare", "gare ferroviaire"]
+  },
+  {
+    "_id": 29951,
+    "keywords": ["se promener", "se balader", "flaner", "aller se promener"]
+  },
+  {
+    "_id": 30383,
+    "keywords": ["près"]
+  },
+  {
+    "_id": 30385,
+    "keywords": ["loin"]
+  },
+  {
+    "_id": 30387,
+    "keywords": ["cinéma", "salle de cinéma"]
+  },
+  {
+    "_id": 30391,
+    "keywords": ["nerfs", "nerveux", "trouille", "stressé", "inquiet"]
+  },
+  {
+    "_id": 30510,
+    "keywords": ["choisir", "sélectionner", "décider", "préférer"]
+  },
+  {
+    "_id": 30516,
+    "keywords": ["piscine"]
+  },
+  {
+    "_id": 30518,
+    "keywords": ["plage"]
+  },
+  {
+    "_id": 30526,
+    "keywords": ["cuisinier", "chef"]
+  },
+  {
+    "_id": 31146,
+    "keywords": ["père", "papa"]
+  },
+  {
+    "_id": 31195,
+    "keywords": ["tromper", "ruser", "ruse", "blague"]
+  },
+  {
+    "_id": 31945,
+    "keywords": ["éducation physique", "bras en croix", "bras tendus"]
+  },
+  {
+    "_id": 32051,
+    "keywords": ["thermomètre"]
+  },
+  {
+    "_id": 32129,
+    "keywords": ["premier", "première"]
+  },
+  {
+    "_id": 32388,
+    "keywords": ["cassé", " brisé"]
+  },
+  {
+    "_id": 32404,
+    "keywords": ["station essence", "station-service", "pompe à essence"]
+  },
+  {
+    "_id": 32406,
+    "keywords": ["musée"]
+  },
+  {
+    "_id": 32398,
+    "keywords": ["bar", "pub", "café", "bistrot", "buvette"]
+  },
+  {
+    "_id": 32408,
+    "keywords": ["restaurant", "coin-repas", "resto"]
+  },
+  {
+    "_id": 32412,
+    "keywords": ["théâtre", "salle de spectacle"]
+  },
+  {
+    "_id": 32420,
+    "keywords": ["camping", "camp"]
+  },
+  {
+    "_id": 32426,
+    "keywords": ["douche", "salle de douche"]
+  },
+  {
+    "_id": 32428,
+    "keywords": ["orthophonie", "logopédie"]
+  },
+  {
+    "_id": 32430,
+    "keywords": ["prison", "taule"]
+  },
+  {
+    "_id": 32440,
+    "keywords": ["sucré"]
+  },
+  {
+    "_id": 32442,
+    "keywords": ["vacances", "congés", "jours fériés"]
+  },
+  {
+    "_id": 32448,
+    "keywords": ["pizzeria"]
+  },
+  {
+    "_id": 32446,
+    "keywords": ["collège", "école", "lycée"]
+  },
+  {
+    "_id": 32456,
+    "keywords": ["Joyeux Noël!"]
+  },
+  {
+    "_id": 32464,
+    "keywords": ["eau"]
+  },
+  {
+    "_id": 32452,
+    "keywords": ["Saint-Jean", "jour de la Saint-Jean"]
+  },
+  {
+    "_id": 32478,
+    "keywords": ["oeuf de Pâques"]
+  },
+  {
+    "_id": 32480,
+    "keywords": ["Bonne Année!", "Joyeuse Année!"]
+  },
+  {
+    "_id": 32488,
+    "keywords": ["calendrier"]
+  },
+  {
+    "_id": 32490,
+    "keywords": ["règles", "menstruations"]
+  },
+  {
+    "_id": 32482,
+    "keywords": ["ferme"]
+  },
+  {
+    "_id": 32508,
+    "keywords": ["voyage", "déplacement", "sortie", "excursion"]
+  },
+  {
+    "_id": 32520,
+    "keywords": ["slalom", "éviter", "contourner"]
+  },
+  {
+    "_id": 32524,
+    "keywords": ["salé"]
+  },
+  {
+    "_id": 32528,
+    "keywords": ["inconfortable"]
+  },
+  {
+    "_id": 32530,
+    "keywords": ["fièvre"]
+  },
+  {
+    "_id": 32514,
+    "keywords": ["menu", "carte"]
+  },
+  {
+    "_id": 32540,
+    "keywords": [
+      "courriel",
+      "message",
+      "email",
+      "courrier électronique",
+      "e-mail"
+    ]
+  },
+  {
+    "_id": 32542,
+    "keywords": ["sciences de la nature", "sciences naturelles"]
+  },
+  {
+    "_id": 32554,
+    "keywords": ["cours de mathématiques", "mathématiques"]
+  },
+  {
+    "_id": 32592,
+    "keywords": ["expression", "geste", "gestuelle", "signe"]
+  },
+  {
+    "_id": 32648,
+    "keywords": ["aider"]
+  },
+  {
+    "_id": 32663,
+    "keywords": ["ramasser", "récolter"]
+  },
+  {
+    "_id": 32669,
+    "keywords": ["venir", "appeler"]
+  },
+  {
+    "_id": 32743,
+    "keywords": ["c'est à qui?", "à qui est-ce?"]
+  },
+  {
+    "_id": 32749,
+    "keywords": ["après", "ensuite", "plus tard", "ultérieurement"]
+  },
+  {
+    "_id": 32747,
+    "keywords": ["maintenant"]
+  },
+  {
+    "_id": 32751,
+    "keywords": ["faire", "fabriquer"]
+  },
+  {
+    "_id": 32753,
+    "keywords": ["j'en veux plus", "donne m'en plus", "j'en veux encore"]
+  },
+  {
+    "_id": 32757,
+    "keywords": ["mettre", "placer", "situer"]
+  },
+  {
+    "_id": 32745,
+    "keywords": ["avant"]
+  },
+  {
+    "_id": 32771,
+    "keywords": ["qu'est-ce que c'est ?"]
+  },
+  {
+    "_id": 32761,
+    "keywords": ["avoir", "tenir", "posséder"]
+  },
+  {
+    "_id": 32814,
+    "keywords": ["terminer", "finir"]
+  },
+  {
+    "_id": 32874,
+    "keywords": ["quand"]
+  },
+  {
+    "_id": 32872,
+    "keywords": ["où est-ce?"]
+  },
+  {
+    "_id": 32942,
+    "keywords": ["marché"]
+  },
+  {
+    "_id": 33064,
+    "keywords": ["cour de récréation", "cour d'école", "aire de jeux"]
+  },
+  {
+    "_id": 34207,
+    "keywords": ["mariage", "noces"]
+  },
+  {
+    "_id": 34320,
+    "keywords": ["regarder un film", "voir  un film"]
+  },
+  {
+    "_id": 34361,
+    "keywords": ["lettre"]
+  },
+  {
+    "_id": 34383,
+    "keywords": ["se couvrir"]
+  },
+  {
+    "_id": 34371,
+    "keywords": ["frotter", "gommer"]
+  },
+  {
+    "_id": 34558,
+    "keywords": ["personne"]
+  },
+  {
+    "_id": 34545,
+    "keywords": ["éclair", "foudre"]
+  },
+  {
+    "_id": 34560,
+    "keywords": ["personne", "individu"]
+  },
+  {
+    "_id": 34715,
+    "keywords": ["sécher", "essuyer"]
+  },
+  {
+    "_id": 34824,
+    "keywords": ["rincer", "nettoyer"]
+  },
+  {
+    "_id": 34846,
+    "keywords": ["savonner", "faire mousser"]
+  },
+  {
+    "_id": 34826,
+    "keywords": ["laver"]
+  },
+  {
+    "_id": 35049,
+    "keywords": ["brouillard", "brume"]
+  },
+  {
+    "_id": 35101,
+    "keywords": ["lever", "soulever"]
+  },
+  {
+    "_id": 35347,
+    "keywords": ["faire caca", "chier", "aller à la selle"]
+  },
+  {
+    "_id": 35117,
+    "keywords": ["centimes"]
+  },
+  {
+    "_id": 35535,
+    "keywords": ["effrayé", "apeuré"]
+  },
+  {
+    "_id": 35537,
+    "keywords": ["fatigué", "épuisé"]
+  },
+  {
+    "_id": 35533,
+    "keywords": ["joyeux"]
+  },
+  {
+    "_id": 35539,
+    "keywords": ["fâché", "en colère", "énervé"]
+  },
+  {
+    "_id": 35545,
+    "keywords": ["triste", "malheureux", "déprimé"]
+  },
+  {
+    "_id": 35547,
+    "keywords": ["content", "heureux"]
+  },
+  {
+    "_id": 35531,
+    "keywords": ["ennuyé", "lassé"]
+  },
+  {
+    "_id": 35529,
+    "keywords": ["surpris"]
+  },
+  {
+    "_id": 35583,
+    "keywords": ["avoir froid"]
+  },
+  {
+    "_id": 35600,
+    "keywords": ["fourgonnette", "minibus"]
+  },
+  {
+    "_id": 35673,
+    "keywords": ["parfum", "eau de cologne"]
+  },
+  {
+    "_id": 35695,
+    "keywords": ["magasin", "commerce", "boutique"]
+  },
+  {
+    "_id": 35747,
+    "keywords": ["danse", "danser"]
+  },
+  {
+    "_id": 35949,
+    "keywords": ["pouvoir", "être capable de"]
+  },
+  {
+    "_id": 36073,
+    "keywords": ["lever", "soulever"]
+  },
+  {
+    "_id": 36075,
+    "keywords": ["acteur", "comédien"]
+  },
+  {
+    "_id": 36205,
+    "keywords": ["hôpital", "clinique"]
+  },
+  {
+    "_id": 36210,
+    "keywords": ["hôpital", "clinique"]
+  },
+  {
+    "_id": 36303,
+    "keywords": ["serviette", "serviette en papier"]
+  },
+  {
+    "_id": 36330,
+    "keywords": ["commander par téléphone", "commander"]
+  },
+  {
+    "_id": 36392,
+    "keywords": ["être", "se trouver", "exister"]
+  },
+  {
+    "_id": 36405,
+    "keywords": ["jeux éducatifs"]
+  },
+  {
+    "_id": 36480,
+    "keywords": ["être"]
+  },
+  {
+    "_id": 36504,
+    "keywords": ["flacon de vitamines", "vitamine", "vitamine C"]
+  },
+  {
+    "_id": 36600,
+    "keywords": ["patient", "être patient", "patienter", "avoir de la patience"]
+  },
+  {
+    "_id": 36673,
+    "keywords": ["jeter à la poubelle", "jeter"]
+  },
+  {
+    "_id": 36719,
+    "keywords": ["pourquoi"]
+  },
+  {
+    "_id": 36914,
+    "keywords": ["attendre"]
+  },
+  {
+    "_id": 37160,
+    "keywords": ["avoir besoin "]
+  },
+  {
+    "_id": 37182,
+    "keywords": ["je ne suis pas d'accord", "pas d'accord"]
+  },
+  {
+    "_id": 37190,
+    "keywords": ["sensations physiques", "sentiments", "sensations"]
+  },
+  {
+    "_id": 37195,
+    "keywords": ["caresser"]
+  },
+  {
+    "_id": 37360,
+    "keywords": ["échanger"]
+  },
+  {
+    "_id": 37361,
+    "keywords": ["classer"]
+  },
+  {
+    "_id": 37362,
+    "keywords": ["mariage"]
+  },
+  {
+    "_id": 37363,
+    "keywords": ["anniversaire"]
+  },
+  {
+    "_id": 37364,
+    "keywords": ["se mouiller"]
+  },
+  {
+    "_id": 37366,
+    "keywords": ["internet"]
+  },
+  {
+    "_id": 37367,
+    "keywords": ["policier", "policière"]
+  },
+  {
+    "_id": 37368,
+    "keywords": ["pharmacie"]
+  },
+  {
+    "_id": 37369,
+    "keywords": ["se rappeler", "se souvenir"]
+  },
+  {
+    "_id": 37370,
+    "keywords": ["Quelle heure est-il? "]
+  },
+  {
+    "_id": 37371,
+    "keywords": ["jour"]
+  },
+  {
+    "_id": 37372,
+    "keywords": ["semaine"]
+  },
+  {
+    "_id": 37373,
+    "keywords": ["se battre", "se quereller"]
+  },
+  {
+    "_id": 37374,
+    "keywords": ["minute"]
+  },
+  {
+    "_id": 37411,
+    "keywords": ["bavoir"]
+  },
+  {
+    "_id": 37418,
+    "keywords": ["appareil de communication", "tablette de communication"]
+  },
+  {
+    "_id": 37721,
+    "keywords": ["aimer", "apprécier"]
+  },
+  {
+    "_id": 37723,
+    "keywords": ["Dimanche"]
+  },
+  {
+    "_id": 37724,
+    "keywords": ["mois"]
+  },
+  {
+    "_id": 37725,
+    "keywords": ["Samedi"]
+  },
+  {
+    "_id": 37726,
+    "keywords": ["Vendredi"]
+  },
+  {
+    "_id": 37727,
+    "keywords": ["Jeudi"]
+  },
+  {
+    "_id": 37728,
+    "keywords": ["Mercredi"]
+  },
+  {
+    "_id": 37729,
+    "keywords": ["Mardi"]
+  },
+  {
+    "_id": 37730,
+    "keywords": ["Lundi"]
+  },
+  {
+    "_id": 37731,
+    "keywords": ["jour"]
+  },
+  {
+    "_id": 37732,
+    "keywords": ["semaine"]
+  },
+  {
+    "_id": 37753,
+    "keywords": ["premier"]
+  },
+  {
+    "_id": 37810,
+    "keywords": ["apprendre", "étudier"]
+  },
+  {
+    "_id": 37825,
+    "keywords": ["je n'aime pas ça", "ne pas aimer", "détester"]
+  },
+  {
+    "_id": 37826,
+    "keywords": ["j'aime ça", "aimer", "apprécier"]
+  },
+  {
+    "_id": 38272,
+    "keywords": ["avant-hier"]
+  },
+  {
+    "_id": 38275,
+    "keywords": ["araignée"]
+  },
+  {
+    "_id": 38277,
+    "keywords": ["après-demain", "surlendemain"]
+  },
+  {
+    "_id": 38278,
+    "keywords": ["demain", "lendemain"]
+  },
+  {
+    "_id": 38279,
+    "keywords": ["hier"]
+  },
+  {
+    "_id": 38351,
+    "keywords": ["famille"]
+  },
+  {
+    "_id": 38566,
+    "keywords": ["Félicitations!", "Bravo!"]
+  },
+  {
+    "_id": 38796,
+    "keywords": ["penser", "réfléchir"]
+  },
+  {
+    "_id": 38900,
+    "keywords": ["partager"]
+  },
+  {
+    "_id": 39016,
+    "keywords": ["lécher"]
+  },
+  {
+    "_id": 39052,
+    "keywords": ["sauter", "bondir", "sauter à pieds joints"]
+  },
+  {
+    "_id": 39395,
+    "keywords": ["bonnet", "bonnet de ski"]
+  },
+  {
+    "_id": 39440,
+    "keywords": ["tomber"]
+  },
+  {
+    "_id": 39447,
+    "keywords": ["vacances", "congé"]
+  },
+  {
+    "_id": 8163,
+    "keywords": ["médicaments", "remèdes", "traitement", "médecine"]
+  }
+]
